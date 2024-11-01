@@ -1,0 +1,20 @@
+name: deployDev
+on:
+  push:
+    branches: [develop]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.APP_SERV }}
+          username: ${{ secrets.APP_USER }}
+          password: ${{ secrets.APP_PASSWORD }}
+          port: 22
+          script: |
+            cd /home/user/web/gpc.fulljamdev.fr/public_html/gpc; git pull;COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader -n;APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ; php bin/console d:m:m -n; php bin/console importmap:install ; php bin/console sass:build; php bin/console asset-map:compile
+# COMPOSER_ALLOW_SUPERUSER=1 composer require symfony/requirement-checker ; nano .env.prod.local; COMPOSER_ALLOW_SUPERUSER=1 composer dump-env prod ; COMPOSER_ALLOW_USERUSER=1 composer install --no-dev --optimize-autoloader ; APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ; php bin/console d:d:d --force ; php d:d:c ; php d:m:m -n
+# COMPOSER_ALLOW_SUPERUSER=1 composer require symfony/requirements-checker ; COMPOSER_ALLOW_SUPERUSER=1 composer dump-env prod ; COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader ; APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ; php bin/console d:d:d --force ; php d:d:c ; php d:m:m -n;php bin/console asset/install ; php bin/console sass:build ; php bin/console asset-map:compile
