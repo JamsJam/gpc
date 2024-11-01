@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil {{parent()}}{% endblock %}
+
+{% block body %}
+<section class="header">
+    <div class="header__info">
+        <h1>Guadeloupe passion Caraïbe</h1>
+        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+        <div class="btn_container">
+            <a href="">Réserver mon voyage</a>
+            <a href="#offers">Voir les offres</a>
+        </div>
+    </div>
+</section>
+<section class="carte">
+    {# Informations/excursions/ #}
+    <div class="carte__info">
+        <h2>Des activité sur tout le térritoire</h2>
+        {# <p></p> #}
+        <a href="">Voir notre catalogue d'activité</a>
+    </div>
+
+    <div class="carte__container">
+        {{ ux_map(map, { style: 'height: 600px;aspect-ratio: 1 /1' }) }}
+    </div>
+
+    {# Carte (excursions (tcheck googleMap/leaflet)) #}
+
+</section>
+<section class="service">
+    {# carte service avec scroll ou link #}
+
+</section>
+<section>
+   {# Section excursion #}
+
+</section>
+<section>
+   {# Section hebergement #}
+
+</section>
+<section>
+   {# Section véhicule/ transport #}
+
+   <a href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+<div{{ attributes }} class="progress-bar" {{stimulus_controller('stepprogressbar')}}>
+    <!-- component html -->
+    <div class="progress-bar__container">
+        <div class="progress-bar__progress-container">
+            <div class="progress-bar__progress" {{stimulus_target('stepprogressbar', 'progress')}}></div>
+            <div class="progress-bar__circle progress-bar__circle--active" {{stimulus_target('stepprogressbar', 'circle')}}>1</div>
+            <div class="progress-bar__circle" {{stimulus_target('stepprogressbar', 'circle')}}>2</div>
+            <div class="progress-bar__circle" {{stimulus_target('stepprogressbar', 'circle')}}>3</div>
+            <div class="progress-bar__circle" {{stimulus_target('stepprogressbar', 'circle')}}>4</div>
+        </div>
+        <div>
+            <button {{stimulus_target('stepprogressbar', 'prev')| stimulus_action('stepprogressbar', 'prev', 'click' )}}>prev</button>
+            <button {{stimulus_target('stepprogressbar', 'next')| stimulus_action('stepprogressbar', 'next', 'click' )}}>next</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+@use "../shared/abstract/" as *;
+
+section.header{
+    height: calc(100dvh - 120px);
+    
+    @extend %flex-column-start-start;
+    padding-block-start: 4rem;
+    padding-inline: 4rem;
+    gap: 2rem;
+    background: 
+        linear-gradient(00deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.25) 25%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,1) 100%),
+        url('../images/grande-anse_sunset.jpg')
+        center / cover
+        no-repeat
+    ;
+
+    .header__info{
+        @extend %flex-column-start-start;
+        gap: 3rem;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(2px);
+    }
+    h1{
+        font-size: 4rem;
+       color: #00aed6;
+       max-width: 50vw;
+    }
+    h2{
+        font-size: 3rem;
+        color: #b1f0ff;
+        max-width: 50vw;
+    }
+
+    .btn_container{
+        // background-color: antiquewhite;
+        // width: 600px;
+        height: 300px;
+
+        @extend %flex-row-start-center;
+        gap: 2rem;
+
+
+
+        a{
+            background-color: hsl(191 100% 15% / 1);
+            font-size: 2rem;
+            padding: 2rem 2rem;
+            border-radius: 10px;
+            color: rgb(177, 240, 255);
+        }
+    }
+
+}
+.carte{
+    
+    height: 100dvh;
+    background-color: black;
+
+
+    @extend %flex-row-around-center;
+
+
+    &__info{}
+    
+    
+    &__container{}
+}

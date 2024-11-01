@@ -1,0 +1,56 @@
+// Block: progress-bar
+.progress-bar {
+
+		text-align: center;
+
+
+	&__progress-container {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		margin-bottom: 30px;
+		max-width: 100%;
+		width: 550px;
+
+		&::before {
+			content: ""; // This makes the line visible
+			background-color: lightgrey;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 4px;
+			width: 100%; // Empty progress line
+			z-index: -1;
+		}
+	}
+
+	&__progress {
+		background-color: blue;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		height: 4px;
+		width: 0%; // Start with no progress
+		z-index: -1;
+		transition: 0.4s ease;
+	}
+
+	&__circle {
+		background-color: white;
+		color: #999;
+		border-radius: 50%;
+		height: 30px;
+		width: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 3px solid lightgray;
+		transition: 0.4s ease;
+
+		&--active {
+			border-color: blue;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+@use '../abstract/' as *;
+
+.nav{
+    
+    @extend %flex-row-between-center;
+
+    height: 120px;
+    padding-inline: 4rem;
+    
+
+
+    &__links{
+        @extend %flex-row-center;
+        gap: 1rem;
+    }
+
+
+    &__link{
+        font-size: 1.5rem;
+    }
+}
