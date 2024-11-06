@@ -1,7 +1,7 @@
 @use "../shared/abstract/" as *;
 
 section.header{
-    height: calc(100dvh - 120px);
+    min-height: calc(100dvh - 120px);
 
     @extend %flex-column-start-start;
     gap: 2rem;
@@ -74,17 +74,44 @@ section.header{
     }
 
 }
+
+
 .carte{
-    
-    height: 100dvh;
+    padding-block: 2rem;
+    min-height: 100dvh;
     background-color: black;
 
 
-    @extend %flex-row-around-center;
-
-
-    &__info{}
+    @extend %flex-row-start-stretch;
     
     
-    &__container{}
+    
+    
+    &__info{
+
+        @extend %flex-column-center-stretch;
+        gap: 2rem;
+        width: 100%;
+        
+        padding-inline: 2rem ;
+
+        p{
+            color: $text-color-2;
+            font-size: $font-desk-24-16;
+        }
+
+    }
+    
+    
+
+    &__component{
+        height: 500px;
+        width: 100%;
+        padding-inline: 2rem ;
+        border-radius: 10px;
+    }
+
+
+    &__container{
+    }
 }

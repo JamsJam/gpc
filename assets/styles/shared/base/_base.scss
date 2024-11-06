@@ -26,7 +26,7 @@ body{
     }
 
     h2{
-        font-size: $font-desk-72-36;
+        font-size: clamp(1.5rem, -0.2143rem + 3.5714vw, 3rem);
     }
 }
 

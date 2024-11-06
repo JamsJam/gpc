@@ -11,6 +11,8 @@
     text-decoration: none;
     font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     font-weight: 600;
+
+    @extend %flex-row-center;
     
     
     
