@@ -9,10 +9,56 @@ $font-style: "Merienda", sans-serif;
 
 //? == size
 
-$font-desk-32-16 :  clamp(1rem, -0.1429rem + 2.381vw, 2rem); // desk-32-16
-$font-desk-24-16 : clamp(1rem, 0.4286rem + 1.1905vw, 1.5rem); // desk-32-16
+$font-desk-72-36 : clamp(2.25rem, -0.3214rem + 5.3571vw, 4.5rem); 
+$font-desk-48-32 : clamp(2rem, -0.2143rem + 3.5714vw, 3rem); 
+$font-desk-32-16 :  clamp(1rem, -0.1429rem + 2.381vw, 2rem); 
+$font-desk-24-16 : clamp(1rem, 0.4286rem + 1.1905vw, 1.5rem); 
 
 
+$font-mob-32-20 :clamp(1.25rem, 0.7143rem + 2.6786vw, 2rem); // desk-32-16
 
 
 //? ========= Color....
+
+//? ==font
+$primary-color: hsl(46, 100%, 47%);
+$secondary-color: #00aed6;
+
+
+//? ==font
+//!vert
+// $title-color-1: hsl(116, 44%, 51%);
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+// $text-color-1: hsl(116, 44%, 81%);
+// $text-color-2: hsl(116, 44%, 51%);
+// $text-color-3: #00aed6;
+
+//!bleu
+// $title-color-1: #00aed6;
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+// $text-color-1: hsl(116, 44%, 81%);
+// $text-color-2: hsl(116, 44%, 51%);
+// $text-color-3: #00aed6;
+
+//!jaune
+$title-color-1: $primary-color;
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+$text-color-1: hsl(46, 100%, 7%);
+$text-color-2: hsl(46, 100%, 87%);
+
+$text-color-3: #00aed6;
+
+//? == bg
+
+
+// $bg-nav:rgba(255, 255, 255, 1) ;
+// $bg-nav:hsl(191, 100%, 98%) ;
+$bg-nav:hsl(191, 100%, 0%) ;
+// $bg-header:rgba(0, 0, 0, 60%);
+$bg-header:hsl(191, 100%, 0%);

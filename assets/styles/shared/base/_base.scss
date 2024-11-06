@@ -3,7 +3,7 @@
 header{
 
     height: 120px;
-    background-color: black;
+    background-color: $bg-nav;
     
 
     a{
@@ -12,9 +12,21 @@ header{
         font-size: 1rem;
     }
 
+    
+}
+body{
+
     h1,h2,h3,h4,h5,h6{
         font-family: $font-title;
+        color:$title-color-1
     }
-    
+
+    h1{
+        font-size: $font-desk-72-36;
+    }
+
+    h2{
+        font-size: $font-desk-72-36;
+    }
 }
 

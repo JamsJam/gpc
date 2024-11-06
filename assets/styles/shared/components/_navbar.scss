@@ -5,7 +5,7 @@
     @extend %flex-row-between-center;
 
     height: 120px;
-    padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);;
+    padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
     
     .logo{
         height: 100%;
@@ -24,7 +24,7 @@
 
     &__link{
         font-family: $font-style;
-        color: #bde4ba;
+        color: $text-color-2;
         font-size: $font-desk-32-16;
         font-weight: 500;
         position:relative;
