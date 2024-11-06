@@ -1,3 +1,5 @@
+@use '../abstract/' as *;
+
 header{
 
     height: 120px;
@@ -5,8 +7,13 @@ header{
     
 
     a{
-        color:rgb(34, 255, 0);
-        font-size: 1;
+        // color:rgb(34, 255, 0);
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: $font-title;
     }
     
 }

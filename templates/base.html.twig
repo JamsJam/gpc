@@ -19,7 +19,9 @@
     </head>
     <body>
         <header>
-            <twig:Navbar />
+            <twig:Navbar 
+                route="{{app.current_route}}"
+            />
             {% block header %}
                 
             {% endblock %}
