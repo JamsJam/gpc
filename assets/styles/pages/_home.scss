@@ -2,27 +2,51 @@
 
 section.header{
     min-height: calc(100dvh - 120px);
+    position: relative;
 
     @extend %flex-column-start-start;
     gap: 2rem;
     
-    padding-block-start: 4rem;
-    padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+
     
     background: 
-        linear-gradient(00deg, $bg-header 0%, rgba(0,0,0,0.35) 25%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 75%, $bg-header 100%),
-        // linear-gradient(00deg, $bg-header 0%, $bg-header 100%),
-
-        url('../images/grande-anse_sunset.jpg')
-        center / cover
-        no-repeat
+    linear-gradient(00deg, $bg-header 0%, rgba(0,0,0,0.35) 25%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 75%, $bg-header 100%),
+    // linear-gradient(00deg, $bg-header 0%, $bg-header 100%),
+    
+    url('../images/grande-anse_sunset.jpg')
+    center / cover
+    no-repeat
     ;
-
-    .header__info{
-        @extend %flex-column-start-start;
-        gap: 3rem;
+    
+    video{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
         height: 100%;
-        width: min(100%,768px);
+        object-fit: cover;
+        
+        // filter: brightness(45)
+        
+    }
+    // background-video: url('https://e1.pcloud.link/publink/show?code=XZz5g8Z0U4qb8woUsLaigjBCnTQTB2ztrhk') ;
+    
+    
+    .header__info{
+        background: 
+            linear-gradient(00deg, $bg-header 0%, rgba(0,0,0,0.55) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.55) 75%, $bg-header 100%),
+            // linear-gradient(00deg, $bg-header 0%, $bg-header 100%),
+
+            // url('../images/grande-anse_sunset.jpg')
+            // center / cover
+            // no-repeat
+        ;
+        padding-block-start: 4rem;
+        padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        @extend %flex-column-center-start;
+        gap: 3rem;
+        min-height: calc(100dvh - 120px);
+        width: 100%;
         backdrop-filter: blur(2px);
 
 
@@ -45,7 +69,7 @@ section.header{
     .btn_container{
         // background-color: antiquewhite;
         // width: 600px;
-        height: 300px;
+        // height: 300px;
 
         @extend %flex-row-start-center;
         gap: 2rem;
@@ -66,8 +90,9 @@ section.header{
                 flex-direction: -webkit-column;
                 align-items: -webkit-stretch;
                 display: flex;
-                flex-direction: column;
-                align-items: center;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: start;
 
             }
         }
