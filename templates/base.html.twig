@@ -19,19 +19,24 @@
     </head>
     <body>
         <header>
-            <twig:Navbar 
-                route="{{app.current_route}}"
-            />
+            {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
+                <twig:Navbar 
+                    route="{{app.current_route}}"
+                    data-turbo-permanent
+                />
+            {# </turbo-frame> #}
             {% block header %}
                 
             {% endblock %}
         </header>
-        <main class="{% block mainClass %}{% endblock %}">
-            {% block body %}
-            
-            {% endblock %}
-        </main>
-        <footer>
+        
+            <main class="{% block mainClass %}{% endblock %}">
+                {% block body %}
+                
+                {% endblock %}
+            </main>
+
+        <footer >
             <twig:Footer />
         </footer>
     </body>

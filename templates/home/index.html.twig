@@ -3,11 +3,12 @@
 {% block title %}Accueil {{parent()}}{% endblock %}
 
 {% block body %}
+
 <section class="header">
-    <video loop autoplay muted >
-        <source src="{{ asset('video/GPCpromo.mp4') }}" type="video/mp4">
-        <source src="{{ asset('video/GPCpromo.mp4') }}" type="video/mp4">
-        <source src="{{ asset('video/GPCpromo.mp4') }}" type="video/mp4">
+    <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.png')}}'>
+        <source src="{{ asset('video/gpcpromo_compress.mp4') }}" type="video/mp4">
+        
+
         <p>La vidéo n'est pas chargée.</p>
     </video>
     <div class="header__info">
@@ -54,4 +55,5 @@
 
    <a href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
 </section>
+
 {% endblock %}
