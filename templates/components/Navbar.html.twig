@@ -21,7 +21,7 @@
                 {#todo flex-r-b-c p7.5   #}
                 <div class="nav__links ">
                 
-                    <a href="{{path('app_home')}}"    class="{{ this.route == 'app_home' ? 'nav__link active' : 'nav__link' }}">Accueil</a>
+                    <a href="{{path('app_home')}}"    class="{{ route == 'app_home' ? 'nav__link active' : 'nav__link' }}">Accueil</a>
                     <a href="{{path('app_reservation')}}"    class="nav__link">Contact</a>
                     <a href="{{path('app_home')}}"    class="nav__link">À propos</a>
                 </div>
@@ -39,4 +39,4 @@
             {% endif %}
         {% endif %}
     </nav>
-    
+
