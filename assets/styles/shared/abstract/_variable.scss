@@ -59,6 +59,7 @@ $text-color-3: #00aed6;
 
 // $bg-nav:rgba(255, 255, 255, 1) ;
 // $bg-nav:hsl(191, 100%, 98%) ;
-$bg-nav:hsl(191, 100%, 0%) ;
+$bg-nav:hsl(191.21deg 50% 4%);
 // $bg-header:rgba(0, 0, 0, 60%);
-$bg-header:hsl(191, 100%, 0%);
+// $bg-header:hsl(191, 100%, 0%);
+$bg-header:$bg-nav;

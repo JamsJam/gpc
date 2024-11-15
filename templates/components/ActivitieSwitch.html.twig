@@ -1,0 +1,53 @@
+<div{{ attributes }}
+    class="activite__component"
+>
+    <!-- component html -->
+    <div class="switch__container">
+        <div class="switch__activities">
+            <p>Activité</p>
+        </div>
+        <div class="switch__excursions">
+            <p>Excursions</p>
+        </div>
+    </div>
+    <div class="activite__carte {{mode}}">
+        <h4>
+            {% if mode is same as 'activities' %}
+                lorem activité
+            {% else %}
+                lorem excursion
+            {% endif %}
+        </h4>
+        <div class="carte__container">
+            {# <div> #}
+                {# carte #}
+                {{ ux_map(map, { 'class': 'carte__component' }) }}
+            {# </div> #}
+            
+            <div class="carte__controller">
+                <div class="marker__grid">
+                    {# markers grid loop #}
+                    <div class="marker__container">
+                        {{ ux_icon('line-md:map-marker-filled') }}
+                        <p>Lorem ipsum </p>
+                    </div>
+                    <div class="marker__container">
+                        {{ ux_icon('line-md:map-marker-filled') }}
+                        <p>Lorem ipsum </p>
+                    </div>
+                    <div class="marker__container">
+                        {{ ux_icon('line-md:map-marker-filled') }}
+                        <p>Lorem ipsum </p>
+                    </div>
+                    <div class="marker__container">
+                        {{ ux_icon('line-md:map-marker-filled') }}
+                        <p>Lorem ipsum </p>
+                    </div>
+
+                </div>
+                <a class="button__secondary" href="">Voir notre catalogue</a>
+            </div>
+
+        </div>
+    </div>
+</div>

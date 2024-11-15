@@ -1,56 +1,133 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil {{parent()}}{% endblock %}
 
+{% block title %}Accueil {{parent()}}{% endblock %}
+{% block mainClass %}home{% endblock %}
 {% block body %}
 
-<section class="header">
-    <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.png')}}'>
-        <source src="{{ asset('video/gpcpromo_compress.mp4') }}" type="video/mp4">
-    </video>
-    <div class="header__info">
-        <h1>Guadeloupe passion Caraïbe</h1>
-        <p class="subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p class="subtitle">
-        <div class="btn_container">
-            <a href="" class="button__primary" >Réserver mon voyage</a>
-            <a href="#offers" class="button__secondary" >Voir les offres</a>
+    <section class="header">
+        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.png')}}'>
+            <source src="{{ asset('video/gpcpromo_compress.mp4') }}" type="video/mp4">
+        </video>
+        <div class="header__info">
+            <h1>Guadeloupe passion Caraïbe</h1>
+            <p class="subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p class="subtitle">
+            <div class="btn_container">
+                <a href="" class="button__primary" >Réserver mon voyage</a>
+                <a href="#offers" class="button__secondary" >Voir les offres</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="carte">
-    {# Informations/excursions/ #}
-    <div class="carte__info">
-        <h2>Des activité sur tout le territoire</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime deserunt recusandae incidunt esse rerum harum sunt dignissimos dolorum voluptas? Eum laborum cupiditate, commodi voluptates eius autem? Dignissimos nam quasi dolorem.</p>
-        {{ ux_map(map, { 'class': 'carte__component' }) }}
+    <section class="service">
+        <h2>Retrouvez nous a travers nos services</h2>
+        <div class="service__cards">
+            <twig:ServiceCard 
+                serviceIcon="bi:house-fill"
+                service='Hebergement'
+                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                target="#hebergement"
+                ctaTitle='Découvrir'
+            />
+            <twig:ServiceCard 
+                serviceIcon="bi:car-front-fill"
+                service='Transport et transfers'
+                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                target="#transport"
+                ctaTitle='Découvrir'
+            />
+            <twig:ServiceCard 
+                serviceIcon="cbi:roomsoutdoor"
+                service='Activités et excurtions'
+                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                target="#activite"
+                ctaTitle='Découvrir'
+            />
+            {# <twig:ServiceCard />
+            <twig:ServiceCard /> #}
+        </div>
+    </section>
 
-    </div>
+
+    <section class="activite" id="activite">
+
+        <h2>Vous recherchez des activiter sur le territoire ?</h2>
+        
+        <div class="activite__container">
+            <div class="activite__imgGrid">
+                <div class="activite__img" id="activite__img1"></div>
+                <div class="activite__img" id="activite__img2"></div>
+                <div class="activite__img" id="activite__img3"></div>
+                <div class="activite__img" id="activite__img4"></div>
+                <div class="activite__img" id="activite__img5"></div>
+            </div>
+            <div class="activite__info">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, maxime.
+                </p>
+            </div>
+        </div>
+        
+        <twig:ActivitieSwitch />
+
+
+    </section>
+
+    <twig:CtaBan 
+        title=""
+        ctaTitle=""
+    />
+
+    <section class="carte">
+        {# Informations/excursions/ #}
+        <div class="carte__info">
+            <h2>Des activité sur tout le territoire</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime deserunt recusandae incidunt esse rerum harum sunt dignissimos dolorum voluptas? Eum laborum cupiditate, commodi voluptates eius autem? Dignissimos nam quasi dolorem.
+            </p>
+            {# {{ ux_map(map, { 'class': 'carte__component' }) }} #}
+
+        </div>
 
 
 
 
-    {# Carte (excursions (tcheck googleMap/leaflet)) #}
+        {# Carte (excursions (tcheck googleMap/leaflet)) #}
 
-</section>
+    </section>
+
+    <twig:CtaBan 
+        titre=""
+        ctaTitre=""
+    />
 
 
-<section class="service">
-    {# carte service avec scroll ou link #}
 
-</section>
-<section>
-   {# Section excursion #}
 
-</section>
-<section>
-   {# Section hebergement #}
+    <section>
+    {# Section hebergement #}
 
-</section>
-<section>
-   {# Section véhicule/ transport #}
+    </section>
+    <section 
+        class="transport" 
+        id="transport"
+    >
 
-   <a href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
-</section>
+        <div class"transport__canvas">
+            <div class="canvas__grid">
+                <div class="canvas__img" id="canvas__img1"></div>
+                <div class="canvas__img" id="canvas__img2"></div>
+                <div class="canvas__img" id="canvas__img3"></div>
+            </div>
+        </div>
+        <div>
+            <h2>Un transport ou un transfer ?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, blanditiis?</p>
+            <a href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
+        </div>
+        {# Section véhicule/ transport #}
+
+    </section>
 
 {% endblock %}
