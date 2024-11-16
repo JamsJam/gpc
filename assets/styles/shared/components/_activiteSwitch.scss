@@ -1,7 +1,9 @@
 @use '../abstract/' as *;
 
-$switchColor1: #9696fa;
-$switchColor2: rgb(176, 243, 176);
+// $switchColor1: #9696fa;
+// $switchColor2: rgb(176, 243, 176);
+$switchColor1: transparent;
+$switchColor2: transparent;
 .activite{
 
     &__component{
