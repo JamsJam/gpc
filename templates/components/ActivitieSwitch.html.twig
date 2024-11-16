@@ -16,36 +16,40 @@
     <div class="activite__carte ">
         <h4>
             {% if mode is same as 'activities' %}
+                {% set markerArray = activiteMarkers %}
                 lorem activité
             {% else %}
+                {% set markerArray = excursionMarkers %}
                 lorem excursion
             {% endif %}
         </h4>
+
         <div class="carte__container">
             {# <div> #}
                 {# carte #}
-                {{ ux_map(map, { 'class': 'carte__component' }) }}
+                {{ ux_map(
+                    map,
+                    attributes: {
+                        'class': 'carte__component',
+                        'data-switch-tab-target': 'map',
+                        'data-controller': 'controllemap',
+                    }
+                    
+                ) }}
+
             {# </div> #}
             
             <div class="carte__controller">
                 <div class="marker__grid">
                     {# markers grid loop #}
+                    {% for marker in markerArray %}
+                        
                     <div class="marker__container">
                         {{ ux_icon('line-md:map-marker-filled') }}
-                        <p>Lorem ipsum </p>
+                        <p>{{marker['titre']}} </p>
                     </div>
-                    <div class="marker__container">
-                        {{ ux_icon('line-md:map-marker-filled') }}
-                        <p>Lorem ipsum </p>
-                    </div>
-                    <div class="marker__container">
-                        {{ ux_icon('line-md:map-marker-filled') }}
-                        <p>Lorem ipsum </p>
-                    </div>
-                    <div class="marker__container">
-                        {{ ux_icon('line-md:map-marker-filled') }}
-                        <p>Lorem ipsum </p>
-                    </div>
+                    {% endfor %}
+                    
 
                 </div>
                 <a class="button__secondary" href="">Voir notre catalogue</a>

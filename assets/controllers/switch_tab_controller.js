@@ -9,7 +9,8 @@ import { getComponent } from '@symfony/ux-live-component';
 export default class extends Controller {
     
     static targets = [
-        'container'
+        'container',
+        'map'
     ];
 
     static value = {
@@ -43,11 +44,18 @@ export default class extends Controller {
      */
     async changeMode(mode){
 
+        this.removeMap()
         await this.component.action('changeMode',{mode})
         
     }
 
-    
+    // mapTargetConnected(element){
+    //     console.log('mapConnect',element)
+    // }
+
+    removeMap(){
+        this.mapTarget.remove()
+    }
 
 
 

@@ -23,21 +23,57 @@ final class ActivitieSwitch
 
     public array $activiteMarkers = [
         [
-            "titre" => "Guadeloupe",
+            "titre" => "Activite 1",
             "lat" => 16.255207,
             "long" => -61.571382,
             "description" => "lorem ipsum"
-        ]
+        ],
+        [
+            "titre" => "Activite 2",
+            "lat" => 15.255207,
+            "long" => -61.571382,
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Activite 3",
+            "lat" => 17.255207,
+            "long" => -61.571382,
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Activite 4",
+            "lat" => 16.255207,
+            "long" => -63.571382,
+            "description" => "lorem ipsum"
+        ],
 
     ];
 
     public array $excursionMarkers = [
         [
-            "titre" => "Guadeloupe",
-            "lat" => 16.255207,
+            "titre" => "excursions 1",
+            "lat" => 14.255207,
             "long" => -61.571382,
             "description" => "lorem ipsum"
-        ]
+        ],
+        [
+            "titre" => "excursions 2",
+            "lat" => 12.255207,
+            "long" => -61.571382,
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "excursions 3",
+            "lat" => 13.255207,
+            "long" => -61.571382,
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "excursions 4",
+            "lat" => 16.255207,
+            "long" => -65.571382,
+            "description" => "lorem ipsum"
+        ],
 
     ];
 
@@ -45,7 +81,7 @@ final class ActivitieSwitch
 
     public function mount(){
 
-        $this->mapInitialise($this->activiteMarkers);
+        $this->changeMode($this->mode);
 
     }
 
@@ -59,7 +95,7 @@ final class ActivitieSwitch
         };
         // dd($this->mode,$mode, $markersArray);
         $this->mapInitialise($markersArray);
-
+        
     }
 
 
@@ -90,6 +126,7 @@ final class ActivitieSwitch
         ;
 
         $this->map = $map;
+        
     }
 
 
