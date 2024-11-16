@@ -164,13 +164,14 @@
     .activite{
 
         @extend %flex-column-center-stretch;
-        gap: 2rem;
-        padding-block: 2rem;
+        gap: 4rem;
+        padding-block: 4rem;
         padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
         
         &__container{
             @extend %flex-row-around-center;
-            
+            gap:2rem;
+
             @media screen and (max-width:768px) {
                 &{
                     flex-direction: column;
@@ -186,7 +187,7 @@
             height: max(50dvh,400px);
             width: max(70vw, 600px);
             max-width: 60rem;
-            background-color: navy;
+            // background-color: navy;
             border-radius: 10px;
 
             display: grid;
@@ -209,28 +210,48 @@
             box-shadow: 0 2px 8px 1px black;
 
             &#activite__img1{
-                grid-area: 1/1/6/5;
-                background-color: aqua;
+                grid-area: 1/1/8/7;
+                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                // background-color: aqua;
             }
             
             &#activite__img2{
-                grid-area: 2/7/8/13;
-                background-color: blue;
+                grid-area: 1/7/8/12;
+                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                // background-color: blue;
             }
             
             &#activite__img3{
-                grid-area: 7/1/12/7;
-                background-color: darkorange;
+                grid-area: 5/2/12/8;
+                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                // background-color: darkorange;
             }
             
             &#activite__img4{
-                grid-area: -5/-6/-1/-1;
-                background-color: tan;
+                grid-area: -8/-6/-1/-1;
+                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                // background-color: tan;
             }
             
             &#activite__img5{
                 grid-area: 3/3/-3/-3;
-                background-color: green;
+                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                // background-color: green;
+            }
+        }
+
+        &__info{
+            @extend %flex-column-center-start;
+            gap: 1rem;
+
+            h3,p{
+                font-size: $font-desk-32-16;
+
+                @media screen and (max-width:768px) {
+                    &{
+                        font-size: $font-mob-24-16;
+                    }
+                }
             }
         }
 
@@ -243,16 +264,18 @@
     .transport{
         min-height: 100vh;
         padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
-
+        
         @extend %flex-row-between-center;
-
+        gap: 2rem;
+        
         @media screen and (max-width:1024px) {
             &{
+                padding-block: 4rem;
                 min-height: 50vh;
                 flex-direction: column-reverse;
                 justify-content: center;
                 align-items: center;
-                gap: 1rem;
+                gap: 4rem;
             }
         }
 
@@ -261,7 +284,25 @@
         &__infos{
 
 
+            @extend %flex-column-center-center;
+            gap:2rem;
             width: 100%;
+
+            h2{
+                text-align: center;
+                text-wrap: pretty;
+            }
+            p{
+                text-align: center;
+                font-size: $font-desk-32-16;
+
+                @media screen and (max-width:768px) {
+                    &{
+                        font-size: $font-mob-24-16;
+                    }
+                }
+            }
+
         }
 
 
@@ -269,7 +310,7 @@
         &__canvas{
 
             width: 100%;
-            padding:2rem;
+            // padding:2rem;
             .canvas{
 
                 
@@ -285,23 +326,26 @@
 
 
                 &__img{
-                    background-color: green;
+                    // background-color: green;
                     
                     
                     
                     &#canvas__img1{
                         grid-area: 1/1/2/5;
+                        background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
                         transform: translateY(-5%);
                     }
                     
                     &#canvas__img2{
-                        grid-area: 1/5/2/9;
+                        grid-area: 1/6/2/10;
+                        background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
                         transform: translateY(-5%);
                     }
                     
                     &#canvas__img3{
-                        background-color: red;
+                        // background-color: red;
                         grid-area: 1/3/2/7;
+                        background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
                         box-shadow: 0 2px 8px 0px black;
                         transform: translateY(5%);
                     }

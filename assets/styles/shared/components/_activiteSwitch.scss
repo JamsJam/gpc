@@ -17,7 +17,8 @@ $switchColor2: rgb(176, 243, 176);
                 @extend %flex-center;
                 width: 100%;
                 padding-block: 1rem;
-                font-size: 2rem;
+                font-family: $font-title;
+                font-size: $font-mob-32-20;
             }
             
             &__activities{
@@ -52,7 +53,7 @@ $switchColor2: rgb(176, 243, 176);
                 &{
                     flex-direction: column;
                     justify-content: center;
-                    align-items: stretch;
+                    align-items: center;
                     gap: 1rem;
                 }
             }
@@ -96,6 +97,7 @@ $switchColor2: rgb(176, 243, 176);
                     @media screen and (max-width:768px) {
                         &{
                             grid-template-columns: repeat(1, 1fr);
+
                         }
                     }
                 }
@@ -104,6 +106,15 @@ $switchColor2: rgb(176, 243, 176);
                     // background-color: Blue;
                     box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
                     padding-block: 1rem;
+                    padding-inline: 1rem;
+
+                    @media screen and (max-width:768px) {
+                        &{
+                            justify-content: flex-start;
+                            gap: 1rem;
+                            
+                        }
+                    }
                 }
             }
         }

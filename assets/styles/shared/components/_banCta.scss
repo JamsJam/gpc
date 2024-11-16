@@ -5,12 +5,32 @@
     background-color: rgb(255, 183, 0);
     width: 100%;
     padding-block: 4rem;
+    padding-inline: 2rem;
 
     @extend %flex-column-center;
+    gap:1rem;
 
 
     h2{
-        font-size: 2rem;
-        color: black;
+        font-size: $font-desk-32-20;
+        color: $text-color-1;
+
+        @media screen and (max-width:768px) {
+            &{
+                font-size:$font-mob-32-20;
+            }
+        }
+
+
+    }
+
+    p{
+        text-align: center;
+        font-size: $font-desk-24-16;
+        @media screen and (max-width:768px) {
+            &{
+                font-size:$font-mob-24-16;
+            }
+        }
     }
 }
