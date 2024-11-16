@@ -1,19 +1,30 @@
 @use '../abstract/' as *;
 
-// $switchColor1: #9696fa;
-// $switchColor2: rgb(176, 243, 176);
-$switchColor1: transparent;
-$switchColor2: transparent;
+$switchColor1: #9696fa;
+$switchColor2: rgb(176, 243, 176);
+// $switchColor1: transparent;
+// $switchColor2: transparent;
 .activite{
 
     &__component{
+
+        // padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        padding-block-end: 4rem;
+        &.activities{
+            background-color: $switchColor1;
+        }
+        &.excursions{
+            background-color: $switchColor2;
+        }
+
+
         
         .switch{
             
             &__container{
                 @extend %flex-row-around-center;
                 width: 100%;
-                
+                // padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
             }
             &__activities,&__excursions{
                 @extend %flex-center;
@@ -21,10 +32,15 @@ $switchColor2: transparent;
                 padding-block: 1rem;
                 font-family: $font-title;
                 font-size: $font-mob-32-20;
+                p{
+
+                    pointer-events: none;
+                }
             }
             
             &__activities{
                 background-color: $switchColor1;
+
             }
             
             &__excursions{
@@ -36,12 +52,7 @@ $switchColor2: transparent;
         
         
     }
-    &__carte.activities{
-        background-color: $switchColor1;
-    }
-    &__carte.excursions{
-        background-color: $switchColor2;
-    }
+
     &__carte{
         padding: 1rem
     }
@@ -50,6 +61,7 @@ $switchColor2: transparent;
     .carte{
         &__container{
             @extend %flex-row-between-center;
+            padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
 
             @media screen and (max-width:768px) {
                 &{
@@ -67,6 +79,7 @@ $switchColor2: transparent;
             box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
 
             height: 500px;
+            
             // padding-inline: 2rem ;
             @media screen and (max-width:768px) {
                 &{

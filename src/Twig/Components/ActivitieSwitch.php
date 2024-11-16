@@ -6,8 +6,11 @@ use Symfony\UX\Map\Map;
 use Symfony\UX\Map\Point;
 use Symfony\UX\Map\Marker;
 use Symfony\UX\Map\InfoWindow;
+use Symfony\UX\LiveComponent\Attribute\LiveArg;
+use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
+use Symfony\UX\LiveComponent\Attribute\LiveAction;
 
 #[AsLiveComponent]
 final class ActivitieSwitch
@@ -15,6 +18,7 @@ final class ActivitieSwitch
     use DefaultActionTrait;
 
 
+    #[LiveProp(writable:true)]
     public string $mode = "activities";
 
     public array $activiteMarkers = [
@@ -27,11 +31,12 @@ final class ActivitieSwitch
 
     ];
 
-    public array $excurtionMarkers = [
+    public array $excursionMarkers = [
         [
-            "titre" => "",
-            "lat" => 0,
-            "long" => 0,
+            "titre" => "Guadeloupe",
+            "lat" => 16.255207,
+            "long" => -61.571382,
+            "description" => "lorem ipsum"
         ]
 
     ];
@@ -39,16 +44,29 @@ final class ActivitieSwitch
     public ?object $map = null;
 
     public function mount(){
-        $this->mapInitialise();
+
+        $this->mapInitialise($this->activiteMarkers);
 
     }
 
-    public function mapInitialise(){
-        $arrayPoint = $this->mode == "activities" ? $this->activiteMarkers : $this->excurtionMarkers;
-        $map = (new Map())
-            //  ->center(new Point(16.255207,-61.571382))
-            // ->zoom(10.6);
-            ->fitBoundsToMarkers();
+    #[LiveAction]
+    public function changeMode(#[LiveArg]string $mode){
+        $this->mode = $mode;
+        $markersArray = match ($this->mode) {
+            'activities'    =>  $this->activiteMarkers,
+            'excursions'     => $this->excursionMarkers,
+            default => [],
+        };
+        // dd($this->mode,$mode, $markersArray);
+        $this->mapInitialise($markersArray);
+
+    }
+
+
+    public function mapInitialise(array $arrayPoint){
+        
+        $map = new Map();
+
             foreach ($arrayPoint as  $item) {
                 
                 //todo Add Marker form a coordTable
@@ -61,6 +79,14 @@ final class ActivitieSwitch
                     )
                 ));
             };
+            if (count($arrayPoint) > 0) {
+                $map
+                    ->fitBoundsToMarkers();
+            } else {
+                $map
+                    ->center(new Point(16.255207, -61.571382))
+                    ->zoom(10.6);
+            }
         ;
 
         $this->map = $map;

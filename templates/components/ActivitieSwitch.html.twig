@@ -1,16 +1,19 @@
-<div{{ attributes }}
-    class="activite__component"
+<div{{ attributes.defaults(
+    stimulus_controller('switch_tab')
+            |stimulus_target( 'switch_tab','container')
+) }}
+    class="activite__component {{mode}}"
 >
     <!-- component html -->
     <div class="switch__container">
-        <div class="switch__activities">
+        <div class="switch__activities" data-mode='activities' {{stimulus_action('switch_tab','handleTabClick','click')}}>
             <p>Activité</p>
         </div>
-        <div class="switch__excursions">
+        <div class="switch__excursions"  data-mode='excursions' {{stimulus_action('switch_tab','handleTabClick','click')}}>
             <p>Excursions</p>
         </div>
     </div>
-    <div class="activite__carte {{mode}}">
+    <div class="activite__carte ">
         <h4>
             {% if mode is same as 'activities' %}
                 lorem activité
