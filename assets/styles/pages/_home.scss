@@ -4,7 +4,7 @@
 
 
     section.header{
-        min-height: calc(100dvh - 120px);
+        min-height: calc(100dvh - (120px + 4rem));
         position: relative;
 
         @extend %flex-column-start-start;
@@ -49,7 +49,7 @@
             padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
             @extend %flex-column-center-start;
             gap: 3rem;
-            min-height: calc(100dvh - 120px);
+            min-height: calc(100dvh - (120px + 4rem));
             width: 100%;
             backdrop-filter: blur(2px);
 
