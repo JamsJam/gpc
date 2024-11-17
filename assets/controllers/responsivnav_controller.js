@@ -36,13 +36,13 @@ export default class extends Controller {
     
 
     turboload(){
-        console.log('TURBOLOAD')
+        //console.log('TURBOLOAD')
     }
     
     setMobileValue(e){
 
         const isMobile = window.innerWidth < 768
-        console.log(isMobile, this.isMobileValue)
+        //console.log(isMobile, this.isMobileValue)
         if(this.isMobileValue !== isMobile){
 
             this.addPendingAction(()=>{
@@ -64,19 +64,19 @@ export default class extends Controller {
         {
 
             // twigComponent.on('connect', (component) => {
-            //     console.log("EVENT : Composant connecté")
+                // //console.log("EVENT : Composant connecté")
 
             // });
             
             // twigComponent.on('disconnect', (component) => {
-            //     console.log("EVENT : Composant déconnecté")
+                // //console.log("EVENT : Composant déconnecté")
                 
             // });
             
             
             //* events are only dispatched when the component is re-rendered (via an action or a model change).
             twigComponent.on('render:started', (html, backendResponse, shouldRender= { shouldRender: true}) => {
-                console.log("EVENT : composant refresh start")
+                //console.log("EVENT : composant refresh start")
                 // this.isComponentInitializeValue = true
                 // this.executePendingActions(this.component)
                 
@@ -85,7 +85,7 @@ export default class extends Controller {
             
             // //* events are only dispatched when the component is re-rendered (via an action or a model change).
             // twigComponent.on('render:finished', (component) => {
-            //     console.log("EVENT : composant refresh end")
+                // //console.log("EVENT : composant refresh end")
                 
             //     // this.handleReload()
             // });
@@ -93,23 +93,23 @@ export default class extends Controller {
             
             twigComponent.on('loading.state:started', (html, backendRequest) => {
                 
-                console.log("EVENT : composant loading start")
+                //console.log("EVENT : composant loading start")
             });
             
             
             twigComponent.on('loading.state:finished', (html) => {
                 
-                console.log("EVENT : composant loading end ")
-                console.log("EVENT : composant loading end ")
+                //console.log("EVENT : composant loading end ")
+                //console.log("EVENT : composant loading end ")
                 
             });
             
             
             twigComponent.on('model:set', (model, value, component) => {
                 
-                console.log("EVENT SET : model " , model )
-                console.log("EVENT SET : value " , value )
-                console.log("EVENT SET isMobileValue " , this.isMobileValue )
+                //console.log("EVENT SET : model " , model )
+                //console.log("EVENT SET : value " , value )
+                //console.log("EVENT SET isMobileValue " , this.isMobileValue )
 
                 switch (model) {
                     case 'isMobile':
@@ -121,7 +121,7 @@ export default class extends Controller {
                         break;
                 }
 
-                console.log("EVENT SET NEW isMobileValue " , this.isMobileValue )
+                //console.log("EVENT SET NEW isMobileValue " , this.isMobileValue )
             });
         }
 
@@ -139,10 +139,10 @@ export default class extends Controller {
     addPendingAction(action) {
         if (typeof this.component !== 'undefined' ) {
         // if (this.isComponentInitializeValue) {
-            // console.log('instant exec',this.isComponentInitializeValue)
+            // //console.log('instant exec',this.isComponentInitializeValue)
             action();
         } else {
-            // console.log('defer exec',this.isComponentInitializeValue)
+            // //console.log('defer exec',this.isComponentInitializeValue)
             this.pendingActions.push(action);
         }
     }

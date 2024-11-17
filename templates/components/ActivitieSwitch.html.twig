@@ -4,7 +4,8 @@
 ) }}
     class="activite__component {{mode}}"
 >
-    <!-- component html -->
+
+    {#? =============== switch tab =============== #}
     <div class="switch__container">
         <div class="switch__activities" data-mode='activities' {{stimulus_action('switch_tab','handleTabClick','click')}}>
             <p>Activité</p>
@@ -13,7 +14,9 @@
             <p>Excursions</p>
         </div>
     </div>
+
     <div class="activite__carte ">
+        {#? =============== Dynamique text marketing =============== #}
         <h4>
             {% if mode is same as 'activities' %}
                 {% set markerArray = activiteMarkers %}
@@ -24,27 +27,39 @@
             {% endif %}
         </h4>
 
-        <div class="carte__container">
-            {# <div> #}
-                {# carte #}
-                {{ ux_map(
-                    map,
-                    attributes: {
-                        'class': 'carte__component',
-                        'data-switch-tab-target': 'map',
-                        'data-controller': 'controllemap',
-                    }
-                    
-                ) }}
+        <div class="carte__container" {{stimulus_controller('map_markers')}}>
 
-            {# </div> #}
+            {#? =============== SYMFONY_UX map =============== #}
+            {{ ux_map(
+                map,
+                attributes: {
+                    'id': 'ux-map-container',
+                    'class': 'carte__component',
+                    'data-switch-tab-target': 'map',
+                    'data-controller': 'controllemap',
+                    'data-action':'map-markers:clickedMarker@window->controllemap#handleMarkerClick',
+                    'data-map-markers-target': 'map' 
+                }
+                
+            ) }}
+
+            {#? =============== Loading map space =============== #}
+            <div class="carte__component--LOADING" id="mapLoading"></div>
             
+            
+            {#? =============== Markers =============== #}
             <div class="carte__controller">
                 <div class="marker__grid">
-                    {# markers grid loop #}
+
+                    {#? =============== Markers loop =============== #}
                     {% for marker in markerArray %}
                         
-                    <div class="marker__container">
+                    <div 
+                        {{stimulus_action('map_markers','getMarker','click')}}
+                        class="marker__container"
+                        data-lat="{{marker["lat"]}}"
+                        data-long="{{marker["long"]}}"
+                    >
                         {{ ux_icon('line-md:map-marker-filled') }}
                         <p>{{marker['titre']}} </p>
                     </div>
@@ -52,6 +67,8 @@
                     
 
                 </div>
+
+                {#? =============== CTA Activities =============== #}
                 <a class="button__secondary" href="">Voir notre catalogue</a>
             </div>
 

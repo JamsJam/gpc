@@ -89,6 +89,25 @@ $switchColor2: rgb(176, 243, 176);
                 }
             }
         }
+        &__component--LOADING{
+            width: 100%;
+            max-width: 50vw;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
+
+            height: 500px;
+
+            display: none;
+            
+            // padding-inline: 2rem ;
+            @media screen and (max-width:768px) {
+                &{
+                    height: unset;
+                    max-width: unset;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
         &__controller{
             height: 500px;
             width: 100%;

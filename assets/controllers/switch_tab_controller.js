@@ -13,21 +13,24 @@ export default class extends Controller {
         'map'
     ];
 
-    static value = {
-        
-    };
-
     pendingActions = [];
 
 
     async initialize(){
         this.component = await getComponent(this.element);
+        this.addPendingAction(()=>{
+            this.setComponentListener(this.component)
+        })
         this.executePendingActions()
     }
 
 
-    handleTabClick(e){
-        const selectMode = e.target.getAttribute('data-mode');
+    /**
+     * gere le clic sur une tab
+     * @param {*} event.target
+     */
+    handleTabClick({target}){
+        const selectMode = target.getAttribute('data-mode');
         console.log(selectMode,this.containerTarget.classList.contains(selectMode))
         
         if(!this.containerTarget.classList.contains(selectMode)){
@@ -44,24 +47,52 @@ export default class extends Controller {
      */
     async changeMode(mode){
 
-        this.removeMap()
+        await this.removeMap()
         await this.component.action('changeMode',{mode})
         
     }
 
-    // mapTargetConnected(element){
-    //     console.log('mapConnect',element)
-    // }
+    /**
+     * remove map from html
+     * @return {void}
+     */
+    async removeMap() {
+        if (this.hasMapTarget) {
+            // Ajouter une classe pour l'animation CSS
+            this.mapTarget.classList.add('fade-out');
+    
+            // Attendre la fin de l'animation avant de continuer
+            const animationDuration = 250; // Durée de l'animation en m
+            await new Promise((resolve) => setTimeout(resolve, animationDuration));
+    
+            // Supprimer la carte après l'animation
+            this.mapTarget.remove();
+        }
+    }
 
-    removeMap(){
-        this.mapTarget.remove()
+    /**
+     *  Set TwigComponents Eventlistener
+     * @param {*} twigComponent
+     * @returns {void}
+     */
+    setComponentListener(twigComponent)
+    {
+        twigComponent.on('loading.state:started', (html, backendRequest) => {
+            if(backendRequest.actions[0] == "changeMode"){
+                html.querySelector("#mapLoading").style.display = "block"
+            }
+        });
+        twigComponent.on('loading.state:finished', (html) => {
+            html.querySelector("#mapLoading").style.display = "none"
+        });
     }
 
 
-
-
     //* ============== pending Action from component
-    
+    /**
+     * execute remaining pending actions
+     * @param {*} component 
+     */
     executePendingActions(component) {
         while (this.pendingActions.length > 0) {
             const action = this.pendingActions.shift();
@@ -75,11 +106,8 @@ export default class extends Controller {
      */
     addPendingAction(action) {
         if (typeof this.component !== 'undefined' ) {
-        // if (this.isComponentInitializeValue) {
-            // console.log('instant exec',this.isComponentInitializeValue)
             action();
         } else {
-            // console.log('defer exec',this.isComponentInitializeValue)
             this.pendingActions.push(action);
         }
     }
