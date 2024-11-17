@@ -143,6 +143,12 @@ $switchColor2: hsl(85 70% 85% / 1);
                     padding-inline: 1rem;
                     background-color: white;
 
+                    &:hover:not(&.focus){
+                        background-color: hsla(43, 100%, 80%,0.7);
+                    }
+                    &.focus{
+                        background-color: hsla(43, 100%, 80%,1);
+                    }
                     @media screen and (max-width:768px) {
                         &{
                             justify-content: flex-start;

@@ -31,13 +31,16 @@ export default class extends Controller {
      */
     handleTabClick({target}){
         const selectMode = target.getAttribute('data-mode');
-        console.log(selectMode,this.containerTarget.classList.contains(selectMode))
+        document.querySelectorAll('.marker__container').forEach(element => {
+            element.classList.remove('focus')
+        });
         
         if(!this.containerTarget.classList.contains(selectMode)){
             this.addPendingAction(()=>{
                 this.changeMode(selectMode)
             })
         }
+
     }
 
     /**

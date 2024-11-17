@@ -14,6 +14,10 @@ export default class extends Controller {
     initialize(){}
 
     getMarker({currentTarget}){
+        document.querySelectorAll('.marker__container').forEach(element => {
+            element.classList.remove('focus')
+        });
+        currentTarget.classList.add('focus')
         let {lat, long} = currentTarget.dataset
         
         let selectedMarker = {
@@ -21,7 +25,6 @@ export default class extends Controller {
             long
         }
         this.dispatchMarkerLocation(selectedMarker)
-
 
 
     }
