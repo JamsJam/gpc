@@ -47,7 +47,7 @@ export default class extends Controller {
     _onConnect(event) {
         // The map, markers and infoWindows are created
         // The instances depend on the renderer you are using
-        console.log(event.detail.map);
+        // console.log(event.detail.map);
 
         this.markersValue = event.detail.markers
         this.mapValue = event.detail.map
@@ -86,25 +86,14 @@ export default class extends Controller {
     handleMarkerClick({detail:{content}}){
         // console.log(e,this.element._ux_map_instance)
         const {lat, long} = content
-
-        this.element.markersValue.forEach(marker => {
-            
-            console.log(marker._latlng)
-        });
-
         const selectedMarker = this.element.markersValue.find(marker=>{
             return marker._latlng.lat === parseFloat(lat) && marker._latlng.lng === parseFloat(long)
         })
-        console.log(selectedMarker)
-        selectedMarker.openPopup()
-        this.element.mapValue.setView([lat, long], 11)
 
-        // Vérifier si une instance de carte est associée
-        // if (container._leaflet_id) {
-        //     // Récupérer l'instance de la carte à partir de l'ID interne de Leaflet
-        //     var map = L.Map._instances[container._leaflet_id];
-        //     console.log(map); // Instance de la carte
-        // }
+        selectedMarker.openPopup()
+        this.element.mapValue.flyTo(selectedMarker._latlng, 11,{duration:1})
+
+
     }
 
 }
