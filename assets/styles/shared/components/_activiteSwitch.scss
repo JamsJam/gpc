@@ -54,7 +54,16 @@ $switchColor2: hsl(85 70% 85% / 1);
     }
 
     &__carte{
-        padding: 1rem
+        padding: 1rem;
+
+
+        h4{
+            margin-block: 4rem;
+            /* padding-inline: 4rem; */
+            font-size: 2rem;
+            text-align: center;
+        }
+        
     }
 
 
@@ -75,6 +84,7 @@ $switchColor2: hsl(85 70% 85% / 1);
         &__component{
             width: 100%;
             max-width: 50vw;
+            border: white solid 3px;
             border-radius: 10px;
             box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
 
@@ -136,12 +146,14 @@ $switchColor2: hsl(85 70% 85% / 1);
                     }
                 }
                 &__container{
-                    @extend %flex-row-around-center;
+                    @extend %flex-row-start-center;
+                    gap: 2rem;
                     // background-color: Blue;
                     box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
                     padding-block: 1rem;
-                    padding-inline: 1rem;
+                    padding-inline: 2rem;
                     background-color: white;
+                    transition: background-color 250ms ease-in-out;
 
                     &:hover:not(&.focus){
                         background-color: hsla(43, 100%, 80%,0.7);
