@@ -82,22 +82,47 @@
         ctaTitle=""
     />
 
-    <section class="carte">
-        {# Informations/excursions/ #}
-        <div class="carte__info">
-            <h2>hebergement</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime deserunt recusandae incidunt esse rerum harum sunt dignissimos dolorum voluptas? Eum laborum cupiditate, commodi voluptates eius autem? Dignissimos nam quasi dolorem.
-            </p>
-            {# {{ ux_map(map, { 'class': 'carte__component' }) }} #}
 
+    <section class="hebergement">
+
+        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
+        <div class="hebergement__container">
+            <div class="hebergement__imgGrid">
+                <div class="hebergement__img" id="hebergement__img1"></div>
+                <div class="hebergement__img" id="hebergement__img2"></div>
+            </div>
+
+            <div class="hebergement__info">
+
+                <div class="hebergement__infoblock">
+                    <h3>Hebergement all inclusive</h3>
+                    <ul 
+                    >
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                    </ul>
+
+                    <a href="" class="cta">Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}</a>
+
+                </div>
+
+                <div class="hebergement__infoblock">
+                    <h3>Hebergement privatif</h3>
+                    <ul >
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                    </ul>
+                    <a 
+                        href="" 
+                        class="cta"
+                    >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+                </div>
+            </div>
         </div>
-
-
-
-
-        {# Carte (excursions (tcheck googleMap/leaflet)) #}
-
     </section>
 
     <twig:CtaBan 
@@ -107,10 +132,10 @@
 
 
     <section 
-        class="transport" 
         id="transport"
-    >
-
+        class="transport" 
+        >
+        
         <div class="transport__infos">
             <h2>Un transport ou un transfert ?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, blanditiis?</p>
