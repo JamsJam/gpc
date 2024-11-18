@@ -104,7 +104,12 @@
                         <li>Lorem, ipsum dolor.</li>
                     </ul>
 
-                    <a href="" class="cta">Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}</a>
+                    <a 
+                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
+                        class="cta"
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
 
                 </div>
 
@@ -116,9 +121,10 @@
                         <li>Lorem, ipsum dolor.</li>
                     </ul>
                     <a 
-                        href="" 
+                        {# href=""  #}
                         class="cta"
-                    >
+                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
+                        >
                         Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
                     </a>
                 </div>
