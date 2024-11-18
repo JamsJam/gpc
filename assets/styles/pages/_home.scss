@@ -46,12 +46,13 @@
             ;
             padding-block-start: 4rem;
             padding-block-end: 2rem;
-            padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+            padding-inline:  $padding-container;
             @extend %flex-column-center-start;
             gap: 3rem;
             min-height: calc(100dvh - (120px + 4rem));
             width: 100%;
-            backdrop-filter: blur(2px);
+            z-index: 1;
+            // backdrop-filter: blur(2px);
 
 
             .subtitle{
@@ -105,12 +106,16 @@
     }
 
     .service{
-        padding-block: 2rem;
-        padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        padding-block: 4rem;
+        padding-inline:  $padding-container;
         @extend %flex-column-center-stretch;
         gap: 2rem;
         background-color: $bg-header;
         
+        h2{
+            color:$blue
+        }
+
         &__cards{
 
             @extend %flex-row-around-center;
@@ -137,14 +142,15 @@
         padding-block-start: 4rem;
 
         &>h2{
-            padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+            padding-inline:  $padding-container;
+            
         }
-        // padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        // padding-inline:  $padding-container;
         
         &__container{
             @extend %flex-row-around-center;
             gap:2rem;
-            padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+            padding-inline:  $padding-container;
 
             @media screen and (max-width:768px) {
                 &{
@@ -219,6 +225,7 @@
             @extend %flex-column-center-start;
             gap: 1rem;
 
+
             h3,p{
                 font-size: $font-desk-32-16;
 
@@ -232,7 +239,7 @@
 
 
         h2,h3{
-            color: $text-color-1
+            color: $blue-hover
         }
     }
 
@@ -240,7 +247,7 @@
     .hebergement{
         // min-height: 100dvh;
         padding-block: 4rem;
-        padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        padding-inline:  $padding-container;
 
         h2{
             margin-block-end: 2rem;
@@ -325,13 +332,18 @@
         }
 
         &__infoblock{
-            // background-color: white;
             @extend %flex-column-center-start;
             gap:1rem;
 
             h3{
-                font-size: 1.5rem;
+                font-size: $font-desk-32-16;
                 color: $blue-hover;
+
+                @media screen and (max-width:768px) {
+                    &{
+                        font-size: $font-mob-24-18;
+                    }
+                }
             }
 
             ul{
@@ -341,45 +353,18 @@
                     margin-block: 0.5rem ;
                     
                     @media screen and (width:768px) {
+                        font-size: clamp(1rem, 0.9107rem + 0.4464vw, 1.125rem);
                         text-align: center;
                     }
                 }
 
             }
 
-            .cta{
-                font-size: 1.2rem;
-                font-weight: 600;
-                font-family: $font-title;
-                color: $blue;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 0.2rem;
-                transition: gap 250ms ease ;
 
-
-                svg{
-                    height: 2em;
-                    width: 2em;
-                    font-weight: 600;
-                    font-family: $font-title;
-                    fill: $blue;
-                }
-
-                &:hover{
-                    color: $blue-hover;
-                    gap: 1rem;
-                    & svg{
-
-                        color: $blue-hover;
-                    }
-                }
-            }
 
             @media screen and (max-width:768px) {
                 &{
+                    font-size: clamp(1rem, 0.9107rem + 0.4464vw, 1.125rem);
                     align-items: center;
                 }
             }
@@ -390,7 +375,7 @@
 
     .transport{
         min-height: 100vh;
-        padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        padding-inline:  $padding-container;
         
         h2{
             color:$blue-hover

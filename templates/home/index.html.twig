@@ -13,8 +13,8 @@
             <h1>Guadeloupe passion Caraïbe</h1>
             <p class="subtitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p class="subtitle">
             <div class="btn_container">
-                <a href="" class="button__primary" >Réserver mon voyage</a>
-                <a href="#offers" class="button__secondary" >Voir les offres</a>
+                <a href="{{path('app_reservation')}}" class="button__primary" >Réserver mon voyage</a>
+                {# <a href="#offers" class="button__secondary" >Voir les offres</a> #}
             </div>
         </div>
     </section>
@@ -22,6 +22,13 @@
     <section class="service">
         <h2>Retrouvez nous a travers nos services</h2>
         <div class="service__cards">
+            <twig:ServiceCard 
+                serviceIcon="cbi:roomsoutdoor"
+                service='Activités et excurtions'
+                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                target="#activite"
+                ctaTitle='Découvrir'
+            />
             <twig:ServiceCard 
                 serviceIcon="bi:house-fill"
                 service='Hebergement'
@@ -36,13 +43,7 @@
                 target="#transport"
                 ctaTitle='Découvrir'
             />
-            <twig:ServiceCard 
-                serviceIcon="cbi:roomsoutdoor"
-                service='Activités et excurtions'
-                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
-                target="#activite"
-                ctaTitle='Découvrir'
-            />
+
             {# <twig:ServiceCard />
             <twig:ServiceCard /> #}
         </div>
@@ -83,7 +84,7 @@
     />
 
 
-    <section class="hebergement">
+    <section class="hebergement" id="hebergement">
 
         <h2>Lorem, ipsum dolor sit amet consectetur adipisicing.</h2>
         <div class="hebergement__container">
@@ -131,10 +132,7 @@
     />
 
 
-    <section 
-        id="transport"
-        class="transport" 
-        >
+    <section id="transport" class="transport" >
         
         <div class="transport__infos">
             <h2>Un transport ou un transfert ?</h2>

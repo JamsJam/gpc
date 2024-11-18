@@ -51,7 +51,15 @@
         }
     }
     h3{
+        font-size: clamp(0.9rem, -0.3571rem + 2.619vw, 2rem);
         text-align: center;
+        color:$blue;
+
+        @media screen and (max-width:768px) {
+            &{
+                font-size:$font-mob-24-18;
+            }
+        }
     }
 
     p{
@@ -63,11 +71,11 @@
     
     
     &__icon{
-        height:  clamp(3rem, 2.4286rem + 1.1905vw, 3.5rem);;
-        width:  clamp(3rem, 2.4286rem + 1.1905vw, 3.5rem);;
+        height:  clamp(3rem, 2.4286rem + 1.1905vw, 3.5rem);
+        width:  clamp(3rem, 2.4286rem + 1.1905vw, 3.5rem);
         path{
 
-            fill: $primary-color;
+            fill: $text-color-2;
         }
         
         @media screen and (max-width:768px) {
@@ -79,5 +87,14 @@
         }
 
         
+    }
+
+    .button__secondary{
+        color:$blue;
+        border-color: $blue;
+
+        &:hover{
+            background-color: $blue;
+        }
     }
 }

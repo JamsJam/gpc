@@ -91,7 +91,7 @@ export default class extends Controller {
         })
 
         selectedMarker.openPopup()
-        this.element.mapValue.flyTo(selectedMarker._latlng, 11,{duration:1})
+        this.element.mapValue.flyTo(selectedMarker._latlng, 12,{duration:1})
 
 
     }

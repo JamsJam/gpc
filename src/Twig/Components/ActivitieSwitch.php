@@ -23,27 +23,27 @@ final class ActivitieSwitch
 
     public array $activiteMarkers = [
         [
-            "titre" => "Activite 1",
-            "lat" => 16.255207,
-            "long" => -61.571382,
+            "titre" => "Rencontre avec les cétacé",
+            "lat" => 16.1723981,
+            "long" => -61.7871479, //16.1723981,-61.7871479
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "Activite 2",
-            "lat" => 15.255207,
-            "long" => -61.571382,
+            "titre" => "Escape game en plaine air",
+            "lat" => 16.2331311,
+            "long" => -61.5520486,
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "Activite 3",
-            "lat" => 17.255207,
-            "long" => -61.571382,
+            "titre" => "Art et design fleural",
+            "lat" => 15.9931362,
+            "long" => -61.6905296,
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "Activite 4",
-            "lat" => 16.255207,
-            "long" => -63.571382,
+            "titre" => "Randonnée massif de la Soufrière",
+            "lat" => 16.0499995,
+            "long" => -61.6769667,
             "description" => "lorem ipsum"
         ],
 
@@ -51,29 +51,30 @@ final class ActivitieSwitch
 
     public array $excursionMarkers = [
         [
-            "titre" => "excursions 1",
-            "lat" => 14.255207,
-            "long" => -61.571382,
+            "titre" => "Parc national de Guadeloupe",
+            "lat" => 16.1309319,
+            "long" =>-61.6840267,
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "excursions 2",
-            "lat" => 12.255207,
-            "long" => -61.571382,
+            "titre" => "La Désirade",
+            "lat" => 16.3199244,
+            "long" => -61.0708992, 
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "excursions 3",
-            "lat" => 13.255207,
-            "long" => -61.571382,
+            "titre" => "Marie-galante",
+            "lat" => 15.9368828,
+            "long" =>-61.3072499, 
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "excursions 4",
-            "lat" => 16.255207,
-            "long" => -65.571382,
+            "titre" => "Terre-de-bas",
+            "lat" => 15.8554203,
+            "long" => -61.6429921, 
             "description" => "lorem ipsum"
         ],
+
 
     ];
 
@@ -111,7 +112,7 @@ final class ActivitieSwitch
                     title: $item["titre"],
                     infoWindow: new InfoWindow(
                         headerContent: '<b>'.$item["titre"].'</b>',
-                        content: 'The French town in the historic Rhône-Alpes region, located at the junction of the Rhône and Saône rivers.'
+                        content: $item["description"]
                     )
                 ));
             };

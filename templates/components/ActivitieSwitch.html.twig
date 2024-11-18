@@ -17,13 +17,15 @@
 
     <div class="activite__carte ">
         {#? =============== Dynamique text marketing =============== #}
-        <h4>
+        <h3>
             {% if mode is same as 'activities' %}
                 {% set markerArray = activiteMarkers %}
-                lorem activité
+                {# lorem activité #}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique.
             {% else %}
                 {% set markerArray = excursionMarkers %}
-                lorem excursion
+                {# lorem excursion #}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique.
             {% endif %}
         </h4>
 
@@ -69,7 +71,7 @@
                 </div>
 
                 {#? =============== CTA Activities =============== #}
-                <a class="button__secondary" href="">Voir notre catalogue</a>
+                <a class="cta" href="">Voir notre catalogue {{ ux_icon('si:arrow-right-fill') }}</a>
             </div>
 
         </div>

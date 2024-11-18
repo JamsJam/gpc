@@ -17,8 +17,16 @@
             {% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <header>
+    <body
+        data-controller="back-to-top" 
+        data-back-to-top-class="back-to-top-container--intersecting"
+        class="back-to-top-container--intersecting"
+    >
+
+        <header 
+            
+            
+        >
             {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
                 <twig:Navbar 
                     route="{{app.current_route}}"
@@ -31,6 +39,8 @@
         </header>
         
             <main class="{% block mainClass %}{% endblock %}">
+            
+                <twig:BackToTop />
                 {% block body %}
                 
                 {% endblock %}

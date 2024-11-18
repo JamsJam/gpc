@@ -24,9 +24,10 @@
     }
     &__secondary{
         @extend .button;
-        border: solid 2px hsl(85.45deg 89.19% 36.27%);
+        border: solid 2px $primary-color;
+        // border: solid 2px hsl(85.45deg 89.19% 36.27%);
         background-color: transparent;
-        color: hsl(85.45deg 89.19% 36.27%);
+        color: $primary-color;
         backdrop-filter: blur(2px);
 
         transition: 
@@ -36,7 +37,8 @@
 
         
         &:hover{
-            background-color: hsl(85.45deg 89.19% 36.27%);
+            background-color: $primary-color;
+            // background-color: hsl(85.45deg 89.19% 36.27%);
             color: black;
         }
     }
@@ -48,5 +50,36 @@
         font-size: $font-desk-24-16;
         padding-inline: 2rem;
         padding-block: 0.5rem;
+    }
+}
+
+.cta{
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: $font-title;
+    color: $blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    transition: gap 250ms ease ;
+
+
+    svg{
+        height: 2em;
+        width: 2em;
+        font-weight: 600;
+        font-family: $font-title;
+        fill: $blue;
+    }
+
+    &:hover{
+        color: $blue-hover;
+        gap: 1rem;
+        & svg{
+
+            color: $blue-hover;
+        }
     }
 }
