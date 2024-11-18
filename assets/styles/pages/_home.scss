@@ -16,7 +16,7 @@
             linear-gradient(00deg, $bg-header 0%, rgba(0,0,0,0.35) 25%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 75%, $bg-header 100%),
             // linear-gradient(00deg, $bg-header 0%, $bg-header 100%),
             
-            url('../images/grande-anse_sunset.jpg')
+            url("../images/hebergement/hebergement1.jpg")
             center / cover
             no-repeat
         ;
@@ -191,32 +191,32 @@
 
             &#activite__img1{
                 grid-area: 1/1/8/7;
-                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite1.jpg") center/cover no-repeat; 
 
                 // background-color: aqua;
             }
             
             &#activite__img2{
                 grid-area: 1/7/8/12;
-                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite5.jpg") center/cover no-repeat;
                 // background-color: blue;
             }
             
             &#activite__img3{
                 grid-area: 5/2/12/8;
-                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite3.jpg") center/cover no-repeat;
                 // background-color: darkorange;
             }
             
             &#activite__img4{
                 grid-area: -8/-6/-1/-1;
-                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite5.jpg") center/cover no-repeat;
                 // background-color: tan;
             }
             
             &#activite__img5{
                 grid-area: 3/3/-3/-3;
-                background: url("../images/grande-anse_sunset.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite1-1.jpg") center/cover no-repeat;
                 // background-color: green;
             }
         }
@@ -276,7 +276,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 8px 1px black;
             background:
-                url('../images/grande-anse_sunset.jpg')
+            url("../images/hebergement/hebergement1.jpg")
                 center / cover
                 no-repeat
             ;
@@ -285,20 +285,30 @@
                 width: 100%;
             }
             @media screen and (max-width:500px) {
-                display:none;
+                // display:none;
+                background:
+                    url("../images/hebergement/hebergement1.jpg")
+                    center / cover
+                    no-repeat
+                ;
+                height: 300px;
             }
-
+            
         }
         &__img{
             border: 2px solid $text-color-2;
             border-radius: 10px;
             box-shadow: 0 2px 8px 1px black;
+            
+            @media screen and (max-width:500px) {
+                display:none;
+            }
 
             &#hebergement__img1{
                 background:
-                    url('../images/grande-anse_sunset.jpg')
-                    center / cover
-                    no-repeat
+                url("../images/hebergement/hebergement2.jpg")
+                center / cover
+                no-repeat
                 ;
 
                 grid-area: -2/2/-6/6;
@@ -306,7 +316,7 @@
             
             &#hebergement__img2{
                 background:
-                    url('../images/grande-anse_sunset.jpg')
+                    url("../images/hebergement/hebergement3.jpg")
                     center / cover
                     no-repeat
                 ;
