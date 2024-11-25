@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Activites;
 use App\Entity\Excursions;
+use App\Entity\Promos;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -56,7 +57,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Activités', 'fas fa-list', Activites::class);
         yield MenuItem::linkToCrud('Excursions', 'fas fa-list', Excursions::class);
         yield MenuItem::section('Gestion Commercial');
-        yield MenuItem::linkToCrud('Offres promotionnelle', 'fas fa-list', Activites::class);
+        yield MenuItem::linkToCrud('Offres promotionnelle', 'fas fa-list', Promos::class);
         yield MenuItem::section('Gestion Administrateur');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Activites::class);
         // yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
