@@ -27,9 +27,9 @@ final class ActivitieSwitch
             "lat" => 16.1723981,
             "long" => -61.7871479, //16.1723981,-61.7871479
             "description" => "lorem ipsum"
-        ],
+        ],//! to remove
         [
-            "titre" => "Escape game en plaine air",
+            "titre" => "Art road tour",
             "lat" => 16.2331311,
             "long" => -61.5520486,
             "description" => "lorem ipsum"
@@ -41,9 +41,15 @@ final class ActivitieSwitch
             "description" => "lorem ipsum"
         ],
         [
-            "titre" => "Randonnée massif de la Soufrière",
+            "titre" => "Randonnées nature",
             "lat" => 16.0499995,
             "long" => -61.6769667,
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Masterclass gastronomique",
+            "lat" => 16.0499995,
+            "long" => -61.6769667, //todo location  montebelo petit bourg
             "description" => "lorem ipsum"
         ],
 
@@ -72,6 +78,30 @@ final class ActivitieSwitch
             "titre" => "Terre-de-bas",
             "lat" => 15.8554203,
             "long" => -61.6429921, 
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Patrimoine des saveurs",
+            "lat" => 15.8554203,
+            "long" => -61.6429921, //capesterre
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Un rhum de legende sur une terre de legende",
+            "lat" => 15.8554203,
+            "long" => -61.6429921, //marie-galante
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Escapade a la desirade",
+            "lat" => 15.8554203,
+            "long" => -61.6429921, //capesterre
+            "description" => "lorem ipsum"
+        ],
+        [
+            "titre" => "Visite du nord basse-terre",
+            "lat" => 15.8554203,
+            "long" => -61.6429921, //capesterre
             "description" => "lorem ipsum"
         ],
 
