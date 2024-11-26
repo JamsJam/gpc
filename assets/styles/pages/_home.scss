@@ -109,7 +109,7 @@
         padding-block: 4rem;
         padding-inline:  $padding-container;
         @extend %flex-column-center-stretch;
-        gap: 2rem;
+        gap: 4rem;
         background-color: $bg-header;
         
         h2{
@@ -143,7 +143,7 @@
 
         &>h2{
             padding-inline:  $padding-container;
-            
+            color:$blue-hover
         }
         // padding-inline:  $padding-container;
         
@@ -165,7 +165,7 @@
 
         &__imgGrid{
             height: max(50dvh,400px);
-            width: max(70vw, 600px);
+            width: max(70vw, 800px);
             max-width: 60rem;
             // background-color: navy;
             border-radius: 10px;
@@ -248,15 +248,20 @@
         // min-height: 100dvh;
         padding-block: 4rem;
         padding-inline:  $padding-container;
+        min-height: 100vh;
+        @extend %flex-column-center-center;
+        gap: 4rem;
 
         h2{
             margin-block-end: 2rem;
             color: $blue-hover;
+            align-self:start;
         }
 
         &__container{
             @extend %flex-row-center;
             gap: 2rem;
+            align-self:stretch;
             
 
             @media screen and (max-width:768px) {

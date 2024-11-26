@@ -2,11 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Promos;
 use App\Entity\Activites;
 use App\Entity\Excursions;
-use App\Entity\Promos;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -37,6 +39,8 @@ class DashboardController extends AbstractDashboardController
         ]);
     }
 
+
+
     
 
     public function configureDashboard(): Dashboard
@@ -47,6 +51,28 @@ class DashboardController extends AbstractDashboardController
             ->setDefaultColorScheme('dark')
             ;
             
+    }
+
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+
+            // you can also import multiple entries
+            // it's equivalent to calling {{ importmap(['app', 'admin']) }}
+            ->addAssetMapperEntry('app')
+            ->addHtmlContentToBody('<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector("main").classList.add("easy-admin-main");
+            });
+        </script>')
+        ;
+    }
+
+    public function configureCrud(): Crud
+    {
+        return parent::configureCrud()
+            
+        ;
     }
 
     public function configureMenuItems(): iterable

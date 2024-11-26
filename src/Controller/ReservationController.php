@@ -94,13 +94,13 @@ class ReservationController extends AbstractController
             //todo envoyer mail à l'utilisateur
             //todo envoyer mail à l'explor
             $email = (new Email())
-            ->from('hello@hotmail.com')
-            ->to('you@example.com')
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!');
-            // ->html(array_map());
+                ->from('hello@hotmail.com')
+                ->to('you@example.com')
+                ->subject('Time for Symfony Mailer!')
+                ->text('Sending emails is fun again!');
+                // ->html(array_map());
 
-        $mailer->send($email);
+            $mailer->send($email);
 
             //todo creer un App.flash
             $this->addFlash(

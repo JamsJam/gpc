@@ -2,11 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\ActivitesRepository;
+// use Vich\Uploadable;
+use Vich\UploadableField;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ActivitesRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 #[ORM\Entity(repositoryClass: ActivitesRepository::class)]
+#[Vich\Uploadable]
 class Activites
 {
     #[ORM\Id]
@@ -31,6 +37,14 @@ class Activites
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
+    
+    // #[Vich\UploadableField(mapping: 'crop_images', fileNameProperty: 'image')]
+    // private ?File $imageFile = null;
+
+
+    #[ORM\Column(type: 'json', nullable: true)]
+    private ?array $crop = null;
+
 
     public function getId(): ?int
     {
@@ -108,4 +122,29 @@ class Activites
 
         return $this;
     }
+
+    // public function getImageFile(): ?File
+    // {
+    //     return $this->imageFile;
+    // }
+
+    // public function setImageFile(?File $imageFile): self
+    // {
+    //     $this->imageFile = $imageFile;
+
+    //     return $this;
+    // }
+
+    public function getCrop(): ?Array
+    {
+        return $this->crop;
+    }
+
+    public function setCrop(?Array $crop): self
+    {
+        $this->crop = $crop;
+
+        return $this;
+    }
+
 }

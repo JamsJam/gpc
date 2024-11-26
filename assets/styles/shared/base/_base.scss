@@ -1,6 +1,6 @@
 @use '../abstract/' as *;
 
-header{
+header:not(header.main-header){
 
     height: 120px;
     background-color: $bg-nav;

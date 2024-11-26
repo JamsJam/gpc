@@ -32,6 +32,14 @@ class Excursions
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    
+    // #[Vich\UploadableField(mapping: 'crop_images', fileNameProperty: 'image')]
+    // private ?File $imageFile = null;
+
+
+    #[ORM\Column(type: 'json', nullable: true)]
+    private ?array $crop = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +113,18 @@ class Excursions
     public function setImage(string $image): static
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getCrop(): ?Array
+    {
+        return $this->crop;
+    }
+
+    public function setCrop(?Array $crop): self
+    {
+        $this->crop = $crop;
 
         return $this;
     }

@@ -17,17 +17,17 @@
 
     <div class="activite__carte ">
         {#? =============== Dynamique text marketing =============== #}
-        <h3>
+        {# <h3> #}
             {% if mode is same as 'activities' %}
                 {% set markerArray = activiteMarkers %}
-                {# lorem activité #}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique.
+                
+                {# Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique. #}
             {% else %}
                 {% set markerArray = excursionMarkers %}
-                {# lorem excursion #}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique.
+                
+                {# Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique. #}
             {% endif %}
-        </h4>
+        {# </h3> #}
 
         <div class="carte__container" {{stimulus_controller('map_markers')}}>
 

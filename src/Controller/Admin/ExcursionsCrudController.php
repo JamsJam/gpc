@@ -5,9 +5,12 @@ namespace App\Controller\Admin;
 use App\Entity\Excursions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Option\SearchMode;
@@ -20,25 +23,66 @@ class ExcursionsCrudController extends AbstractCrudController
         return Excursions::class;
     }
 
-    public function configureFields(string $pageName): iterable
+    public function configureAssets(Assets $assets): Assets
     {
-        return [
-            IdField::new('id')->onlyOnindex(),
-            TextField::new('slug')->onlyOnDetail(),
-            TextField::new('titre'),
-            TextEditorField::new('description'),
-            DateTimeField::new('createdAt')->onlyOnindex(),
-
-        ];
+        return $assets
+            // ->addAssetMapperEntry('app')
+        ;
     }
+
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
             ->setSearchMode(SearchMode::ALL_TERMS)
             ->setPageTitle('detail', fn (Excursions $excursion) => (string) $excursion->getTitre())
+            ->setFormOptions([
+                'attr' => ['data-controller' => 'cropper']
+            ])
+            ->setFormThemes(['admin/form.html.twig', '@EasyAdmin/crud/form_theme.html.twig'])
         ;
     }
+
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id')
+                ->onlyOnindex()
+                ->setSortable(true)
+                ,
+            DateTimeField::new('createdAt')
+                ->onlyOnindex()
+                ->setSortable(true)
+                ,
+            TextField::new('titre')
+                ->setSortable(true)
+                ,
+            TextEditorField::new('description'),
+            
+            FormField::addPanel('Image'),
+
+            ImageField::new('image')
+                ->setBasePath('/uploads/images/excursions')
+                ->setUploadDir('public/uploads/images/excursions')
+                ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
+                ->setFormTypeOptions([
+                    'attr' =>[
+                        'require'=> false,
+
+                        "data-action"=>"change->cropper#loadImage"
+                        ]
+                ]),
+
+            FormField::addPanel('Aperçu image'),
+            TextField::new('crop', '')
+                ->setFormTypeOptions([
+                    'mapped'=>'false',
+                    'block_name' => 'crop_image'
+                ])
+                ->onlyOnForms(),
+        ];
+    }
+
 
 
     public function configureActions(Actions $actions): Actions
