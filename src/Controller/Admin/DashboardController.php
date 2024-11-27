@@ -11,8 +11,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
+#[IsGranted('ROLE_USER')]
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
@@ -77,16 +79,20 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        // yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToRoute('Retour au site', 'fa ...', 'app_home');
+        yield MenuItem::linkToRoute('Retour au site', 'fa fa-back', 'app_home');
+        yield MenuItem::section('');
+        yield MenuItem::linkToRoute('Dashboard', 'fa fa-home','admin');
         yield MenuItem::section('Gestion voyage');
         yield MenuItem::linkToCrud('Activités', 'fas fa-list', Activites::class);
         yield MenuItem::linkToCrud('Excursions', 'fas fa-list', Excursions::class);
         yield MenuItem::section('Gestion Commercial');
         yield MenuItem::linkToCrud('Offres promotionnelle', 'fas fa-list', Promos::class);
-        yield MenuItem::section('Gestion Administrateur');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Activites::class);
-        // yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
+        if($this->isGranted('ROLE_ADMIN')){
+            yield MenuItem::section('Gestion Administrateur');
+
+            yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Activites::class);
+        }
+        yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
     }
 
 
