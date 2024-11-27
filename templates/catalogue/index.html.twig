@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{type}}{{parent()}}{% endblock %}
+{% block mainClass %}catalogue{% endblock %}
+
+{% block body %}
+
+{# section.header> #}
+{% if collection|length > 0 %}
+    <p>Il y a des  {{type}}</p>
+{% else %}
+    <p>Pas de {{type}}</p>
+    <a href="{{path('app_home')}}">Retour</a>
+{% endif %}
+
+
+{% endblock %}

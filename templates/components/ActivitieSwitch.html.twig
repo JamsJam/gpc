@@ -20,10 +20,12 @@
         {# <h3> #}
             {% if mode is same as 'activities' %}
                 {% set markerArray = activiteMarkers %}
+                {% set type = 'activites' %}
                 
                 {# Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique. #}
             {% else %}
                 {% set markerArray = excursionMarkers %}
+                {% set type = 'excursions' %}
                 
                 {# Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, similique. #}
             {% endif %}
@@ -71,7 +73,9 @@
                 </div>
 
                 {#? =============== CTA Activities =============== #}
-                <a class="cta" href="">Voir notre catalogue {{ ux_icon('si:arrow-right-fill') }}</a>
+
+                
+                <a class="cta" href="{{path('app_catalogue',{'type': type })}}">Voir notre catalogue {{ ux_icon('si:arrow-right-fill') }}</a>
             </div>
 
         </div>
