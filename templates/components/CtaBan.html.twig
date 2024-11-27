@@ -4,14 +4,15 @@
     <!-- component html -->
 
     <h2>
-        Reserver dès maintenant votre voyage
+        {{titre}}
     </h2>
-
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, ducimus!</p>
+    <p>
+        {{text|raw}}
+    </p>
     <a 
         class="button__secondary"
-        href=""
+        href="{{path('app_reservation')}}"
     >
-        titre du cta
+        {{ctaTitre}}
     </a>
 </div>
