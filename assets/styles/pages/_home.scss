@@ -105,6 +105,7 @@
 
     }
 
+
     .service{
         padding-block: 4rem;
         padding-inline:  $padding-container;
@@ -113,7 +114,7 @@
         background-color: $bg-header;
         
         h2{
-            color:$blue
+            color:$blue-hover
         }
 
         &__cards{
@@ -123,23 +124,28 @@
 
             
 
-            @media screen and (max-width:768px) {
+            @media screen and (max-width:1024px) {
                 &{
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     gap: 1rem;
+
+
+                    
                 }
             }
         }
         
     }
 
+
     .activite{
 
         @extend %flex-column-center-stretch;
         gap: 4rem;
         padding-block-start: 4rem;
+        
 
         &>h2{
             padding-inline:  $padding-container;
@@ -224,7 +230,14 @@
         &__info{
             @extend %flex-column-center-start;
             gap: 1rem;
+            max-width: 40vw;
 
+            @media screen and (max-width:768px) {
+                &{
+                    font-size: $font-mob-24-16;
+                    max-width: none;
+                }
+            }
 
             h3,p{
                 font-size: $font-desk-32-16;
@@ -253,7 +266,7 @@
         gap: 4rem;
 
         h2{
-            margin-block-end: 2rem;
+            // margin-block-end: 2rem;
             color: $blue-hover;
             align-self:start;
         }
@@ -265,9 +278,18 @@
             
 
             @media screen and (max-width:768px) {
-                flex-direction: column;
-                justify-content: stretch;
-                align-items: center;
+                &#hotel{
+
+                    flex-direction: column;
+                    justify-content: stretch;
+                    align-items: center;
+                }
+                &#villa{
+
+                    flex-direction: column-reverse;
+                    justify-content: stretch;
+                    align-items: center;
+                }
             }
         }
 
@@ -386,7 +408,6 @@
     }
 
 
-
     .transport{
         min-height: 100vh;
         padding-inline:  $padding-container;
@@ -423,13 +444,17 @@
             }
             p{
                 text-align: center;
-                font-size: $font-desk-32-16;
+                font-size: $font-desk-24-16;
 
                 @media screen and (max-width:768px) {
                     &{
                         font-size: $font-mob-24-16;
                     }
                 }
+            }
+
+            ul li{
+                list-style: none;
             }
 
         }

@@ -25,23 +25,23 @@
             <twig:ServiceCard 
                 serviceIcon="cbi:roomsoutdoor"
                 service='Activités et excurtions'
-                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                description='Explorez des activités à vivre en Guadeloupe.'
                 target="#activite"
-                ctaTitle='Découvrir'
+                ctaTitle='Découvrir nos activités'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:house-fill"
                 service='Hebergement'
-                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                description='Séjournez dans des hôtels et villas d’exception.'
                 target="#hebergement"
-                ctaTitle='Découvrir'
+                ctaTitle='Voir nos hébergements'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:car-front-fill"
                 service='Transport et transfers'
-                description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, minus.'
+                description='Réservez facilement votre VTC ou transfert privé.'
                 target="#transport"
-                ctaTitle='Découvrir'
+                ctaTitle='Réserver votre transport'
             />
 
             {# <twig:ServiceCard />
@@ -67,9 +67,7 @@
                 <p>
                     <strong>Guadeloupe Passion Caraïbes</strong>, concepteur de loisirs interactifs, promeut l'authenticité guadeloupeenne en proposant aux visiteurs de faire des loisirs inedits et vivre des experience innoubliable au cour des excurtions.
                 </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, maxime.
-                </p>
+
             </div>
         </div>
         
@@ -80,21 +78,21 @@
 
     <twig:CtaBan 
         titre="Découvrez l'archipel guadeloupéen dès aujourd'hui !"
-        text="Plages paradisiaques, nature luxuriante et expériences inoubliables vous attendent. <strong>Réservez votre voyage en un clic !</strong>"
-        ctaTitre="Je réserve mon voyage"
+        text="Plages paradisiaques, nature luxuriante et expériences inoubliables vous attendent. <br/><strong>Réservez votre voyage en un clic !</strong>"
+        ctaTitre="Je réserve mon voyage !"
     />
 
 
     <section class="hebergement" id="hebergement">
 
         <h2>Vous souhaitez un hebergement ?</h2>
-        <div class="hebergement__container">
+        <div class="hebergement__container" id='hotel'>
             <div class="hebergement__imgGrid">
                 <div class="hebergement__img" id="hebergement__img1"></div>
                 <div class="hebergement__img" id="hebergement__img2"></div>
             </div>
 
-            <div class="hebergement__info">
+            <div class="hebergement__info" >
 
                 <div class="hebergement__infoblock">
                     <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
@@ -115,6 +113,49 @@
 
                 </div>
 
+                {# <div class="hebergement__infoblock">
+                    <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
+                    <ul >
+                        <li>Des villas de charme avec piscine et vue imprenable</li>
+                        <li>Un séjour sur mesure pour des moments de détente absolue.</li>
+                        <li>Parfait pour des vacances en famille ou entre amis.</li>
+                    </ul>
+                    <a 
+                        
+                        class="cta"
+                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+                </div> #}
+            </div>
+        </div>
+
+
+        <div class="hebergement__container" id="villa">
+
+
+            <div class="hebergement__info">
+
+                {# <div class="hebergement__infoblock">
+                    <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
+                    <ul 
+                    >
+                        
+                        <li>Séjours tout confort dans des établissements haut de gamme.</li>
+                        <li>Services exclusifs et panoramas à couper le souffle.</li>
+                        <li>Une expérience inoubliable au cœur de l'archipel.</li>
+                    </ul>
+
+                    <a 
+                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
+                        class="cta"
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+
+                </div> #}
+
                 <div class="hebergement__infoblock">
                     <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
                     <ul >
@@ -123,7 +164,7 @@
                         <li>Parfait pour des vacances en famille ou entre amis.</li>
                     </ul>
                     <a 
-                        {# href=""  #}
+                        
                         class="cta"
                         href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
                         >
@@ -131,22 +172,52 @@
                     </a>
                 </div>
             </div>
+
+            <div class="hebergement__imgGrid">
+                <div class="hebergement__img" id="hebergement__img1"></div>
+                <div class="hebergement__img" id="hebergement__img2"></div>
+            </div>
         </div>
     </section>
 
     <twig:CtaBan 
         titre="Envolez-vous vers la magie de la Guadeloupe !"
-        text="Entre lagons turquoise, forêts tropicales et soleil toute l’année, vivez une expérience unique dans l’archipel. <strong>Réservez dès maintenant !</strong>"
-        ctaTitre="Je pars en Guadeloupe"
+        text="Entre lagons turquoise, forêts tropicales et soleil toute l’année, vivez une expérience unique dans l’archipel. <br/><strong>Réservez dès maintenant !</strong>"
+        ctaTitre="Je pars en Guadeloupe !"
     />
-
 
     <section id="transport" class="transport" >
         
         <div class="transport__infos">
-            <h2>Un transport ou un transfert ?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, blanditiis?</p>
-            <a class="button__secondary" href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
+            <h2>
+                Un transport ou un transfert ?
+            </h2>
+            <p>
+                Avec notre partenaire <strong>En Woute</strong>, profitez d’un service de VTC fiable et confortable dans toute la Guadeloupe. Déplacez-vous facilement grâce à leurs chauffeurs professionnels.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        Transferts aéroport rapides et sécurisés
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Excursions privées et sur mesure
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Trajets dans un confort absolu
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener">Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant
+            </p>
+            <a class="button__secondary" href="https://ew21596948.web.app/?providerID=5438bb9a">
+                Accéder à la Web App En Woute
+            </a>
         </div>
 
         <div class="transport__canvas">

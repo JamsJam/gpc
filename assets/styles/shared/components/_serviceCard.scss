@@ -52,11 +52,11 @@
         }
     }
     h3{
-        font-size: clamp(0.9rem, -0.3571rem + 2.619vw, 2rem);
+        font-size: clamp(1.2rem, 0.4615rem + 1.1538vw, 1.5rem);
         text-align: center;
         color:$blue;
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width:1024px) {
             &{
                 font-size:$font-mob-24-18;
             }
@@ -79,7 +79,7 @@
             fill: $text-color-1;
         }
         
-        @media screen and (max-width:768px) {
+        @media screen and (max-width:1024px) {
             
             &{
                 height: clamp(2rem, 0.9286rem + 5.3571vw, 3rem);
@@ -93,9 +93,17 @@
     .button__secondary{
         color:$blue;
         border-color: $blue;
+        font-size: $font-desk-20-14;
 
         &:hover{
             background-color: $blue;
+        }
+
+        @media screen and (max-width:1024px) {
+            
+            &{
+                font-size: $font-mob-20-12;
+            }
         }
     }
 }

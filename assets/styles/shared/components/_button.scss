@@ -24,22 +24,24 @@
     }
     &__secondary{
         @extend .button;
-        border: solid 2px $primary-color;
+        border: solid 2px $blue;
         // border: solid 2px hsl(85.45deg 89.19% 36.27%);
         background-color: transparent;
-        color: $primary-color;
+        color: $blue;
         backdrop-filter: blur(2px);
 
         transition: 
             background-color 250ms ease-in-out,
-            color 250ms ease-in-out 
+            color 250ms ease-in-out, 
+            border 250ms ease-in-out 
             ;
 
         
         &:hover{
-            background-color: $primary-color;
+            background-color: $blue-hover;
+            border: solid 2px $blue-hover;
             // background-color: hsl(85.45deg 89.19% 36.27%);
-            color: black;
+            color: rgb(255, 255, 255);
         }
     }
     &__nav{
