@@ -32,6 +32,24 @@ class Promos
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
+    #[ORM\Column]
+    private array $pack1 = [];
+
+    #[ORM\Column]
+    private array $pack2 = [];
+
+    #[ORM\Column]
+    private ?int $prix1 = null;
+
+    #[ORM\Column]
+    private ?int $prix2 = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
+
+    #[ORM\Column(type: 'json', nullable: true)]
+    private ?array $crop = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +123,79 @@ class Promos
     public function setDescription(?string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPack1(): array
+    {
+        return $this->pack1;
+    }
+
+    public function setPack1(array $pack1): static
+    {
+        $this->pack1 = $pack1;
+
+        return $this;
+    }
+
+    public function getPack2(): array
+    {
+        return $this->pack2;
+    }
+
+    public function setPack2(array $pack2): static
+    {
+        $this->pack2 = $pack2;
+
+        return $this;
+    }
+
+    public function getPrix1(): ?int
+    {
+        return $this->prix1;
+    }
+
+    public function setPrix1(int $prix1): static
+    {
+        $this->prix1 = $prix1;
+
+        return $this;
+    }
+
+    public function getPrix2(): ?int
+    {
+        return $this->prix2;
+    }
+
+    public function setPrix2(int $prix2): static
+    {
+        $this->prix2 = $prix2;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+
+    public function getCrop(): ?Array
+    {
+        return $this->crop;
+    }
+
+    public function setCrop(?Array $crop): self
+    {
+        $this->crop = $crop;
 
         return $this;
     }

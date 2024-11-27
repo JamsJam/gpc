@@ -36,6 +36,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
             return;
         }
 
+        
         $today = new DateTimeImmutable('now');
         $slug = $this->slugger->slug(strtolower($entity->getTitre()));
         $entity
@@ -52,7 +53,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         $entity = $event->getEntityInstance();
         // dd($entity);
 
-        if (!($entity instanceof Activites) && !($entity instanceof Excursions) && !($entity instanceof Promos)) {
+        if (!($entity instanceof Activites) && !($entity instanceof Excursions) ) {
             return;
         }
 
