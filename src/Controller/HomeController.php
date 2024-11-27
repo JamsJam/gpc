@@ -2,13 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\UX\Map\Map;
-use Symfony\UX\Map\Point;
-use Symfony\UX\Map\Marker;
-use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Form\Reservation\ContactType as ReservationType1;
+
 use App\Repository\PromosRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,9 +17,26 @@ class HomeController extends AbstractController
     {
 
 
-        $offer = $pr->findTodayOffer(new DateTime());
+        $offerResult = $pr->findTodayOffer(new DateTime());
+        
+        $offer =  isset($offerResult) ? [
+            "start" => $offerResult->getBeginAt(),
+            "end"   => $offerResult->getEndAt(),
+            'titre' => $offerResult->getTitre(),
+            'image' => $offerResult->getImage(),
+            'pack1' => [
+                "contenu" => $offerResult->getPack1(),
+                "prix" => $offerResult->getPrix1()/100,
+                "lien" => $offerResult->getStripeLink1(),
+            ],
+            'pack2' => [
+                "contenu" => $offerResult->getPack2(),
+                "prix" => $offerResult->getPrix2()/100,
+                "lien" => $offerResult->getStripeLink2(),
+            ],
 
-        // dd($offer);
+        ] : null;
+
         
         return $this->render('home/index.html.twig', [
             'offer' => $offer,

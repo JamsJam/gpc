@@ -238,5 +238,41 @@
 
 
     </section>
+    {# <pre>
+        {{ dump(offer) }}
+    </pre> #}
+    {% if offer is not null %}
+        <section id="offer">
+
+            <div class="offerContainer">
+                <div class="offerPacks">
+                    <div id="pack1" class="pack">
+                        <h2>Pack Promo 1</h2>
+                        <ul>
+                        {% for item in offer.pack1.contenu %}
+                            
+                            <li>{{item}}</li>
+                        {% endfor %}
+                        </ul>
+                        <p>{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <a href="{{offer.pack1.lien}}">j'en profite</a>
+                    </div>
+                    <div id="pack2" class="pack">
+                        <h2>Pack Promo 2</h2>
+                        <ul>
+                        {% for item in offer.pack2.contenu %}
+                            
+                            <li>{{item}}</li>
+                        {% endfor %}
+                        </ul>
+                        <p>{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <a href="{{offer.pack2.lien}}">j'en profite</a>
+                    </div>
+                    
+                </div>
+                <img src="uploads/images/promotions/{{offer.image}}" alt="">
+            </div>
+        </section>
+    {% endif %}
 
 {% endblock %}
