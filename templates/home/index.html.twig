@@ -49,6 +49,14 @@
         </div>
     </section>
 
+    {% if offer is  null %}
+        
+        <twig:offerBan 
+            titre="Offres limitées : Séjours tout inclus en Guadeloupe !"
+            text="Hôtels d’exception, activités et excursions inclus. <strong>Réservez avant qu’il ne soit trop tard !</strong>"
+            ctaTitre="Voir nos packs exclusifs"
+        />
+    {% endif %}
 
     <section class="activite" id="activite">
 
