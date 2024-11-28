@@ -48,6 +48,12 @@
                     route="{{app.current_route}}"
                     data-turbo-permanent
                 />
+                {% if app.user %}
+                    
+                    <div class="dashboard">
+                        <a href="{{path('admin')}}" class="button__dashboard">Acceder au Dashboard</a>
+                    </div>
+                {% endif %}
             {# </turbo-frame> #}
             {% block header %}
                 
@@ -63,7 +69,10 @@
             </main>
 
         <footer >
-            <twig:Footer />
+            <twig:Footer 
+                data-turbo-permanent
+            />
+            
         </footer>
     </body>
 </html>
