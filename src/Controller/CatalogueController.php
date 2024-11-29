@@ -21,11 +21,12 @@ class CatalogueController extends AbstractController
             default => throw new NotFoundHttpException("Resource not found for type: $type"),
              
         };
-        // dd($carteCollection);
+        $modalOnPage = true;
 
         return $this->render('catalogue/index.html.twig', [
             'collection' => $carteCollection,
             'type' => $type,
+            'modalOnPage' => $modalOnPage
         ]);
     }
 }

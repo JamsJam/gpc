@@ -60,8 +60,10 @@
             {% endblock %}
         </header>
         
-            <main class="{% block mainClass %}{% endblock %}">
-            
+            <main class="{% block mainClass %}{% endblock %}" >
+                {% if modalOnPage is defined %}
+                    <twig:ModalContainer />
+                {% endif %}
                 <twig:BackToTop />
                 {% block body %}
                 
