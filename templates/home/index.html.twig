@@ -241,36 +241,48 @@
     {# <pre>
         {{ dump(offer) }}
     </pre> #}
-    {% if offer is not null %}
-        <section id="offer">
 
-            <div class="offerContainer">
-                <div class="offerPacks">
-                    <div id="pack1" class="pack">
-                        <h2>Pack Promo 1</h2>
-                        <ul>
-                        {% for item in offer.pack1.contenu %}
-                            
-                            <li>{{item}}</li>
-                        {% endfor %}
+
+    {% if offer is not null %}
+
+
+        <section  id="offer">
+
+        <h2>Offre exclusive :  {{offer.titre}}</h2>
+
+        <p class="offer__subtext">Profitez d'une offre tout compris, à ne pas manquer !</p>
+
+            <div class="offer__container">
+                <div class="offer__packs">
+                    <div id="pack1" class="offer__pack">
+                        <h2 class="pack__titre">Pack Promo 1</h2>
+                        <p class="pack__price">{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <ul class="pack__content">
+                            {% for item in offer.pack1.contenu %}
+                                
+                                <li>{{item}}</li>
+                            {% endfor %}
                         </ul>
-                        <p>{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
-                        <a href="{{offer.pack1.lien}}">j'en profite</a>
+                        <a class=" button__primary pack__link" href="{{offer.pack1.lien}}">J'en profite</a>
                     </div>
-                    <div id="pack2" class="pack">
-                        <h2>Pack Promo 2</h2>
-                        <ul>
-                        {% for item in offer.pack2.contenu %}
-                            
-                            <li>{{item}}</li>
-                        {% endfor %}
+
+                    <div id="pack2" class="offer__pack">
+                        <h2 class="pack__titre">Pack Promo 2</h2>
+                        <p class="pack__price">{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <ul class="pack__content">
+                            {% for item in offer.pack2.contenu %}
+                                
+                                <li>{{item}}</li>
+                            {% endfor %}
                         </ul>
-                        <p>{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
-                        <a href="{{offer.pack2.lien}}">j'en profite</a>
+
+                        <a class=" button__primary pack__link" href="{{offer.pack2.lien}}">J'en profite</a>
                     </div>
                     
                 </div>
-                <img src="uploads/images/promotions/{{offer.image}}" alt="">
+                <div class="offer__imgcontainer">
+                    <img src="uploads/images/promotions/{{offer.image}}" alt="">
+                </div>
             </div>
         </section>
     {% endif %}

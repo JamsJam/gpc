@@ -7,7 +7,7 @@
 
 <section class="product__header">
 
-    <a href="" class="return__link cta">
+    <a href="{{path('app_home')}}" class="return__link cta">
         {{ ux_icon('flowbite:arrow-left-outline',{'class':'back-arrow'}) }}
         Retour
     </a>
@@ -42,7 +42,7 @@
         </a>
         
         {% if app.user %}
-            <a href="{{path('admin')}}">
+            <a href="{{path('admin_'~ type ~'_index')}}">
                 Ajouter des {{type}}
             </a>
 

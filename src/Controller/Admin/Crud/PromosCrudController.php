@@ -54,7 +54,7 @@ class PromosCrudController extends AbstractCrudController
             FormField::addRow(),
             DateTimeField::new('beginAt','debut')->setColumns(6),
             DateTimeField::new('endAt','fin')->setColumns(6)
-                ->hideOnIndex()
+
             ,
 
             FormField::addPanel('Prix'),

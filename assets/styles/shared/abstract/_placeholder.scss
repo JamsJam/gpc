@@ -106,6 +106,17 @@
         align-items: center;
     }
 
+    %flex-row-around-stretch{
+        display: -webkit-flex;
+        flex-direction: -webkit-row;
+        justify-content: -webkit-space-around;
+        align-items: -webkit-stretch;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
     %flex-row-end-center{
         display: -webkit-flex;
         flex-direction: -webkit-row;

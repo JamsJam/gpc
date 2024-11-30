@@ -516,6 +516,110 @@
     }
 
 
+    #offer{
+        background-color: $bg-offerBan-pastel;
+        padding-inline:  $padding-container;
+        padding-block: 4rem;
+
+        &>h2{
+            margin-block-end: 2rem;
+            text-align:center;
+            text-wrap: pretty;
+            color: $blue-hover;
+        }
+        .offer{
+
+            &__subtext{
+                font-size: $font-desk-24-16;
+                font-weight: 600;
+                text-align:center;
+                text-wrap: pretty;
+                margin-block-end: 2rem;
+            }
+            &__container{
+                // background-color: $bg-offerBan;
+                @extend %flex-row-around-stretch;
+
+                @media  screen and (max-width:768px) {
+                    &{
+                        flex-direction: column;
+                        // align-items: center;
+                        gap: 3rem;
+                    }
+                }
+            }
+            
+            &__packs{
+                @extend %flex-column-around-stretch;
+                gap:3rem;
 
 
+                @media  screen and (max-width:768px) {
+                    &{
+                        // align-self: space-around;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: start;
+                        gap: 2rem;
+                        flex-wrap: wrap
+
+                        
+                    }
+                }
+
+                
+                
+                .offer__pack{
+                    @extend %flex-column-start-stretch;
+                    gap: 2rem;
+
+                    .pack{
+
+                        &__titre{
+                            text-align: center;
+                            color: $blue-dark;
+                        }
+
+                        &__content{
+                            @extend %flex-column-center-center;
+                            gap:1rem;
+    
+                            li{
+                                list-style: none;
+                                font-size: $font-desk-24-16;
+                            }
+                        }
+                        
+                        &__price{
+                            font-size: $font-desk-24-16;
+                            text-align: center;
+                            font-weight: 700;
+                        }
+
+                        &__link{
+                            background-color: $blue;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            &__imgcontainer{
+
+                @media  screen and (max-width:768px) {
+                    &{
+                        align-self: center;
+                        
+                    }
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                    width: max(40vw,300px);
+                }
+            }
+        }
+    }
 }

@@ -56,6 +56,7 @@ $secondary-color: #00aed6;
 $blue: hsl(191, 100%, 35%);
 $blue-bg: hsl(191, 100%, 95%);
 $blue-hover: hsl(191, 100%, 25%);
+$blue-dark: hsl(191, 100%, 10%);
 
 //!jaune
 $title-color-1: $primary-color;
@@ -80,6 +81,8 @@ $bg-nav:hsl(0, 0%, 100%);
 // $bg-header:hsl(191, 100%, 0%);
 $bg-header:$bg-nav;
 
+$bg-offerBan:hsl(86 91% 65% / 1);
+$bg-offerBan-pastel:hsl(86 51% 85% / 1);
 //? === padding 
 
 $padding-container: clamp(2rem, -0.2857rem + 4.7619vw, 4rem)
