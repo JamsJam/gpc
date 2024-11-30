@@ -20,7 +20,8 @@ class TripType extends AbstractType
                 // "html5" => false,
                 'row_attr'=>[
                     'data-controller'=>"datepicker",
-                    "data-datepicker-target"=>"datepicker"
+                    "data-datepicker-target"=>"datepicker",
+                    "class" => "field__container"
 
                 ]
             ])

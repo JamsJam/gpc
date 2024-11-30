@@ -1,28 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block stylesheet %}
     {{parent()}}
-    <link rel="stylesheet" href="">
 {% endblock %}
 
 {% block title %}Reservation {{parent()}}{% endblock %}
 
 
-{% block header %}
-    {{parent()}}
+{# {% block header %}
+    {{parent()}} #}
 
-    {# header  #}
-    <div class="header">
+
+
+{% block mainClass %}reservation{% endblock %}
+{% block body %}
+    <div class="reservation-header">
         <h1>Réservez votre voyage</h1>
     </div>
-{% endblock %}
-
-
-{% block body %}
-
 {# Bar de progression #}
-<div class="progress__container">
-    <twig:Progressbar />
-</div>
+{# <div class="progress__container"> #}
+    {# <twig:Progressbar /> #}
+{# </div> #}
 
 {# sub-title #}
 <turbo-frame id="sub-title">
@@ -35,6 +32,7 @@
 {# formulaire #}
 <turbo-frame id="reservationForm">
     {{form_start(form,{action: path('app_reservation_confirm')})}}
+
 
         {# <div>
             <div class"field__container">

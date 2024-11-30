@@ -3,22 +3,17 @@
 {% block title %}Reservation {{parent()}}{% endblock %}
 
 
-{% block header %}
-    {{parent()}}
-
-    {# header  #}
-    <div class="header">
-        <h1>Réservez votre voyage</h1>
-    </div>
-{% endblock %}
-
-
+{% block mainClass %}reservation{% endblock %}
 {% block body %}
 
+    <div class="reservation-header">
+        <h1>Réservez votre voyage</h1>
+    </div>
 {# Bar de progression #}
 {# <div class="progress__container"> #}
-    <twig:Progressbar />
+    {# <twig:Progressbar /> #}
 {# </div> #}
+
 
     {# sub-title #}
     <turbo-frame id="sub-title">
@@ -32,40 +27,40 @@
     <turbo-frame id="reservationForm">
         {{form_start(form)}}
 
-            <div>
-                <div class"field__container">
+            <div class="field__group">
+                <div class="field__container">
                     {{form_label(form.prenom)}}
                     {{form_widget(form.prenom)}}
                 </div>
-                <div class"field__container">
+                <div class="field__container">
                     {{form_label(form.nom)}}
                     {{form_widget(form.nom)}}
                 </div>
             </div>
 
-            <div class"field__container">
+            <div class="field__container">
                 {{form_label(form.nationalite)}}
                 {{form_widget(form.nationalite)}}
             </div>
 
-            <div class"field__container">
+            <div class="field__container">
                 {{form_label(form.adresse1)}}
                 {{form_widget(form.adresse1)}}
             </div>
 
-            <div class"field__container">
+            <div class="field__container">
                 {{form_label(form.adresse2)}}
                 {{form_widget(form.adresse2)}}
             </div>
 
-            <div class"field__container">
+            <div class="field__container">
                 {{form_label(form.telephone)}}
                 {{form_widget(form.telephone)}}
             </div>
 
-            <div class="bouton_container">
-                <a data-turbo="false" href="{{path('app_home')}}">Retour</a>
-                <button>Suivant</button>
+            <div class="bouton__container">
+                <a class="cta" data-turbo="false" href="{{path('app_home')}}">Retour</a>
+                <button type="submit" class="button__primary">Suivant</button>
             </div>
         
         {{form_end(form)}}
