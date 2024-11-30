@@ -9,7 +9,7 @@
     @extend %flex-column-start-stretch;
     gap: 4rem;
 
-    h2,h1{
+    h3,h2,h1{
         text-align: center;
         color: $blue-hover;
         text-wrap: pretty;
@@ -90,6 +90,14 @@
                     
                 }
 
+
+
+                &.confirmationform{
+                    flex-direction: row-reverse;
+                    justify-content: start;
+                    align-items: center;
+                    gap: 1rem;
+                }
             }
 
             &__radiosContainer{
@@ -135,7 +143,44 @@
                 background-color: $blue;
                 // color: aliceblue;
                 color: white;
+
+
+                &.validation{
+                    background-color: hsl(120, 55%, 45%);
+                }
             }
+        }
+
+    }
+
+
+    .confirmation{
+        &__field{
+            @extend %flex-row-between-center;
+            margin-block-end: 1rem;
+            gap: 4rem;
+            
+            max-width: 500px;
+            margin-inline: auto;
+        }
+
+        &__section{
+            border-top: solid 4px $blue-hover;
+            @extend %flex-column-start-stretch;
+            gap:1rem;
+
+            &-titre{
+                margin-block: 1rem;
+            }
+        }
+
+        &__field{
+            width: 100%;
+            border-bottom: solid 2px $blue-hover;
+        }
+
+        &__value{
+            list-style: none;
         }
 
     }

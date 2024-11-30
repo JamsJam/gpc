@@ -71,19 +71,16 @@
             </div>
         </div>
 
-
-
-         
         <div class="field__container">
             {{form_label(form.budget)}}
             {{form_widget(form.budget)}}
         </div>
 
 
-            <div class="bouton__container">
-                <a class="cta" data-turbo="false" href="{{path('app_home')}}">Précédents</a>
-                <button type="submit" class="button__primary">Suivant</button>
-            </div>
+        <div class="bouton__container">
+            <a class="cta" data-turbo="false" href="{{path('app_home')}}">Retour</a>
+            <button type="submit" class="button__primary" data-turbo="false">Suivant</button>
+        </div>
     {{form_end(form)}}
 </turbo-frame>
 

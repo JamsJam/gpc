@@ -5,7 +5,6 @@ namespace App\Form\Reservation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class ConfirmationType extends AbstractType
@@ -14,7 +13,7 @@ class ConfirmationType extends AbstractType
     {
         $builder
             ->add('confirmation', CheckboxType::class,[
-                // "label" => ''
+                "label" => "En cochant cette case, je certifie que les informations fournies sont exactes, et j'accepte les Conditions générales d'utilisation (CGU) et la Politique de confidentialité."
             ])
         ;
     }
