@@ -162,6 +162,13 @@
             
             max-width: 500px;
             margin-inline: auto;
+
+            @media screen and (max-width:768px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 1rem;
+            }
         }
 
         &__section{

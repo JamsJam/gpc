@@ -1,20 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AboutController!{% endblock %}
+{% block title %}À propos{{parent()}}{% endblock %}
+{% block mainClass %}about{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1>À propos de Guadeloupe Passion Caraïbe</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<section>
+    <h2>Qui sommes-nous ?</h2>
+    <p>
+        <strong>Guadeloupe Passion Caraïbe</strong> est une agence de voyage spécialisée dans la découverte authentique de 
+        l'archipel guadeloupéen. Nous avons à cœur de partager la beauté, la diversité et la richesse culturelle de la 
+        Guadeloupe avec des voyageurs en quête d’expériences uniques.
+    </p>
+    <p>
+        Forte d’une équipe de passionnés locaux, notre agence combine expertise, connaissance du terrain et amour pour 
+        notre île. Que vous soyez amateurs de plages paradisiaques, d’aventures en pleine nature ou de rencontres 
+        culturelles inoubliables, nous mettons tout en œuvre pour vous offrir un séjour sur mesure, adapté à vos envies 
+        et vos besoins.
+    </p>
+</section>
 
-    This friendly message is coming from:
+<section>
+    <h2>Quelles sont nos valeurs ?</h2>
+    <p>
+        Chez <strong>Guadeloupe Passion Caraïbe</strong>, nos valeurs sont le reflet de notre attachement à la Guadeloupe 
+        et à ses habitants. Voici ce qui nous anime :
+    </p>
     <ul>
-        <li>Your controller at <code>/Users/jamdev/Desktop/fjd---projet/GPC/gpc_app/src/Controller/AboutController.php</code></li>
-        <li>Your template at <code>/Users/jamdev/Desktop/fjd---projet/GPC/gpc_app/templates/about/index.html.twig</code></li>
+        <li><strong>Authenticité</strong> : Nous souhaitons vous faire vivre des moments vrais et sincères, en immersion avec 
+        les paysages, les traditions et les habitants de l’archipel.</li>
+        <li><strong>Respect de l’environnement</strong> : Engagés pour un tourisme durable, nous favorisons des activités respectueuses 
+        de la nature exceptionnelle de la Guadeloupe.</li>
+        <li><strong>Partage culturel</strong> : Nous valorisons les rencontres humaines et la découverte des coutumes, de la cuisine locale 
+        et des savoir-faire guadeloupéens.</li>
+        <li><strong>Excellence</strong> : Votre satisfaction est notre priorité. Chaque détail de votre voyage est pensé pour 
+        créer des souvenirs inoubliables.</li>
     </ul>
-</div>
+    <p>
+        <strong>Guadeloupe Passion Caraïbe</strong>, c’est bien plus qu’un simple voyage. C’est une invitation à explorer, 
+        à s’émerveiller et à vivre des instants précieux dans un cadre exceptionnel. Rejoignez-nous pour découvrir la 
+        Guadeloupe autrement !
+    </p>
+</section>
+
 {% endblock %}

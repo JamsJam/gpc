@@ -1,0 +1,29 @@
+@use "../shared/abstract/" as *;
+
+.about{
+
+    padding-inline: $padding-container;
+    padding-block: 4rem;
+    @extend %flex-column-start-start;
+    gap:3rem;
+    min-height: 100dvh;
+    h1,h2{
+        color: $blue-hover;
+
+    }
+
+    section{
+        @extend %flex-column-start-start;
+        gap:1rem;
+
+        ul {
+
+            @extend %flex-column-start-start;
+            gap: 0.5rem;
+            
+            li{
+                list-style: none;
+            }
+        }
+    }
+}

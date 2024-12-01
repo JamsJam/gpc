@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Form\Reservation\TripType as ReservationType2;
 use App\Form\Reservation\ContactType as ReservationType1;
 use App\Form\Reservation\ConfirmationType as ReservationType3;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ReservationController extends AbstractController
@@ -92,13 +93,15 @@ class ReservationController extends AbstractController
 
 
             //todo envoyer mail à l'utilisateur
+            //todo envoyer mail à l'admin
             //todo envoyer mail à l'explor
-            $email = (new Email())
+            $email = (new TemplatedEmail())
                 ->from('hello@hotmail.com')
                 ->to('you@example.com')
                 ->subject('Time for Symfony Mailer!')
-                ->text('Sending emails is fun again!');
-                // ->html(array_map());
+                ->htmlTemplate('emails/reservations/client.html.twig')
+                ->context([])
+                ;
 
             $mailer->send($email);
 
