@@ -22,12 +22,6 @@ final class ActivitieSwitch
     public string $mode = "activities";
 
     public array $activiteMarkers = [
-        // [
-        //     "titre" => "Rencontre avec les cétacé",
-        //     "lat" => 16.1723981,
-        //     "long" => -61.7871479, //16.1723981,-61.7871479
-        //     "description" => "lorem ipsum"
-        // ],//! to remove
         [
             "titre" => "Art road tour",
             "lat" => 16.2331311,
@@ -48,8 +42,8 @@ final class ActivitieSwitch
         ],
         [
             "titre" => "Masterclass gastronomique",
-            "lat" => 16.0499995,
-            "long" => -61.6769667, //todo location  montebelo petit bourg
+            "lat" => 16.1767479,
+            "long" => -61.6092936, 
             "description" => "lorem ipsum"
         ],
 
@@ -82,26 +76,26 @@ final class ActivitieSwitch
         // ],
         [
             "titre" => "Patrimoine des saveurs",
-            "lat" => 15.8554203,
-            "long" => -61.6429921, //capesterre
+            "lat" => 16.0391367,
+            "long" => -61.6547454, //capesterre
             "description" => "lorem ipsum"
         ],
         [
             "titre" => "Un rhum de legende sur une terre de legende",
-            "lat" => 15.8554203,
-            "long" => -61.6429921, //marie-galante
+            "lat" => 15.9368828,
+            "long" =>-61.3072499, //marie-galante
             "description" => "lorem ipsum"
         ],
         [
             "titre" => "Escapade a la desirade",
-            "lat" => 15.8554203,
-            "long" => -61.6429921, //capesterre
+            "lat" => 16.3199244,
+            "long" => -61.0708992,
             "description" => "lorem ipsum"
         ],
         [
             "titre" => "Visite du nord basse-terre",
-            "lat" => 15.8554203,
-            "long" => -61.6429921, //capesterre
+            "lat" => 16.048552,
+            "long" => -61.6609027, //capesterre
             "description" => "lorem ipsum"
         ],
 
