@@ -50,30 +50,7 @@ final class ActivitieSwitch
     ];
 
     public array $excursionMarkers = [
-        // [
-        //     "titre" => "Parc national de Guadeloupe",
-        //     "lat" => 16.1309319,
-        //     "long" =>-61.6840267,
-        //     "description" => "lorem ipsum"
-        // ],
-        // [
-        //     "titre" => "La Désirade",
-        //     "lat" => 16.3199244,
-        //     "long" => -61.0708992, 
-        //     "description" => "lorem ipsum"
-        // ],
-        // [
-        //     "titre" => "Marie-galante",
-        //     "lat" => 15.9368828,
-        //     "long" =>-61.3072499, 
-        //     "description" => "lorem ipsum"
-        // ],
-        // [
-        //     "titre" => "Terre-de-bas",
-        //     "lat" => 15.8554203,
-        //     "long" => -61.6429921, 
-        //     "description" => "lorem ipsum"
-        // ],
+
         [
             "titre" => "Patrimoine des saveurs",
             "lat" => 16.0391367,
