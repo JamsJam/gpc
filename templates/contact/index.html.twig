@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block mainClass %}contact{{parent()}}{% endblock %}
+
+{% block body %}
+
+    <h1>Contactez Guadeloupe Passion Caraïbe</h1>
+    <p>
+        Vous avez une question, une demande particulière ou souhaitez organiser votre prochain voyage ? 
+        Remplissez le formulaire ci-dessous, et notre équipe vous répondra dans les plus brefs délais.
+    </p>
+
+
+{{form_start(form)}}
+    {{form_row(form.nom)}}
+    {{form_row(form.email)}}
+    {{form_row(form.message)}}
+    <div>
+            <button class="button__primary" type="submit">Envoyer</button>
+    </div>
+
+
+{{form_end(form)}}
+{% endblock %}

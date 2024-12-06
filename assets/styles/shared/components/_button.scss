@@ -1,0 +1,87 @@
+@use '../abstract/' as *;
+
+.button{
+
+    border-radius: 10px;
+    
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    
+    font-family: $font-title;
+    text-decoration: none;
+    font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
+    font-weight: 600;
+
+    @extend %flex-row-center;
+    
+    
+    
+    &__primary{
+        @extend .button;
+
+        background-color: $primary-color;
+        color: black;
+    }
+    &__secondary{
+        @extend .button;
+        border: solid 2px $blue;
+        // border: solid 2px hsl(85.45deg 89.19% 36.27%);
+        background-color: transparent;
+        color: $blue;
+        backdrop-filter: blur(2px);
+
+        transition: 
+            background-color 250ms ease-in-out,
+            color 250ms ease-in-out, 
+            border 250ms ease-in-out 
+            ;
+
+        
+        &:hover{
+            background-color: $blue-hover;
+            border: solid 2px $blue-hover;
+            // background-color: hsl(85.45deg 89.19% 36.27%);
+            color: rgb(255, 255, 255);
+        }
+    }
+    &__nav{
+        @extend .button__primary;
+        
+        background-color: $primary-color;
+        color: black;
+        font-size: $font-desk-24-16;
+        padding-inline: 2rem;
+        padding-block: 0.5rem;
+    }
+}
+
+.cta{
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: $font-title;
+    color: $blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    transition: gap 250ms ease ;
+
+
+    svg{
+        height: 2em;
+        width: 2em;
+        font-weight: 600;
+        font-family: $font-title;
+        fill: $blue;
+    }
+
+    &:hover{
+        color: $blue-hover;
+        gap: 1rem;
+        & svg{
+
+            color: $blue-hover;
+        }
+    }
+}

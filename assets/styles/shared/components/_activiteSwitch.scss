@@ -1,0 +1,185 @@
+@use '../abstract/' as *;
+
+// $switchColor1: #9696fa;
+// $switchColor2: rgb(176, 243, 176);
+$switchColor1: hsl(191 70% 90% / 1);
+$switchColor2: hsl(85 70% 85% / 1);
+.activite{
+
+    &__component{
+
+        // padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+        padding-block-end: 4rem;
+        &.activities{
+            background-color: $switchColor1;
+        }
+        &.excursions{
+            background-color: $switchColor2;
+        }
+
+
+        
+        .switch{
+            
+            &__container{
+                @extend %flex-row-around-center;
+                width: 100%;
+                // padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+            }
+            &__activities,&__excursions{
+                @extend %flex-center;
+                width: 100%;
+                padding-block: 1rem;
+                font-family: $font-title;
+                font-size: $font-mob-32-20;
+                p{
+
+                    pointer-events: none;
+                }
+            }
+            
+            &__activities{
+                background-color: $switchColor1;
+
+            }
+            
+            &__excursions{
+                background-color: $switchColor2;
+            }
+            
+        }
+        
+        
+        
+    }
+
+    &__carte{
+        padding: 1rem;
+        padding-block-start: 4rem;
+
+
+        h3{
+            margin-block: 3rem;
+            padding-inline: $padding-container; 
+
+            font-size: $font-desk-32-20;
+            text-align: center;
+            
+            @media screen and (max-width:768px) {
+                text-align: start;
+                
+            }
+        }
+        
+    }
+
+
+    .carte{
+        &__container{
+            @extend %flex-row-between-center;
+            padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+            gap:2rem;
+
+            @media screen and (max-width:768px) {
+                &{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
+        }
+        &__component{
+            width: 100%;
+            max-width: 50vw;
+            border: white solid 3px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
+
+            height: 500px;
+            
+            // padding-inline: 2rem ;
+            @media screen and (max-width:768px) {
+                &{
+                    height: unset;
+                    max-width: unset;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+        &__component--LOADING{
+            width: 100%;
+            max-width: 50vw;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
+
+            height: 500px;
+
+            display: none;
+            
+            // padding-inline: 2rem ;
+            @media screen and (max-width:768px) {
+                &{
+                    height: unset;
+                    max-width: unset;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+        &__controller{
+            height: 500px;
+            width: 100%;
+            // padding-inline: 2rem;
+            @extend %flex-column-around-center;
+            
+            // max-width: 50vw;
+            
+            
+            
+            .marker{
+                &__grid{
+                    display: grid;
+                    align-content: space-evenly;
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 1rem;
+                    
+                    height: 70%;
+                    width: 100%;
+                    // background-color: tan;
+                    
+                    @media screen and (max-width:768px) {
+                        &{
+                            grid-template-columns: repeat(1, 1fr);
+                            
+                        }
+                    }
+                }
+                &__container{
+                    @extend %flex-row-start-center;
+                    gap: 2rem;
+                    // background-color: Blue;
+                    box-shadow: 0 2px 8px 4px rgba(0,0,0,0.35);
+                    padding-block: 1rem;
+                    padding-inline: 2rem;
+                    background-color: white;
+                    transition: background-color 250ms ease-in-out;
+
+                    &:hover:not(&.focus){
+                        background-color: hsla(43, 100%, 80%,0.7);
+                    }
+                    &.focus{
+                        background-color: hsla(43, 100%, 80%,1);
+                    }
+                    @media screen and (max-width:768px) {
+                        &{
+                            justify-content: flex-start;
+                            gap: 1rem;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

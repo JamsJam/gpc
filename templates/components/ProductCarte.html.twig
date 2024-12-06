@@ -1,0 +1,25 @@
+<div{{ attributes }}
+        {{stimulus_controller('product_detail')}}
+        class="product__carte"
+        data-id={{produit.id}}
+        data-mode={{type}}
+    >
+
+    <div class="carte__image">
+        <img src="/uploads/images/{{type}}/{{produit.image}}" alt="image-{{produit.titre}}" >
+    </div>
+
+    <div class="carte__info">
+
+        <h3>
+            {{produit.titre}}
+        </h3>
+
+        <button 
+            class="button__secondary"
+            {{stimulus_action('product_detail','handleDetailRequest','click',)}}
+        >
+            Voir plus
+        </button>
+    </div>
+</div>

@@ -2,22 +2,16 @@
 
 {% block title %}Reservation {{parent()}}{% endblock %}
 
-
-{% block header %}
-    {{parent()}}
-
-    {# header  #}
-    <div class="header">
-        <h1>Réservez votre voyage</h1>
-    </div>
-{% endblock %}
-
+{% block mainClass %}reservation{% endblock %}
 
 {% block body %}
 
+    <div class="reservation-header">
+        <h1>Réservez votre voyage</h1>
+    </div>
 {# Bar de progression #}
 {# <div class="progress__container"> #}
-    <twig:Progressbar />
+    {# <twig:Progressbar /> #}
 {# </div> #}
 
 {# sub-title #}
@@ -28,54 +22,68 @@
 </turbo-frame>
 
 
+
 {# formulaire #}
 <turbo-frame id="reservationForm">
 
     {{form_start(form,{action: path('app_reservation_trip')})}}
 
  
-        {# <div>
-            <div class"field__container">
-                {{form_label(form.prenom)}}
-                {{form_widget(form.prenom)}}
+        {# <div> #}
+            {# {{form_label(form.periode)}} #}
+            {{form_row(form.periode)}}
+        {# </div> #}
+
+        <div class="field__container">
+            {{form_label(form.lieux)}}
+            <div class="field__radiosContainer">
+                {% for radio in form.lieux.children %}
+                    <div class="field__radios">
+                        {{form_widget(radio)}}
+                        {{form_label(radio)}}
+                    </div>
+                {% endfor %}
             </div>
-            <div class"field__container">
-                {{form_label(form.nom)}}
-                {{form_widget(form.nom)}}
+        </div>
+
+
+        <div class="field__container">
+            {{form_label(form.duree)}}
+            <div class="field__radiosContainer">
+                {% for radio in form.duree.children %}
+                    <div class="field__radios">
+                        {{form_widget(radio)}}
+                        {{form_label(radio)}}
+                    </div>
+                {% endfor %}
             </div>
         </div>
 
-        <div class"field__container">
-            {{form_label(form.nationalite)}}
-            {{form_widget(form.nationalite)}}
-        </div>
-
-        <div class"field__container">
-            {{form_label(form.adresse1)}}
-            {{form_widget(form.adresse1)}}
-        </div>
-
-        <div class"field__container">
-            {{form_label(form.adresse2)}}
-            {{form_widget(form.adresse2)}}
-        </div>
-
-        <div class"field__container">
-            {{form_label(form.telephone)}}
-            {{form_widget(form.telephone)}}
-        </div>
-
-        <div class="bouton_container">
-            <button></button>
-            <button></button>
-        </div> #}
-
-            <div class="bouton_container">
-                <a data-turbo="false" href="{{path('app_home')}}">Retour</a>
-                <button>Suivant</button>
+        <div class="field__container">
+            {{form_label(form.produits_service)}}
+            <div class="field__radiosContainer">
+                {% for radio in form.produits_service.children %}
+                    <div class="field__radios">
+                        {{form_widget(radio)}}
+                        {{form_label(radio)}}
+                    </div>
+                {% endfor %}
             </div>
+        </div>
+
+        <div class="field__container">
+            {{form_label(form.budget)}}
+            {{form_widget(form.budget)}}
+        </div>
+
+
+        <div class="bouton__container">
+            <a class="cta" data-turbo="false" href="{{path('app_home')}}">Retour</a>
+            <button type="submit" class="button__primary" data-turbo="false">Suivant</button>
+        </div>
     {{form_end(form)}}
 </turbo-frame>
+
 
 
 

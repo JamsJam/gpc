@@ -1,0 +1,112 @@
+@use '../abstract/' as *;
+
+
+.modal__container{
+    position:absolute;
+    z-index: 10;
+
+    width: 100dvw;
+    // height: 100%;
+    height: calc(100dvh - 120px);
+
+    background-color: hsl(0, 0%, 0%, 0.2);
+    backdrop-filter: blur(4px);
+
+    padding-block: 4rem;
+    transition: top 250ms ease;
+
+    overflow-y: scroll;
+
+
+    &.open{
+        
+        top:120px
+
+    }
+    &.close{
+        // display:none:
+        top: -1000vh
+    }
+
+
+
+
+    .product__modal{
+        width: max(50dvw,300px);
+        min-height: 70vh;
+        background-color: #ffffff;
+
+        margin-inline: auto ;
+        position: relative;
+
+        padding-block-end: 4rem;
+
+
+        .modal__close{
+
+            
+            &-container{
+                position: absolute;
+                right: 2rem;
+                top: 2rem;
+                // background-color: #efefef;
+                
+
+                &:hover{
+                    
+                    cursor:pointer;
+                }
+            }
+            &-icone{
+                pointer-events: none;
+                font-size: 2rem;
+            }
+        }   
+
+
+        .content{
+            &__container{
+                // background-color: aqua;
+
+                width: max(60%,300px);
+                min-height: 100%;
+    
+                margin-inline: auto;
+                padding-block-start: 4rem;
+                padding-inline:1rem;
+                
+                scrollbar-color: black;
+
+                @extend %flex-column-center-stretch;
+                gap:2rem
+            }
+
+            &__img{
+
+                // background-color: brown;
+
+                width: 100%;
+                height: 300px;
+
+                img{
+                    object-fit: contain;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+
+            &__title{
+                color: $blue-hover;
+                text-align: center;
+            }
+
+            &__description{
+                padding-inline: 0.5rem;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,70 @@
+@use "../shared/abstract/" as *;
+
+
+.contact{
+
+    width: min(1440px, calc(100vw - 2rem));
+    min-height: calc(100dvh - 120px);
+    margin-inline: auto;
+    padding-block: 4rem;
+    padding-inline: $padding-container;
+
+    @extend %flex-column-start-stretch;
+    gap:4rem;
+
+
+    h3,h2,h1{
+        text-align: center;
+        color: $blue-hover;
+        text-wrap: pretty;
+    }
+
+    form{
+
+
+
+        input,textarea{
+            font-family: $font-text;
+            font-size: $font-desk-20-16;
+            padding: 0.5rem 1rem;
+            background-color: hsl(0, 0%, 95%);
+        }
+        label{
+            font-family: $font-title;
+            font-size: $font-desk-20-16;
+        }
+
+
+
+        .field{
+            &__container{
+                @extend %flex-column-center-start;
+                margin-block-end: 1rem;
+                gap: 0.3rem;
+                // width: 100%;
+
+                input[type="text"],textarea{
+                    width: 100%;
+                    // padding: 0.5rem;
+                    border-radius: 10px;
+                    border: none;
+                }
+            }
+        }
+
+
+        .button__primary{
+            border:none;
+            color: white;
+            background-color: $blue;
+            font-size: $font-desk-20-16;
+            transition: background 250ms ease;
+
+            &:hover{
+
+
+                background-color: $blue-hover;
+            }
+        }
+    }
+}

@@ -5,30 +5,80 @@
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="{% block keyWord %}{% endblock %}">
-        <title>{% block title %} | Guadeloupe Passion Caraïbe{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <meta name="geo.region" content="GP" />
+        <meta name="geo.placename" content="Guadeloupe" />
+        <meta name="geo.position" content="16.265;-61.551" />
+        <meta name="ICBM" content="16.265, -61.551" />
+        <title>{% block title %} | Guadeloupe Passion  Caraïbe{% endblock %}</title>
+        {#? ====== favicon ====  #}
+        <link rel="apple-touch-icon" sizes="57x57" href="{{asset("favicon/apple-icon-57x57.png")}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{asset("favicon/apple-icon-60x60.png")}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{asset("favicon/apple-icon-72x72.png")}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{asset("favicon/apple-icon-76x76.png")}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{asset("favicon/apple-icon-114x114.png")}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{asset("favicon/apple-icon-120x120.png")}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{asset("favicon/apple-icon-144x144.png")}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{asset("favicon/apple-icon-152x152.png")}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{asset("favicon/apple-icon-180x180.png")}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{asset("favicon/android-icon-192x192.png")}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset("favicon/favicon-32x32.png")}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset("favicon/favicon-96x96.png")}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset("favicon/favicon-16x16.png")}}">
+        <link rel="manifest" href="{{asset("favicon/manifest.json")}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{asset("favicon/ms-icon-144x144.png")}}">
+        <meta name="theme-color" content="#ffffff">
+        {#? ====== ------- ====  #}
+        
         {% block stylesheets %}
             {# <link rel="stylesheet" href="{{ asset('styles/app.scss') }}"> #}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {% block importmap %}
+                {{ importmap('app') }}
+            {% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <header>
-            <twig:Navbar />
+    <body
+        data-controller="back-to-top" 
+        data-back-to-top-class="back-to-top-container--intersecting"
+        class="back-to-top-container--intersecting"
+    >
+
+        <header >
+            {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
+                <twig:Navbar 
+                    route="{{app.current_route}}"
+                    data-turbo-permanent
+                />
+                {% if app.user %}
+                    
+                    <div class="dashboard">
+                        <a href="{{path('admin')}}" class="button__dashboard">Acceder au Dashboard</a>
+                    </div>
+                {% endif %}
+            {# </turbo-frame> #}
             {% block header %}
                 
             {% endblock %}
         </header>
-        <main class="{% block mainClass %}{% endblock %}">
-            {% block body %}
+        
+            <main class="{% block mainClass %}{% endblock %}" >
+                {% if modalOnPage is defined %}
+                    <twig:ModalContainer />
+                {% endif %}
+                <twig:BackToTop />
+                {% block body %}
+                
+                {% endblock %}
+            </main>
+
+        <footer >
+            <twig:Footer 
+                data-turbo-permanent
+            />
             
-            {% endblock %}
-        </main>
-        <footer>
-            <twig:Footer />
         </footer>
     </body>
 </html>

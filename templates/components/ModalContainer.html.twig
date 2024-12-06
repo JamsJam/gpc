@@ -1,0 +1,38 @@
+<div{{ attributes.defaults(stimulus_controller('modal_manager')|stimulus_action('modal_manager','openModal','product_detail:openDetailModal@window')|stimulus_action('modal_manager','closeModal','click')) }}
+    class="modal__container {{modal_isOpen ? "open" : "close" }}"
+    
+>
+
+    {% if modal_isOpen and modal == "product_modal" %}
+        
+
+        <div
+            
+            class="product__modal"
+        >
+
+
+            <div class="modal__close-container" {{stimulus_action('modal_manager','closeModal','click')}}>
+                {{ ux_icon('mingcute:close-fill',{'class':'modal__close-icone'}) }}  
+            </div>
+
+            <div class="content__container">
+
+                <div class="content__img">
+                    <img src="/uploads/images/{{data.mode}}/{{data.image}}" alt="">
+                </div>
+                <h3 class="content__title">{{data.titre}}</h3>
+
+                <div class="content__description">
+                    {{data.description|raw}}
+                </div>
+
+                <a href="{{path('app_reservation',{"target_activites" : data.id})}}" class='button__primary'>Je participe</a>
+            </div>
+        
+        </div>
+        {% else %}
+        
+    {% endif %}
+    
+</div>

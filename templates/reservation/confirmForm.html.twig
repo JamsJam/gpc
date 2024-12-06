@@ -1,31 +1,28 @@
 {% extends 'base.html.twig' %}
 {% block stylesheet %}
     {{parent()}}
-    <link rel="stylesheet" href="">
 {% endblock %}
 
 {% block title %}Reservation {{parent()}}{% endblock %}
 
 
-{% block header %}
-    {{parent()}}
+{# {% block header %}
+    {{parent()}} #}
 
-    {# header  #}
-    <div class="header">
+
+
+{% block mainClass %}reservation{% endblock %}
+{% block body %}
+    <div class="reservation-header">
         <h1>Réservez votre voyage</h1>
     </div>
-{% endblock %}
-
-
-{% block body %}
-
 {# Bar de progression #}
-<div class="progress__container">
-    <twig:Progressbar />
-</div>
+{# <div class="progress__container"> #}
+    {# <twig:Progressbar /> #}
+{# </div> #}
 
-{# sub-title #}
-<turbo-frame id="sub-title">
+{# sub-titre #}
+<turbo-frame id="sub-titre">
     <h2>
         Information de contact
     </h2>
@@ -34,54 +31,144 @@
 
 {# formulaire #}
 <turbo-frame id="reservationForm">
-    {{form_start(form,{action: path('app_reservation_confirm')})}}
+    {{form_start(form,{
+            action: path('app_reservation_confirm'),
+            attr: {
+                'class':'confirmationform'
+                }
+            })}}
 
-        {# <div>
-            <div class"field__container">
-                {{form_label(form.prenom)}}
-                {{form_widget(form.prenom)}}
-            </div>
-            <div class"field__container">
-                {{form_label(form.nom)}}
-                {{form_widget(form.nom)}}
-            </div>
+
+        <div class="confirmation__section">
+        <h3 class="confirmation__section-titre">Informations personnelles</h3>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Nom</p>
+            <p class="confirmation__value">{{ sejour.nom }}</p>
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Prénom</p>
+            <p class="confirmation__value">{{ sejour.prenom }}</p>
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Nationalité</p>
+            <p class="confirmation__value">{{ sejour.nationalite }}</p>
+        </div>
+    </div>
+
+    <div class="confirmation__section">
+        <h3 class="confirmation__section-titre">Coordonnées</h3>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Adresse 1</p>
+            <p class="confirmation__value">{{ sejour.adresse1 }}</p>
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Adresse 2</p>
+            <p class="confirmation__value">{{ sejour.adresse2 }}</p>
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Téléphone</p>
+            <p class="confirmation__value">{{ sejour.telephone }}</p>
+        </div>
+    </div>
+
+    <div class="confirmation__section">
+        <h3 class="confirmation__section-titre">Détails du séjour</h3>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Période</p>
+            <p class="confirmation__value">
+                {% set periode_parts = sejour.periode|split(' to ') %}
+                {% set date_debut = periode_parts[0]|date('d F Y') %}
+                {% set date_fin = periode_parts[1]|date('d F Y') %}
+                du {{ date_debut|replace({'January': 'janvier', 'February': 'février', 'March': 'mars', 'April': 'avril', 'May': 'mai', 'June': 'juin', 'July': 'juillet', 'August': 'août', 'September': 'septembre', 'October': 'octobre', 'November': 'novembre', 'December': 'décembre'}) }}
+                au
+                {{ date_fin|replace({'January': 'janvier', 'February': 'février', 'March': 'mars', 'April': 'avril', 'May': 'mai', 'June': 'juin', 'July': 'juillet', 'August': 'août', 'September': 'septembre', 'October': 'octobre', 'November': 'novembre', 'December': 'décembre'}) }}</p>
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Lieux</p>
+            {% if sejour.lieux|length > 1  %}
+                <ul class="confirmation__value">
+                    {% for lieu in sejour.lieux %}
+                        <li>
+                            {{ lieu|replace({'_': ' '})|capitalize }} 
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                
+                <p class="confirmation__value">
+                    {{ sejour.lieux[0]|replace({'_': ' '})|capitalize }} 
+                </p>
+            {% endif %}
+        </div>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Durée</p>
+            {% if sejour.duree|length > 1  %}
+                <ul class="confirmation__value">
+                    {% for duree in sejour.duree %}
+                        <li>
+                            {{ duree|replace({'_': ' '})|capitalize }} 
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                
+                <p class="confirmation__value">
+                    {{ sejour.duree[0]|replace({'_': ' '})|capitalize }} 
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="confirmation__section">
+        <h3 class="confirmation__section-titre">Produits et services</h3>
+        <div class="confirmation__field">
+            <p class="confirmation__label">Produit / Service</p>
+            {% if sejour.produits_service|length > 1  %}
+                <ul class="confirmation__value">
+                    {% for produit in sejour.produits_service %}
+                        <li>
+                            {{ produit|replace({'_': ' '})|capitalize }} 
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                
+                <p class="confirmation__value">
+                    {{ sejour.produits_service[0]|replace({'_': ' '})|capitalize }} 
+                </p>
+            {% endif %}
+        </div>
+        
+
+        <div class="confirmation__field">
+            <p class="confirmation__label">Budget</p>
+            <p class="confirmation__value">
+                {{ sejour.budget|replace({'_': ' '})|capitalize }}
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+        <div class="field__container confirmationform" >
+            {{form_label(form.confirmation)}}
+            {{form_widget(form.confirmation)}}
         </div>
 
-        <div class"field__container">
-            {{form_label(form.nationalite)}}
-            {{form_widget(form.nationalite)}}
+        <div class="bouton__container">
+            <a class="cta" data-turbo="false" href="{{path('app_home')}}">Précédent</a>
+            <button type="submit" class="button__primary validation" data-turbo="false">Valider</button>
         </div>
-
-        <div class"field__container">
-            {{form_label(form.adresse1)}}
-            {{form_widget(form.adresse1)}}
-        </div>
-
-        <div class"field__container">
-            {{form_label(form.adresse2)}}
-            {{form_widget(form.adresse2)}}
-        </div>
-
-        <div class"field__container">
-            {{form_label(form.telephone)}}
-            {{form_widget(form.telephone)}}
-        </div>
-
-        <div class="bouton_container">
-            <button></button>
-            <button></button>
-        </div> #}
-                <div class="bouton_container">
-                <a data-turbo="false" href="{{path('app_home')}}">Retour</a>
-                <button data-turbo="false">Suivant</button>
-            </div>
     {{form_end(form)}}
-            <pre>
-            {{ dump(sejour) }}
-        </pre>
 </turbo-frame>
 
 
 
 {# formulaire #}
+
 {% endblock %}

@@ -1,17 +1,43 @@
 
 {#todo flex-r-b-c p7.5    #}
-<nav {{ attributes }}class='nav'>
+    <nav 
+        {{ attributes.defaults(
+            stimulus_controller('responsivnav')
+            |stimulus_action( 'responsivnav','turboload','turbo:load@window')
+            |stimulus_action( 'responsivnav','setMobileValue','resize@window')
+            ) }}
+        class='nav'
+        
+    >
+        {% if loading == false %}
 
-    <img src="{{asset('./images/GPC-logo.png')}}" alt="logo Guadeloupe Passion Caraïbe" class="nav__logo"/>
 
-    {#todo flex-r-b-c p7.5   #}
-    <div class='nav__links'>
-        <a href="" class="nav__link">Accueil</a>
-        <a href="" class="nav__link">Contact</a>
-        <a href="" class="nav__link">À propos</a>
-    </div>
+            <div class="logo__container">
+                    <img src="{{asset('./images/GPC-logo.png')}}" alt="logo Guadeloupe Passion Caraïbe" class="logo"/>
+            </div>
+            
+            {% if isMobile is not same as true %}
+                
 
-     {#todo btn to turbo add modal-form-etape #}
+                {#todo flex-r-b-c p7.5   #}
+                <div class="nav__links ">
+                
+                    <a href="{{path('app_home')}}"  class="nav__link">Accueil</a>
+                    <a href="{{path('app_contact')}}"    class="nav__link">Contact</a>
+                    <a href="{{path('app_about')}}"  class="nav__link">À propos</a>
+                </div>
 
-    <button class="nav__cta button__primary">Reserver votre voyage</button>
-</nav>
+
+
+                    {#todo btn to turbo add modal-form-etape #}
+
+                <a href="{{path('app_reservation')}}" class="nav__cta button__nav ">Réserver votre voyage</a>
+            {% else %}
+                
+
+                {{ ux_icon('mingcute:menu-fill',{'class':'nav__burger'})}} 
+
+            {% endif %}
+        {% endif %}
+    </nav>
+

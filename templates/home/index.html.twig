@@ -1,48 +1,290 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Accueil {{parent()}}{% endblock %}
-
+{% block mainClass %}home{% endblock %}
 {% block body %}
-<section class="header">
-    <div class="header__info">
-        <h1>Guadeloupe passion Caraïbe</h1>
-        <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
-        <div class="btn_container">
-            <a href="">Réserver mon voyage</a>
-            <a href="#offers">Voir les offres</a>
+
+    <section class="header">
+        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.png')}}'>
+            <source src="{{ asset('video/gpcpromo_compress.mp4') }}" type="video/mp4">
+        </video>
+        <div class="header__info">
+            <h1>Guadeloupe passion Caraïbes</h1>
+            <p class="subtitle">Agence receptive des îles de Guadeloupe</p class="subtitle">
+            <div class="btn_container">
+                <a href="{{path('app_reservation')}}" class="button__primary" >Réserver mon voyage</a>
+                {# <a href="#offers" class="button__secondary" >Voir les offres</a> #}
+            </div>
         </div>
-    </div>
-</section>
-<section class="carte">
-    {# Informations/excursions/ #}
-    <div class="carte__info">
-        <h2>Des activité sur tout le térritoire</h2>
+    </section>
+
+    <section class="service">
+        <h2>Vous recherchez un service touristique pour vos vacances en guadeloupe ?</h2>
+        <div class="service__cards">
+            <twig:ServiceCard 
+                serviceIcon="cbi:roomsoutdoor"
+                service='Activités et excurtions'
+                description='Explorez des activités à vivre en Guadeloupe.'
+                target="#activite"
+                ctaTitle='Découvrir nos activités'
+            />
+            <twig:ServiceCard 
+                serviceIcon="bi:house-fill"
+                service='Hebergement'
+                description='Séjournez dans des hôtels et villas d’exception.'
+                target="#hebergement"
+                ctaTitle='Voir nos hébergements'
+            />
+            <twig:ServiceCard 
+                serviceIcon="bi:car-front-fill"
+                service='Transport et transfers'
+                description='Réservez facilement votre VTC ou transfert privé.'
+                target="#transport"
+                ctaTitle='Réserver votre transport'
+            />
+
+            {# <twig:ServiceCard />
+            <twig:ServiceCard /> #}
+        </div>
+    </section>
+
+    {% if offer is not null %}
+        
+        <twig:offerBan 
+            titre="Offres limitées : Séjours tout inclus en Guadeloupe !"
+            text="Hôtels d’exception, activités et excursions inclus. <strong>Réservez avant qu’il ne soit trop tard !</strong>"
+            ctaTitre="Voir nos packs exclusifs"
+        />
+    {% endif %}
+
+    <section class="activite" id="activite">
+
+        <h2>Que faire en Guadeloupe ?</h2>
         {# <p></p> #}
-        <a href="">Voir notre catalogue d'activité</a>
-    </div>
+        <div class="activite__container">
+            <div class="activite__imgGrid">
+                <div class="activite__img" id="activite__img1"></div>
+                <div class="activite__img" id="activite__img2"></div>
+                <div class="activite__img" id="activite__img3"></div>
+                <div class="activite__img" id="activite__img4"></div>
+                <div class="activite__img" id="activite__img5"></div>
+            </div>
+            <div class="activite__info">
+                <h3>Nos activités de loisir et nos excurtions</h3>
+                <p>
+                    <strong>Guadeloupe Passion Caraïbes</strong>, concepteur de loisirs interactifs, promeut l'authenticité guadeloupeenne en proposant aux visiteurs de faire des loisirs inedits et vivre des experience innoubliable au cour des excurtions.
+                </p>
 
-    <div class="carte__container">
-        {{ ux_map(map, { style: 'height: 600px;aspect-ratio: 1 /1' }) }}
-    </div>
+            </div>
+        </div>
+        
+        <twig:ActivitieSwitch />
 
-    {# Carte (excursions (tcheck googleMap/leaflet)) #}
 
-</section>
-<section class="service">
-    {# carte service avec scroll ou link #}
+    </section>
 
-</section>
-<section>
-   {# Section excursion #}
+    <twig:CtaBan 
+        titre="Découvrez l'archipel guadeloupéen dès aujourd'hui !"
+        text="Plages paradisiaques, nature luxuriante et expériences inoubliables vous attendent. <br/><strong>Réservez votre voyage en un clic !</strong>"
+        ctaTitre="Je réserve mon voyage !"
+    />
 
-</section>
-<section>
-   {# Section hebergement #}
 
-</section>
-<section>
-   {# Section véhicule/ transport #}
+    <section class="hebergement" id="hebergement">
 
-   <a href="https://ew21596948.web.app/?providerID=5438bb9a">En Woute WebApp</a>
-</section>
+        <h2>Vous souhaitez un hebergement ?</h2>
+        <div class="hebergement__container" id='hotel'>
+            <div class="hebergement__imgGrid">
+                <div class="hebergement__img" id="hebergement__img1"></div>
+                <div class="hebergement__img" id="hebergement__img2"></div>
+            </div>
+
+            <div class="hebergement__info" >
+
+                <div class="hebergement__infoblock">
+                    <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
+                    <ul 
+                    >
+                        
+                        <li>Séjours tout confort dans des établissements haut de gamme.</li>
+                        <li>Services exclusifs et panoramas à couper le souffle.</li>
+                        <li>Une expérience inoubliable au cœur de l'archipel.</li>
+                    </ul>
+
+                    <a 
+                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
+                        class="cta"
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+
+                </div>
+
+                {# <div class="hebergement__infoblock">
+                    <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
+                    <ul >
+                        <li>Des villas de charme avec piscine et vue imprenable</li>
+                        <li>Un séjour sur mesure pour des moments de détente absolue.</li>
+                        <li>Parfait pour des vacances en famille ou entre amis.</li>
+                    </ul>
+                    <a 
+                        
+                        class="cta"
+                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+                </div> #}
+            </div>
+        </div>
+
+
+        <div class="hebergement__container" id="villa">
+
+
+            <div class="hebergement__info">
+
+                {# <div class="hebergement__infoblock">
+                    <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
+                    <ul 
+                    >
+                        
+                        <li>Séjours tout confort dans des établissements haut de gamme.</li>
+                        <li>Services exclusifs et panoramas à couper le souffle.</li>
+                        <li>Une expérience inoubliable au cœur de l'archipel.</li>
+                    </ul>
+
+                    <a 
+                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
+                        class="cta"
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+
+                </div> #}
+
+                <div class="hebergement__infoblock">
+                    <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
+                    <ul >
+                        <li>Des villas de charme avec piscine et vue imprenable</li>
+                        <li>Un séjour sur mesure pour des moments de détente absolue.</li>
+                        <li>Parfait pour des vacances en famille ou entre amis.</li>
+                    </ul>
+                    <a 
+                        
+                        class="cta"
+                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
+                        >
+                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                    </a>
+                </div>
+            </div>
+
+            <div class="hebergement__imgGrid">
+                <div class="hebergement__img" id="hebergement__img1"></div>
+                <div class="hebergement__img" id="hebergement__img2"></div>
+            </div>
+        </div>
+    </section>
+
+    <twig:CtaBan 
+        titre="Envolez-vous vers la magie de la Guadeloupe !"
+        text="Entre lagons turquoise, forêts tropicales et soleil toute l’année, vivez une expérience unique dans l’archipel. <br/><strong>Réservez dès maintenant !</strong>"
+        ctaTitre="Je pars en Guadeloupe !"
+    />
+
+    <section id="transport" class="transport" >
+        
+        <div class="transport__infos">
+            <h2>
+                Un transport ou un transfert ?
+            </h2>
+            <p>
+                Avec notre partenaire <strong>En Woute</strong>, profitez d’un service de VTC fiable et confortable dans toute la Guadeloupe. Déplacez-vous facilement grâce à leurs chauffeurs professionnels.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        Transferts aéroport rapides et sécurisés
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Excursions privées et sur mesure
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Trajets dans un confort absolu
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener">Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant
+            </p>
+            <a class="button__secondary" href="https://ew21596948.web.app/?providerID=5438bb9a">
+                Accéder à la Web App En Woute
+            </a>
+        </div>
+
+        <div class="transport__canvas">
+            <div class="canvas__grid">
+                <div class="canvas__img" id="canvas__img1"></div>
+                <div class="canvas__img" id="canvas__img2"></div>
+                <div class="canvas__img" id="canvas__img3"></div>
+            </div>
+        </div>
+
+
+    </section>
+    {# <pre>
+        {{ dump(offer) }}
+    </pre> #}
+
+
+    {% if offer is not null %}
+
+
+        <section  id="offer">
+
+        <h2>Offre exclusive :  {{offer.titre}}</h2>
+
+        <p class="offer__subtext">Profitez d'une offre tout compris, à ne pas manquer !</p>
+
+            <div class="offer__container">
+                <div class="offer__packs">
+                    <div id="pack1" class="offer__pack">
+                        <h2 class="pack__titre">Pack Promo 1</h2>
+                        <p class="pack__price">{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <ul class="pack__content">
+                            {% for item in offer.pack1.contenu %}
+                                
+                                <li>{{item}}</li>
+                            {% endfor %}
+                        </ul>
+                        <a class=" button__primary pack__link" href="{{offer.pack1.lien}}">J'en profite</a>
+                    </div>
+
+                    <div id="pack2" class="offer__pack">
+                        <h2 class="pack__titre">Pack Promo 2</h2>
+                        <p class="pack__price">{{(offer.pack2.prix / 100)|round(2, 'floor')}} €</p>
+                        <ul class="pack__content">
+                            {% for item in offer.pack2.contenu %}
+                                
+                                <li>{{item}}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <a class=" button__primary pack__link" href="{{offer.pack2.lien}}">J'en profite</a>
+                    </div>
+                    
+                </div>
+                <div class="offer__imgcontainer">
+                    <img src="uploads/images/promotions/{{offer.image}}" alt="">
+                </div>
+            </div>
+        </section>
+    {% endif %}
+
 {% endblock %}

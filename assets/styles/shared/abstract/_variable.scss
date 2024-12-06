@@ -1,0 +1,88 @@
+//? ========= Font....
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Merienda:wght@300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+//? == familly
+$font-title: "Manrope", sans-serif;
+$font-text: "Nunito", sans-serif;
+$font-style: "Merienda", sans-serif;
+
+//? == size
+
+$font-desk-72-36 : clamp(2.25rem, -0.3214rem + 5.3571vw, 4rem); 
+$font-desk-48-32 : clamp(2rem, -0.2143rem + 3.5714vw, 3rem); 
+$font-desk-32-20 : clamp(1.25rem, 0.3929rem + 1.7857vw, 2rem);
+$font-desk-32-16 : clamp(1rem, -0.1429rem + 2.381vw, 2rem); 
+$font-desk-32-14 : clamp(0.9rem, -0.3571rem + 2.619vw, 2rem); 
+$font-desk-24-16 : clamp(1rem, 0.4286rem + 1.1905vw, 1.5rem); 
+$font-desk-20-16 : clamp(1rem, 0.4286rem + 1.1905vw, 1.25rem);
+ 
+$font-desk-20-14 : clamp(0.89rem, 0.0038rem + 1.3846vw, 1.25rem);
+
+
+
+$font-mob-32-20 :clamp(1.25rem, 0.7143rem + 2.6786vw, 2rem); 
+$font-mob-24-18 :clamp(1.125rem, 0.8571rem + 1.3393vw, 1.5rem); 
+$font-mob-24-16 :clamp(1rem, 0.6429rem + 1.7857vw, 1.5rem); 
+$font-mob-20-12 :clamp(0.8rem, 0.6429rem + 1.7857vw, 1.25rem); 
+
+
+//? ========= Color....
+
+//? ==font
+$primary-color: hsl(46, 100%, 50%);
+$secondary-color: #00aed6;
+
+
+//? ==font
+//!vert
+// $title-color-1: hsl(116, 44%, 51%);
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+// $text-color-1: hsl(116, 44%, 81%);
+// $text-color-2: hsl(116, 44%, 51%);
+// $text-color-3: #00aed6;
+
+//!bleu
+// $title-color-1: #00aed6;
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+// $text-color-1: hsl(116, 44%, 81%);
+// $text-color-2: hsl(116, 44%, 51%);
+// $text-color-3: #00aed6;
+
+$blue: hsl(191, 100%, 35%);
+$blue-bg: hsl(191, 100%, 95%);
+$blue-hover: hsl(191, 100%, 25%);
+$blue-dark: hsl(191, 100%, 10%);
+
+//!jaune
+$title-color-1: $primary-color;
+// $title-color-2: #00aed6;
+// $title-color-3: #00aed6;
+
+$text-color-1: hsl(46, 100%, 7%);
+$text-color-2: hsl(46, 100%, 87%);
+
+$text-color-3: hsl(191, 100%, 42%);
+
+//? == bg
+
+
+// $bg-nav:rgba(255, 255, 255, 1) ;
+// $bg-nav:hsl(191, 100%, 98%) ;
+// $bg-nav:hsl(191.21deg 50% 4%);
+
+$bg-nav:hsl(0, 0%, 100%);
+
+// $bg-header:rgba(0, 0, 0, 60%);
+// $bg-header:hsl(191, 100%, 0%);
+$bg-header:$bg-nav;
+
+$bg-offerBan:hsl(86 91% 65% / 1);
+$bg-offerBan-pastel:hsl(86 51% 85% / 1);
+//? === padding 
+
+$padding-container: clamp(2rem, -0.2857rem + 4.7619vw, 4rem)

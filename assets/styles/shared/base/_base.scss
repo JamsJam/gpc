@@ -1,13 +1,55 @@
-header{
+@use '../abstract/' as *;
 
-    height: 120px;
-    background-color: black;
+header:not(header.main-header){
+
+    min-height: 120px;
+    background-color: $bg-nav;
     
 
     a{
-        color:rgb(34, 255, 0);
-        font-size: 1;
+        // color:rgb(34, 255, 0);
+        text-decoration: none;
+        font-size: 1rem;
     }
+
     
+}
+body{
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: $font-title;
+        color:$title-color-1
+    }
+
+    h1{
+        font-size: $font-desk-72-36;
+    }
+
+    h2{
+        font-size: clamp(1.5rem, -0.2143rem + 3.5714vw, 2rem);
+    }
+
+    .dashboard{
+        @extend %flex-column-center-center;
+        width: 100dvw;
+        // height: 100dvw;
+        padding-block: 1rem ;
+        // background-color: $blue-bg;
+        background-color: hsl(0, 0%, 100%);
+
+        .button__dashboard{
+            padding: 0.5rem 1rem;
+            background-color: hsl(0, 0%, 10%);
+            color: beige;
+            border: 2px solid beige;
+            border-radius: 10px;
+
+
+            &:hover{
+                background-color: hsl(0, 0%, 20%);
+            }
+        }
+        
+    }
 }
 
