@@ -60,9 +60,9 @@ class ExcursionsCrudController extends AbstractCrudController
             TextEditorField::new('description'),
             
             FormField::addPanel('Image'),
-
+ 
             ImageField::new('image')
-                ->setBasePath('/uploads/images/excursions')
+                ->setBasePath('/public/uploads/images/excursions')
                 ->setUploadDir('/uploads/images/excursions')
                 ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
                 ->setFormTypeOptions([
