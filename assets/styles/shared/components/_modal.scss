@@ -59,25 +59,27 @@
         }
     }
 
-    &__links{
+    &__link{
         //todo flex column
         @extend %flex-column-around-center;
         gap: 3rem;
         
 
-        .nav__link{
+        .navLink{
             @extend %flex-column-around-center;
             text-decoration: none;
             color: rgb(27, 26, 26);
             font-weight: 700;
             font-size: $font-desk-24-16;
             font-family: $font-title;
+
+
+
+
+
         }
     }
 
-    &__footer{
-        //cta j'adhere / connection
-    }
 
 
 }
