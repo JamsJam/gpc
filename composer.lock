@@ -1315,16 +1315,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "v4.15.1",
+            "version": "v4.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EasyCorp/EasyAdminBundle.git",
-                "reference": "d0fb7e8260206d29154fbe3eddbc9cb5680a417b"
+                "reference": "436f1f3954a61b5ace67c7a291df5bab6d355662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/d0fb7e8260206d29154fbe3eddbc9cb5680a417b",
-                "reference": "d0fb7e8260206d29154fbe3eddbc9cb5680a417b",
+                "url": "https://api.github.com/repos/EasyCorp/EasyAdminBundle/zipball/436f1f3954a61b5ace67c7a291df5bab6d355662",
+                "reference": "436f1f3954a61b5ace67c7a291df5bab6d355662",
                 "shasum": ""
             },
             "require": {
@@ -1351,7 +1351,9 @@
                 "symfony/translation": "^5.4|^6.0|^7.0",
                 "symfony/twig-bundle": "^5.4|^6.0|^7.0",
                 "symfony/uid": "^5.4|^6.0|^7.0",
-                "symfony/validator": "^5.4|^6.0|^7.0"
+                "symfony/ux-twig-component": "^2.21",
+                "symfony/validator": "^5.4|^6.0|^7.0",
+                "twig/twig": "^3.15"
             },
             "require-dev": {
                 "doctrine/doctrine-fixtures-bundle": "^3.4|3.5.x-dev",
@@ -1366,7 +1368,8 @@
                 "symfony/debug-bundle": "^5.4|^6.0|^7.0",
                 "symfony/dom-crawler": "^5.4|^6.0|^7.0",
                 "symfony/expression-language": "^5.4|^6.0|^7.0",
-                "symfony/phpunit-bridge": "^6.1|^7.0"
+                "symfony/phpunit-bridge": "^6.1|^7.0",
+                "symfony/process": "^5.4|^6.0|^7.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1398,7 +1401,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EasyCorp/EasyAdminBundle/issues",
-                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.15.1"
+                "source": "https://github.com/EasyCorp/EasyAdminBundle/tree/v4.20.0"
             },
             "funding": [
                 {
@@ -1406,7 +1409,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-21T18:08:26+00:00"
+            "time": "2024-12-04T18:54:46+00:00"
         },
         {
             "name": "egulias/email-validator",

@@ -26,7 +26,7 @@ class ActivitesCrudController extends AbstractCrudController
 {
 
     public function __construct(
-        public CropperInterface $cropper
+        // public CropperInterface $cropper
     ){}
 
     public static function getEntityFqcn(): string
