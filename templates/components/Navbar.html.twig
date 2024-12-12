@@ -3,7 +3,6 @@
     <nav 
         {{ attributes.defaults(
             stimulus_controller('responsivnav')
-            |stimulus_action( 'responsivnav','turboload','turbo:load@window')
             |stimulus_action( 'responsivnav','setMobileValue','resize@window')
             ) }}
         class='nav'
