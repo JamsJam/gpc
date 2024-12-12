@@ -4,7 +4,7 @@
 {% block title %}Accueil {{parent()}}{% endblock %}
 {% block mainClass %}home{% endblock %}
 {% block body %}
-
+{{parent()}}
     <section class="header">
         <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg')}}'>
             <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
