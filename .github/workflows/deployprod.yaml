@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.APP_MAIN_PASS }}
           port: ${{ secrets.APP_MAIN_PORT }}
           script: |
-            cd /var/www/${{ secrets.APP_MAIN_USER }}/${{ secrets.APP_MAIN_DOMAIN }}; 
+            cd /var/www/gpcdev/${{ secrets.APP_MAIN_DOMAIN }}; 
             git pull;
             composer install --no-dev --optimize-autoloader -n;
             APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ;
