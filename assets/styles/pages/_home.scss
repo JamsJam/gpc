@@ -204,7 +204,7 @@
             
             &#activite__img2{
                 grid-area: 1/7/8/12;
-                background: url("../images/activites/activite5.jpg") center/cover no-repeat;
+                background: url("../images/activites/activite2.jpg") center/cover no-repeat;
                 // background-color: blue;
             }
             
@@ -308,6 +308,13 @@
                 no-repeat
             ;
             
+            &#villaGrid{
+                background:
+                    url("../images/hebergement/villa1.jpg")
+                        center / cover
+                        no-repeat
+                    ;
+            }
             @media screen and (max-width:768px) {
                 width: 100%;
             }
@@ -319,6 +326,16 @@
                     no-repeat
                 ;
                 height: 300px;
+
+
+                &#villaGrid{
+                    background:
+                        url("../images/hebergement/villa1.jpg")
+                        center / cover
+                        no-repeat
+                    ;
+                    height: 300px;
+                }
             }
             
         }
@@ -343,6 +360,24 @@
             &#hebergement__img2{
                 background:
                     url("../images/hebergement/hebergement3.jpg")
+                    center / cover
+                    no-repeat
+                ;
+                grid-area: 2/-2/6/-6;
+            }
+
+            &#villa__img1{
+                background:
+                    url("../images/hebergement/villa2.jpeg")
+                    center / cover
+                    no-repeat
+                ;
+                grid-area: -2/2/-6/6;
+            }
+            
+            &#villa__img2{
+                background:
+                    url("../images/hebergement/villa3.jpg")
                     center / cover
                     no-repeat
                 ;
@@ -450,6 +485,10 @@
                     &{
                         font-size: $font-mob-24-16;
                     }
+                }
+
+                .cta{
+                    display: inline;
                 }
             }
 

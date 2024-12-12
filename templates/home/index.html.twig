@@ -6,12 +6,12 @@
 {% block body %}
 
     <section class="header">
-        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.png')}}'>
-            <source src="{{ asset('video/gpcpromo_compress.mp4') }}" type="video/mp4">
+        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg')}}'>
+            <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
         </video>
         <div class="header__info">
             <h1>Guadeloupe passion Caraïbes</h1>
-            <p class="subtitle">Agence receptive des îles de Guadeloupe</p class="subtitle">
+            <p class="subtitle">Agence réceptive des îles de Guadeloupe</p class="subtitle">
             <div class="btn_container">
                 <a href="{{path('app_reservation')}}" class="button__primary" >Réserver mon voyage</a>
                 {# <a href="#offers" class="button__secondary" >Voir les offres</a> #}
@@ -20,26 +20,26 @@
     </section>
 
     <section class="service">
-        <h2>Vous recherchez un service touristique pour vos vacances en guadeloupe ?</h2>
+        <h2>Vous recherchez un service touristique pour vos vacances en Guadeloupe ?</h2>
         <div class="service__cards">
             <twig:ServiceCard 
                 serviceIcon="cbi:roomsoutdoor"
-                service='Activités et excurtions'
-                description='Explorez des activités à vivre en Guadeloupe.'
+                service='Activités et excursions'
+                description='Explorer des activités à vivre en Guadeloupe.'
                 target="#activite"
                 ctaTitle='Découvrir nos activités'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:house-fill"
-                service='Hebergement'
+                service='Hébergement'
                 description='Séjournez dans des hôtels et villas d’exception.'
                 target="#hebergement"
                 ctaTitle='Voir nos hébergements'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:car-front-fill"
-                service='Transport et transfers'
-                description='Réservez facilement votre VTC ou transfert privé.'
+                service='Transport et transfert'
+                description='Réserver facilement votre VTC ou transfert privé.'
                 target="#transport"
                 ctaTitle='Réserver votre transport'
             />
@@ -53,7 +53,7 @@
         
         <twig:offerBan 
             titre="Offres limitées : Séjours tout inclus en Guadeloupe !"
-            text="Hôtels d’exception, activités et excursions inclus. <strong>Réservez avant qu’il ne soit trop tard !</strong>"
+            text="Hôtels d’exceptions, activités et excursions inclus. <strong>Réservez avant qu’il ne soit trop tard !</strong>"
             ctaTitre="Voir nos packs exclusifs"
         />
     {% endif %}
@@ -71,9 +71,9 @@
                 <div class="activite__img" id="activite__img5"></div>
             </div>
             <div class="activite__info">
-                <h3>Nos activités de loisir et nos excurtions</h3>
+                <h3>Nos activités de loisir et nos exécutions</h3>
                 <p>
-                    <strong>Guadeloupe Passion Caraïbes</strong>, concepteur de loisirs interactifs, promeut l'authenticité guadeloupeenne en proposant aux visiteurs de faire des loisirs inedits et vivre des experience innoubliable au cour des excurtions.
+                    <strong>Guadeloupe Passion Caraïbes</strong>,concepteur de loisirs interactifs, promeus l'authenticité guadeloupéenne en proposant aux visiteurs de faire des loisirs inédits et vivre des expériences inoubliables au cours des excursions.
                 </p>
 
             </div>
@@ -93,7 +93,7 @@
 
     <section class="hebergement" id="hebergement">
 
-        <h2>Vous souhaitez un hebergement ?</h2>
+        <h2>Vous souhaitez un hébergement ?</h2>
         <div class="hebergement__container" id='hotel'>
             <div class="hebergement__imgGrid">
                 <div class="hebergement__img" id="hebergement__img1"></div>
@@ -103,7 +103,7 @@
             <div class="hebergement__info" >
 
                 <div class="hebergement__infoblock">
-                    <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
+                    <h3>Notre sélection d'hôtels dans les îles de Guadeloupe</h3>
                     <ul 
                     >
                         
@@ -116,26 +116,11 @@
                         href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
                         class="cta"
                         >
-                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                        Télécharger notre guide {{ ux_icon('si:arrow-right-fill') }}
                     </a>
 
                 </div>
 
-                {# <div class="hebergement__infoblock">
-                    <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
-                    <ul >
-                        <li>Des villas de charme avec piscine et vue imprenable</li>
-                        <li>Un séjour sur mesure pour des moments de détente absolue.</li>
-                        <li>Parfait pour des vacances en famille ou entre amis.</li>
-                    </ul>
-                    <a 
-                        
-                        class="cta"
-                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
-                        >
-                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
-                    </a>
-                </div> #}
             </div>
         </div>
 
@@ -145,27 +130,9 @@
 
             <div class="hebergement__info">
 
-                {# <div class="hebergement__infoblock">
-                    <h3>Notre selection d'hotel dans les îles de guadeloupe</h3>
-                    <ul 
-                    >
-                        
-                        <li>Séjours tout confort dans des établissements haut de gamme.</li>
-                        <li>Services exclusifs et panoramas à couper le souffle.</li>
-                        <li>Une expérience inoubliable au cœur de l'archipel.</li>
-                    </ul>
-
-                    <a 
-                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
-                        class="cta"
-                        >
-                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
-                    </a>
-
-                </div> #}
 
                 <div class="hebergement__infoblock">
-                    <h3>Des hebergements privé dans toutes les iles de l'archipel</h3>
+                    <h3>Des hébergements privé dans toutes les iles de l'archipel</h3>
                     <ul >
                         <li>Des villas de charme avec piscine et vue imprenable</li>
                         <li>Un séjour sur mesure pour des moments de détente absolue.</li>
@@ -176,14 +143,14 @@
                         class="cta"
                         href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
                         >
-                        Telecharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                        Télécharger notre guide {{ ux_icon('si:arrow-right-fill') }}
                     </a>
                 </div>
             </div>
 
-            <div class="hebergement__imgGrid">
-                <div class="hebergement__img" id="hebergement__img1"></div>
-                <div class="hebergement__img" id="hebergement__img2"></div>
+            <div class="hebergement__imgGrid" id="villaGrid">
+                <div class="hebergement__img" id="villa__img1"></div>
+                <div class="hebergement__img" id="villa__img2"></div>
             </div>
         </div>
     </section>
@@ -206,7 +173,7 @@
             <ul>
                 <li>
                     <p>
-                        Transferts aéroport rapides et sécurisés
+                        Transferts aéroports rapides et sécurisés
                     </p>
                 </li>
                 <li>
@@ -221,7 +188,7 @@
                 </li>
             </ul>
             <p>
-                Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener">Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant
+                Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant.
             </p>
             <a class="button__secondary" href="https://ew21596948.web.app/?providerID=5438bb9a">
                 Accéder à la Web App En Woute
@@ -238,9 +205,7 @@
 
 
     </section>
-    {# <pre>
-        {{ dump(offer) }}
-    </pre> #}
+
 
 
     {% if offer is not null %}
@@ -248,9 +213,9 @@
 
         <section  id="offer">
 
-        <h2>Offre exclusive :  {{offer.titre}}</h2>
+            <h2>Offre exclusive :  {{offer.titre}}</h2>
 
-        <p class="offer__subtext">Profitez d'une offre tout compris, à ne pas manquer !</p>
+            <p class="offer__subtext">Profitez d'une offre toute comprise, à ne pas manquer !</p>
 
             <div class="offer__container">
                 <div class="offer__packs">

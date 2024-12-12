@@ -1,3 +1,23 @@
-<div{{ attributes }}>
+<footer{{ attributes }}>
     <!-- component html -->
-</div>
+
+    <div class="footer__container">
+        <div class="footer__logo">
+            <img class='logo' src="{{asset('./images/GPC-logo.png')}}" alt="Logo de guadeloupe passion caraïbe">
+            
+        </div>
+
+
+        <div class="footer__nav">
+            
+            <a href="{{path('app_about')}}">A propos</a>
+            <a href="{{path('app_contact')}}">Nous contacter</a>
+        </div>
+
+        <div class="footer__nav">
+            <a href="">Mention Legals</a>
+            <a href="">Politique de confidentialité</a>
+        </div>
+    </div>
+
+</footer>
