@@ -34,9 +34,9 @@ export default class extends Controller {
 
     }
     
-
-    turboload(){
-        //console.log('TURBOLOAD')
+    //!todo on click event burger menu
+    getNavModal(){
+        this.dispatch("getModalEvent", { detail: { content: "" } })
     }
     
     setMobileValue(e){
