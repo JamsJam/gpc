@@ -38,9 +38,10 @@ footer{
 
             a{
                 font-family: $font-text;
+                text-decoration: none;
                 color: $text-color-1;
                 font-size: 1rem;
-                font-weight: 500;
+                font-weight: 600;
                 position:relative;
     
                 &:hover{

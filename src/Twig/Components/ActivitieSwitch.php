@@ -26,25 +26,25 @@ final class ActivitieSwitch
             "titre" => "Art road tour",
             "lat" => 16.2331311,
             "long" => -61.5520486,
-            "description" => "lorem ipsum"
+            "description" => "Exploration de l’art urbain guadeloupéen avec guide bilingue"
         ],
         [
             "titre" => "Art et design fleural",
             "lat" => 15.9931362,
             "long" => -61.6905296,
-            "description" => "lorem ipsum"
+            "description" => "Découverte des fleurs tropicales et création florale personnalisée"
         ],
         [
             "titre" => "Randonnées nature",
             "lat" => 16.0499995,
             "long" => -61.6769667,
-            "description" => "lorem ipsum"
+            "description" => "Balade immersive en pleine nature, découverte faune et flore."
         ],
         [
             "titre" => "Masterclass gastronomique",
             "lat" => 16.1767479,
             "long" => -61.6092936, 
-            "description" => "lorem ipsum"
+            "description" => "Dégustation gastronomique guadeloupéenne avec un chef"
         ],
 
     ];
@@ -55,26 +55,27 @@ final class ActivitieSwitch
             "titre" => "Patrimoine des saveurs",
             "lat" => 16.0391367,
             "long" => -61.6547454, //capesterre
-            "description" => "lorem ipsum"
+            "description" => "Dégustation gourmande de produits locaux et traditions culinaires."
         ],
         [
-            "titre" => "Un rhum de legende sur une terre de legende",
+            "titre" => "Un rhum de légende sur une terre de légende",
             "lat" => 15.9368828,
-            "long" =>-61.3072499, //marie-galante
-            "description" => "lorem ipsum"
+            "long" => -61.3072499, //marie-galante
+            "description" => "Découverte de rhums exceptionnels sur l’île Marie-Galante."
         ],
         [
-            "titre" => "Escapade a la desirade",
+            "titre" => "Escapade à la Désirade",
             "lat" => 16.3199244,
             "long" => -61.0708992,
-            "description" => "lorem ipsum"
+            "description" => "Exploration paisible des paysages uniques et traditions de Désirade."
         ],
         [
-            "titre" => "Visite du nord basse-terre",
+            "titre" => "Visite du nord Basse-Terre",
             "lat" => 16.048552,
             "long" => -61.6609027, //capesterre
-            "description" => "lorem ipsum"
+            "description" => "Immersion culturelle et naturelle dans le nord de Basse-Terre."
         ],
+        
 
 
     ];
