@@ -19,7 +19,7 @@ class CatalogueController extends AbstractController
             'activites' => $ar->findAll(),
             'excursions' => $er->findAll(),
             default => throw new NotFoundHttpException("Resource not found for type: $type"),
-             
+            
         };
         $modalOnPage = true;
 
