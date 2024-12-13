@@ -87,9 +87,79 @@ class ExcursionsCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+
+        
         return $actions
         
+        //! ==========================  Index page
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
+
+
+            //? ===== label index actions
+            ->update(Crud::PAGE_INDEX, Action::DETAIL,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Details');
+            })
+            ->update(Crud::PAGE_INDEX, Action::NEW,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Ajouter');
+            })
+            ->update(Crud::PAGE_INDEX, Action::DELETE,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Supprimer');
+            })
+
+        //! ==========================  Details page
+
+            // ->add(Crud::PAGE_DETAIL, Action::INDEX)
+
+
+            //? ===== label detail actions
+            ->update(Crud::PAGE_DETAIL, Action::EDIT,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Modifier');
+            })
+            ->update(Crud::PAGE_DETAIL, Action::DELETE,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Supprimer');
+            })
+            ->update(Crud::PAGE_DETAIL, Action::INDEX,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Retour');
+            })
+
+
+            -> reorder(Crud::PAGE_DETAIL, [Action::DELETE,Action::INDEX,Action::EDIT])
+
+        //! ==========================  New page
+            ->add(Crud::PAGE_NEW, Action::INDEX)
+
+            ->update(Crud::PAGE_NEW, Action::INDEX, function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Annuler');
+            })
+            ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Enregistrer et continuer');
+            })
+            ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Enregistrer');
+            })
+
+
+        //! ==========================  Edit page
+            ->add(Crud::PAGE_EDIT, Action::INDEX)
+            ->add(Crud::PAGE_EDIT, Action::DELETE)
+
+
+
+            ->update(Crud::PAGE_EDIT, Action::INDEX,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Annuler');
+            })
+            ->update(Crud::PAGE_EDIT, Action::DELETE,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Supprimer');
+            })
+            ->update(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Valider');
+            })
+            ->update(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN,function (Action $action) {
+                return $action->setIcon('fa fa-file-alt')->setLabel('Valider et quitter');
+            })
+            // ->update(Crud::PAGE_INDEX, Action::DELETE,function (Action $action) {
+            //     return $action->setIcon('fa fa-file-alt')->setLabel('Supprimer');
+            // })
 
         ;
     }
