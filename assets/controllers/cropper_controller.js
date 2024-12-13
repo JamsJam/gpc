@@ -10,7 +10,7 @@ export default class extends Controller {
 	// ...
 
 	initialize() {
-		console.log("CROP CROP");
+		// console.log("CROP CROP");
 	}
 
 	connect() {

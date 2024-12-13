@@ -8,7 +8,7 @@
     {#? =============== switch tab =============== #}
     <div class="switch__container">
         <div class="switch__activities" data-mode='activities' {{stimulus_action('switch_tab','handleTabClick','click')}}>
-            <p>Activité</p>
+            <p>Activités</p>
         </div>
         <div class="switch__excursions"  data-mode='excursions' {{stimulus_action('switch_tab','handleTabClick','click')}}>
             <p>Excursions</p>
@@ -42,7 +42,7 @@
                     'data-switch-tab-target': 'map',
                     'data-controller': 'controllemap',
                     'data-action':'map-markers:clickedMarker@window->controllemap#handleMarkerClick',
-                    'data-map-markers-target': 'map' 
+                    'data-map-markers-target': 'map'
                 }
                 
             ) }}
