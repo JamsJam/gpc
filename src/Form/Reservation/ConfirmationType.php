@@ -13,7 +13,7 @@ class ConfirmationType extends AbstractType
     {
         $builder
             ->add('confirmation', CheckboxType::class,[
-                "label" => "En cochant cette case, je certifie que les informations fournies sont exactes, et j'accepte les Conditions générales d'utilisation (CGU) et la Politique de confidentialité."
+                "label" => "En cochant cette case, je certifie que les informations fournies sont exactes, et j'accepte la Politique de confidentialité de Guadeloupe Passion Caraïbes."
             ])
         ;
     }

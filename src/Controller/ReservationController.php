@@ -82,35 +82,57 @@ class ReservationController extends AbstractController
 
         $session = $request->getSession();
         $form = $this->createForm(ReservationType3::class);
-        // todo recupéré les info dans la session
-        //todo les decrypter
+        // ? recupéré les info dans la session
+        //? les decrypter
         $sejourInfo = $this->cryptRecursively(array_merge($session->get('contactInfo'),$session->get('tripInfo')),2);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
+            //? envoyer mail à l'utilisateur
+            //? envoyer mail à l'admin
+            //? envoyer mail à l'explor
 
-
-
-            //todo envoyer mail à l'utilisateur
-            //todo envoyer mail à l'admin
-            //todo envoyer mail à l'explor
-            $email = (new TemplatedEmail())
-                ->from('hello@hotmail.com')
-                ->to('you@example.com')
-                ->subject('Time for Symfony Mailer!')
-                ->htmlTemplate('emails/reservations/client.html.twig')
-                ->context([])
+            for ($counter=0; $counter < 3; $counter++) { 
+            
+                $emailInfo =  match ($counter) {
+                    0 => [ //? Mail Explor
+                        'to'=>'leads@explor.app',
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Nouvelle réservation - Informations de séjour',
+                        'template'=>'emails/reservations/explor.html.twig',
+                    ],
+                    1 => [//? Mail client
+                        'to'=>strval($sejourInfo['email']),
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Confirmation de votre réservation chez Passion Caraïbes',
+                        'template'=>'emails/reservations/client.html.twig',
+                    ],
+                    2 => [//? Mail admin
+                        'to'=>'contact@guadeloupepassioncaraibes.fr',
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Nouvelle réservation reçue - Guadeloupe Passion Caraïbes',
+                        'template'=>'emails/reservations/gpc.html.twig',
+                    ],
+                };
+                $email = (new TemplatedEmail())
+                    ->from($emailInfo['from'])
+                    ->from($emailInfo['to'])
+                    ->subject($emailInfo['subject'])
+                    ->htmlTemplate($emailInfo['template'])
+                    ->context(['infoSejour' => $sejourInfo])
                 ;
 
-            $mailer->send($email);
+                $mailer->send($email);
+            }
 
-            //todo creer un App.flash
+
+            //? creer un App.flash
             $this->addFlash(
                 'success',
                 'Votre message a bien été envoyé'
             );
-            //todo redirect to home
+            //? redirect to home
             return $this->redirectToRoute('app_home');
             
             // $contactInfo = $form->getData();

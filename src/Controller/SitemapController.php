@@ -19,9 +19,44 @@ class SitemapController extends AbstractController
         // On initialise un tableau pour lister les URLs
         $urls = [];
 
-        // On ajoute les URLs "statiques"
-        $urls[] = ['loc' => $this->generateUrl('website.index')];
-
+        $urls = [
+            [
+                'loc' => $this->generateUrl('app_home'), // Page d'accueil
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'weekly',
+                'priority' => '0.5',
+            ],
+            [
+                'loc' => $this->generateUrl('app_about'), // Page "À propos"
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'yearly',
+                'priority' => '0.5',
+            ],
+            [
+                'loc' => $this->generateUrl('app_contact'), // Page de contact
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'yearly',
+                'priority' => '0.5',
+            ],
+            [
+                'loc' => $this->generateUrl('app_catalogue',['type' => 'activites']), // Page des services
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'weekly',
+                'priority' => '0.5',
+            ],
+            [
+                'loc' => $this->generateUrl('app_catalogue',['type' => 'excursions']), // Page des services
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'weekly',
+                'priority' => '0.5',
+            ],
+            [
+                'loc' => $this->generateUrl('app_reservation'), // Blog principal (statique)
+                'lastmod' => (new \DateTime())->format('Y-m-d'),
+                'changefreq' => 'monthly',
+                'priority' => '0.5',
+            ],
+        ];
         // Fabrication de la réponse XML
         $response = new Response(
             $this->renderView('sitemap/index.html.twig', [

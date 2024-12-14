@@ -3,11 +3,13 @@
 namespace App\Form\Reservation;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class ContactType extends AbstractType
 {
@@ -16,33 +18,44 @@ class ContactType extends AbstractType
         $builder
             ->add('nom',TextType::class,[
                 
-                'label' => '',
+                'label' => 'Nom',
                 'attr'=> []
             ])
             ->add('prenom',TextType::class,[
                 
-                'label' => '',
+                'label' => 'Prénom',
                 'attr'=> []
             ])
             ->add('nationalite',CountryType::class,[
                 
-                'label' => '',
-                'attr'=> []
+                'label' => 'Nationalité',
+                'attr'=> [],
+                'data' => 'FR',
             ])
             ->add('adresse1',TextType::class,[
                 
-                'label' => '',
+                'label' => 'Adresse',
                 'attr'=> []
             ])
             ->add('adresse2',TextType::class,[
                 
-                'label' => '',
+                'label' => 'Complément d\'adresse',
                 'attr'=> []
             ])
-            ->add('telephone',NumberType::class,[
+            ->add('telephone',TelType::class,[
                 
-                'label' => '',
-                'attr'=> []
+                'label' => 'Téléphone',
+                'attr'=> [
+                    // 'placeholder'=>'+33123456789',
+                ],
+                
+            ])
+            ->add('email',EmailType::class,[
+                
+                'label' => 'Adresse email',
+                'attr'=> [
+                    // 'placeholder'=>'adresse@email.fr',
+                ]
             ])
         ;
     }

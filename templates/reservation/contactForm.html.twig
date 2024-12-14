@@ -63,6 +63,11 @@
                 {{form_widget(form.telephone)}}
             </div>
 
+            <div class="field__container">
+                {{form_label(form.email)}}
+                {{form_widget(form.email)}}
+            </div>
+
             <div class="bouton__container">
                 <a class="cta" data-turbo="false" href="{{path('app_home')}}">Précédent</a>
                 <button type="submit" class="button__primary">Suivant</button>

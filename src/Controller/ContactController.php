@@ -28,27 +28,38 @@ class ContactController extends AbstractController
 
 
 
-            //mail to client
-            $emailClient = (new TemplatedEmail())
-                ->from('contact@guadeloupepassioncaraïbes.com')
-                ->to(new Address('you@example.com'))
-                ->subject('Contact Guadeloupe Passion Caraïbes')
-                ->htmlTemplate('emails/contact/client.html.twig')
-                ->context([])
+            for ($counter=0; $counter < 3; $counter++) { 
+            
+                $emailInfo =  match ($counter) {
+                    0 => [ //? Mail Explor
+                        'to'=>'leads@explor.app',
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Nouveau contact - Formulaire de contact',
+                        'template'=>'emails/contact/explor.html.twig',
+                    ],
+                    1 => [//? Mail client
+                        'to'=>$form->getData()->getEmail(),
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Confirmation de reception du du formulaire de contact',
+                        'template'=>'emails/contact/client.html.twig',
+                    ],
+                    2 => [//? Mail admin
+                        'to'=>'contact@guadeloupepassioncaraibes.fr',
+                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'subject'=>'Nouveau formulaire de reçue - Guadeloupe Passion Caraïbes',
+                        'template'=>'emails/contact/gpc.html.twig',
+                    ],
+                };
+                $email = (new TemplatedEmail())
+                    ->from($emailInfo['from'])
+                    ->from($emailInfo['to'])
+                    ->subject($emailInfo['subject'])
+                    ->htmlTemplate($emailInfo['template'])
+                    ->context(['client' => $form->getData()])
                 ;
-            $mailer->send($emailClient);
 
-
-            // mail to admin
-            $emailPro = (new TemplatedEmail())
-                ->from('contact@guadeloupepassioncaraïbes.com')
-                ->to('contact@guadeloupepassioncaraïbes.com')
-                ->subject('Nouveau Contact')
-                ->htmlTemplate('emails/contact/gpc.html.twig')
-                ->context([])
-                ;
-
-            $mailer->send($emailPro );
+                $mailer->send($email);
+            }
 
             //todo creer un App.flash
             $this->addFlash(

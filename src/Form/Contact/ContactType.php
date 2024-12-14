@@ -28,6 +28,12 @@ class ContactType extends AbstractType
                     'class' => 'field__container'
                 ]
             ])
+            ->add('prenom',TextType::class,[
+                'label'=>'Votre prénom :',
+                'row_attr' =>[
+                    'class' => 'field__container'
+                ]
+            ])
             ->add('message',TextareaType::class,[
                 'label'=>'Votre message :',
                 'row_attr' =>[

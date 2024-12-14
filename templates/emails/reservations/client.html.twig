@@ -1,12 +1,40 @@
-{# templates/emails/signup.html.twig #}
-<h1>Welcome {{ email.toName }}!</h1>
 
-<p>
-    You signed up as {{ username }} the following email:
-</p>
-<p><code>{{ email.to[0].address }}</code></p>
 
-<p>
-    <a href="#">Activate your account</a>
-    (this link is valid until {{ expiration_date|date('F jS') }})
-</p>
+    <p>Bonjour {{ sejourInfo.nom }},</p>
+<br>
+    <p>Nous avons bien reçu votre réservation chez <strong>Guadeloupe Passion Caraïbes</strong>.</p>
+    <br>
+    <p>
+        Dans un délais de 72h, vous recevrez un document de voyage présentant les prestations sollicitées, accompagné d'un devis détaillé des dîtes prestations
+    </p>
+<br>
+    <p> Voici un récapitulatif de votre séjour :</p>
+    <ul>
+        <li><strong>Date d'arrivée :</strong> {{ sejourInfo.date_arrivee|date('d/m/Y') }}</li>
+        <li><strong>Date de départ :</strong> {{ sejourInfo.date_depart|date('d/m/Y') }}</li>
+        <li><strong>Nombre de personnes :</strong> {{ sejourInfo.nb_personnes }}</li>
+        <li><strong>Hébergement :</strong> {{ sejourInfo.hebergement }}</li>
+    </ul>
+<br>
+    <p>
+        Si vous avez des questions ou souhaitez apporter des modifications, n’hésitez pas à nous contacter à l’adresse suivante : <a href="mailto:contact@guadeloupepassioncaraibes.com">contact@guadeloupepassioncaraibes.com</a>.
+    </p>
+    
+    <p>Nous sommes impatients de vous accueillir dans notre archipel !</p>
+    
+    <p>
+        Cordialement,
+        <br>
+        téléphone : +590690376161
+        email: contact@guadeloupepassioncaraibes.com
+        <br>
+        <a href="https://guadeloupepassioncaraibes.fr">
+            guadeloupepassioncaraibes.fr
+        </a>
+        <br>
+        <a href="https://guadeloupepassioncaraibes.fr">
+            Guadeloupe Passion Caraïbes
+        </a>
+    </p>
+</body>
+

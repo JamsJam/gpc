@@ -1,12 +1,36 @@
-{# templates/emails/signup.html.twig #}
-<h1>Welcome {{ email.toName }}!</h1>
+<p>Bonjour, {{ contact.prenom }} {{ contact.nom }}</p>
+<br>
+    <p>Nous avons bien reçu votre message et vous remercions de nous avoir contactés. Voici un récapitulatif de votre demande :</p>
+    <br>
+    <ul>
 
-<p>
-    You signed up as {{ username }} the following email:
-</p>
-<p><code>{{ email.to[0].address }}</code></p>
+        <li><strong>Message :</strong></li>
+        <li><p>{{ contact.message }}</p></li>
+    </ul>
+<br>
+    <p>
+        Notre équipe vous répondra dans un delais de 48h.
+        <br>
+        Si votre demande est urgente, vous pouvez également nous joindre directement à l’adresse mail suivante : <a href="mailto:contact@guadeloupepassioncaraibes.com">contact@guadeloupepassioncaraibes.com</a> ou à ce numero <a href="tel:+590690376161">+590690376161</a>
+    </p>
+<br>
+    <p>
+        Afin de mieux répondre à votre besoin et dans l'attente d'être recontacter, pourriez vous nous en dire un peu plus sur vos préférences pour les déplacements, l’hébergement et les activités de loisirs que vous souhaiteriez pratiquer ainsi que sur votre budget.
+    </p>
+    <br>
+    <p>Guadeloupe Passion Caraibes vous remerci pour votre confiance, et à bientôt !</p>
+    <p>
+        Cordialement,
+        <br>
+        téléphone : +590690376161
+        email: contact@guadeloupepassioncaraibes.com
+        <br>
+        <a href="https://guadeloupepassioncaraibes.fr">
+            guadeloupepassioncaraibes.fr
+        </a>
+        <br>
+        <a href="https://guadeloupepassioncaraibes.fr">
+            Guadeloupe Passion Caraïbes
+        </a>
+    </p>
 
-<p>
-    <a href="#">Activate your account</a>
-    (this link is valid until {{ expiration_date|date('F jS') }})
-</p>

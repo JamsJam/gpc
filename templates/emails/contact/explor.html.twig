@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau Message du Formulaire de Contact</title>
+</head>
+<body>
+    <h1>Nouveau message reçu depuis le formulaire de contact</h1>
+    <p>Bonjour,</p>
+    <p>Un utilisateur a soumis un message via le formulaire de contact de votre site. Voici les informations fournies :</p>
+    
+    <ul>
+        <li><strong>Nom :</strong> {{ contact.nom }}</li>
+        <li><strong>Prenom :</strong> {{ contact.prenom }}</li>
+        <li><strong>Email :</strong> {{ contact.email }}</li>
+        <li><strong>Message :</strong></li>
+        <p>{{ contact.message }}</p>
+    </ul>
+    
+    <p>Merci de traiter cette demande dès que possible.</p>
+
+    <p>
+        Cordialement,
+    <br>
+        Guadeloupe Passion Caraïbes
+    </p>
+</body>
+</html>
