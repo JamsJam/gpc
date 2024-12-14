@@ -24,7 +24,7 @@ class SitemapController extends AbstractController
                 'loc' => $this->generateUrl('app_home'), // Page d'accueil
                 'lastmod' => (new \DateTime())->format('Y-m-d'),
                 'changefreq' => 'weekly',
-                'priority' => '0.5',
+                'priority' => '0.7',
             ],
             [
                 'loc' => $this->generateUrl('app_about'), // Page "À propos"
@@ -36,19 +36,19 @@ class SitemapController extends AbstractController
                 'loc' => $this->generateUrl('app_contact'), // Page de contact
                 'lastmod' => (new \DateTime())->format('Y-m-d'),
                 'changefreq' => 'yearly',
-                'priority' => '0.5',
+                'priority' => '0.4',
             ],
             [
                 'loc' => $this->generateUrl('app_catalogue',['type' => 'activites']), // Page des services
                 'lastmod' => (new \DateTime())->format('Y-m-d'),
                 'changefreq' => 'weekly',
-                'priority' => '0.5',
+                'priority' => '0.8',
             ],
             [
                 'loc' => $this->generateUrl('app_catalogue',['type' => 'excursions']), // Page des services
                 'lastmod' => (new \DateTime())->format('Y-m-d'),
                 'changefreq' => 'weekly',
-                'priority' => '0.5',
+                'priority' => '0.8',
             ],
             [
                 'loc' => $this->generateUrl('app_reservation'), // Blog principal (statique)
