@@ -73,8 +73,8 @@
                 {% endif %}
                 <twig:BackToTop />
                 {% block body %}
-                    <div class="modal" {{stimulus_controller('modalmanager')|stimulus_target('modalmanager', 'modal')|stimulus_action('modalmanager','openModal','responsivnav:getModalEvent@window')|stimulus_action('modalmanager','showOnlyOnMobile','resize@window')}}>
-                        <div class="modal__container">
+                    <div class="modalmobile" {{stimulus_controller('modalmanager')|stimulus_target('modalmanager', 'modal')|stimulus_action('modalmanager','openModal','responsivnav:getModalEvent@window')|stimulus_action('modalmanager','showOnlyOnMobile','resize@window')}}>
+                        <div class="modalmobile__container">
                             {{ ux_icon('iconamoon:close-bold',{'class':'close', 'data-action':'click->modalmanager#closeModal'}) }}
                             <div class="logo">
                                 
@@ -83,7 +83,7 @@
                                     
                                 </a>
                             </div>
-                            <div class="modal__link">
+                            <div class="modalmobile__link">
                                 <a class='navLink' href="{{path('app_home')}}">Accueil</a>
                                 <a class='navLink' href="{{path('app_reservation')}}">Reservation</a>
                                 <a class='navLink' href="{{path('app_about')}}">À propos</a>
