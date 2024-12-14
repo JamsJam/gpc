@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% if type === 'activité'  %}
+{% if type is same as 'activité'  %}
     {% block keyWord %}
-    Activités Guadeloupe, loisirs archipel, activités familiales 
-{% endblock %}
-{% block desc %}
-    Découvrez les meilleures activités en Guadeloupe : loisirs pour tous les âges et expériences authentiques au cœur des îles
-{% endblock %}
+        Activités Guadeloupe, loisirs archipel, activités familiales 
+    {% endblock %}
+    {% block desc %}
+        Découvrez les meilleures activités en Guadeloupe : loisirs pour tous les âges et expériences authentiques au cœur des îles
+    {% endblock %}
 {% else %}
-        {% block keyWord %}
-    Excursions Guadeloupe, aventures archipel, découverte nature. 
-{% endblock %}
-{% block desc %}
-    Explorez notre catalogue d’excursions en Guadeloupe : nature, aventure, culture et expériences mémorables.
-{% endblock %}
+    {% block keyWord %}
+        Excursions Guadeloupe, aventures archipel, découverte nature. 
+    {% endblock %}
+    {% block desc %}
+        Explorez notre catalogue d’excursions en Guadeloupe : nature, aventure, culture et expériences mémorables.
+    {% endblock %}
 {% endif %}
 
 
