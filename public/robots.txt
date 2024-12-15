@@ -1,0 +1,35 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Google Favicon
+Allow: /
+
+User-agent: Google-Site-Verification
+Allow: /
+
+User-agent: *
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /private/
+
+
+Sitemap: https://guadeloupepassioncaraibes.fr/sitemap.xml

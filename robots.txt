@@ -1,9 +1,0 @@
-User-agent: *
-Disallow: /admin/
-Disallow: /assets/
-Disallow: /scripts/
-Disallow: /private/
-Disallow: /reservation
-Allow: /
-
-Sitemap: https://guadeloupepassioncaraibes.fr/sitemap.xml
