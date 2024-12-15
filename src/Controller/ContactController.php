@@ -39,6 +39,15 @@ class ContactController extends AbstractController
                     //     'subject'=>'Nouveau contact - Formulaire de contact',
                     //     'template'=>'emails/contact/explor.html.twig',
                     // ],
+                    // 1 => [//? Mail client
+                    //     'to'=>$form->getData()['email'],
+                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'subject'=>'Confirmation de reception du du formulaire de contact',
+                    //     'template'=>'emails/contact/client.html.twig',
+                    // ],
+
+                    //!dev test purpose 
+                    //todo remove in prod
                     1 => [//? Mail client
                         'to'=>$form->getData()['email'],
                         'from'=>'contact@fulljamdev.fr',
