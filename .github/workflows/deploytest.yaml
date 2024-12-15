@@ -16,6 +16,7 @@ jobs:
           port: 22
           script: |
             cd /home/user/web/gpc.fulljamdev.fr/public_html/gpc; 
+            git config --global --add safe.directory /home/user/web/gpc.fulljamdev.fr/public_html/gpc;
             git pull;
             COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader -n;
             APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ;
