@@ -16,6 +16,7 @@ jobs:
           port: 22
           script: |
             cd /home/user/web/gpc.fulljamdev.fr/public_html/gpc; 
+            git config --global --add safe.directory /home/user/web/gpc.fulljamdev.fr/public_html/gpc;
             git pull;
             COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader -n;
             APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ;
@@ -27,6 +28,7 @@ jobs:
             sudo chmod -R 775 var/cache var/log;
             sudo chown -R user:user /home/user/tmp;
             sudo chmod -R 775 /home/user/tmp
+            
 
 # COMPOSER_ALLOW_SUPERUSER=1 composer require symfony/requirement-checker ; nano .env.prod.local; COMPOSER_ALLOW_SUPERUSER=1 composer dump-env prod ; COMPOSER_ALLOW_USERUSER=1 composer install --no-dev --optimize-autoloader ; APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ; php bin/console d:d:d --force ; php d:d:c ; php d:m:m -n
 # COMPOSER_ALLOW_SUPERUSER=1 composer require symfony/requirements-checker ; COMPOSER_ALLOW_SUPERUSER=1 composer dump-env prod ; COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader ; APP_ENV=prod APP_DEBUG=0 php bin/console cache:clear ; php bin/console d:d:d --force ; php d:d:c ; php d:m:m -n;php bin/console asset/install ; php bin/console sass:build ; php bin/console asset-map:compile
