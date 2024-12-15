@@ -25,34 +25,46 @@ class ContactController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
 
 
-
+            // dd($form->getData()['email']);
 
 
             for ($counter=0; $counter < 3; $counter++) { 
-            
+                if($counter != 1){
+                    continue;
+                }
                 $emailInfo =  match ($counter) {
-                    0 => [ //? Mail Explor
-                        'to'=>'leads@explor.app',
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
-                        'subject'=>'Nouveau contact - Formulaire de contact',
-                        'template'=>'emails/contact/explor.html.twig',
-                    ],
+                    // 0 => [ //? Mail Explor
+                    //     'to'=>'leads@explor.app',
+                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'subject'=>'Nouveau contact - Formulaire de contact',
+                    //     'template'=>'emails/contact/explor.html.twig',
+                    // ],
+                    // 1 => [//? Mail client
+                    //     'to'=>$form->getData()['email'],
+                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'subject'=>'Confirmation de reception du du formulaire de contact',
+                    //     'template'=>'emails/contact/client.html.twig',
+                    // ],
+
+                    //!dev test purpose 
+                    //todo remove in prod
                     1 => [//? Mail client
-                        'to'=>$form->getData()->getEmail(),
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'to'=>$form->getData()['email'],
+                        'from'=>'contact@fulljamdev.fr',
                         'subject'=>'Confirmation de reception du du formulaire de contact',
                         'template'=>'emails/contact/client.html.twig',
                     ],
-                    2 => [//? Mail admin
-                        'to'=>'contact@guadeloupepassioncaraibes.fr',
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
-                        'subject'=>'Nouveau formulaire de reçue - Guadeloupe Passion Caraïbes',
-                        'template'=>'emails/contact/gpc.html.twig',
-                    ],
+                    // 2 => [//? Mail admin
+                    //     'to'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'subject'=>'Nouveau formulaire de reçue - Guadeloupe Passion Caraïbes',
+                    //     'template'=>'emails/contact/gpc.html.twig',
+                    // ],
+                    
                 };
                 $email = (new TemplatedEmail())
                     ->from($emailInfo['from'])
-                    ->from($emailInfo['to'])
+                    ->to($emailInfo['to'])
                     ->subject($emailInfo['subject'])
                     ->htmlTemplate($emailInfo['template'])
                     ->context(['client' => $form->getData()])
