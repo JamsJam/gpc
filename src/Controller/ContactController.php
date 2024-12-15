@@ -41,7 +41,7 @@ class ContactController extends AbstractController
                     // ],
                     1 => [//? Mail client
                         'to'=>$form->getData()['email'],
-                        'from'=>'contact@fulljamdev.com',
+                        'from'=>'contact@fulljamdev.fr',
                         'subject'=>'Confirmation de reception du du formulaire de contact',
                         'template'=>'emails/contact/client.html.twig',
                     ],
