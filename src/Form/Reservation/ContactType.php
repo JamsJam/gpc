@@ -40,7 +40,10 @@ class ContactType extends AbstractType
             ->add('adresse2',TextType::class,[
                 
                 'label' => 'Complément d\'adresse',
-                'attr'=> []
+                "require" => 'false',
+                'attr'=> [
+
+                ]
             ])
             ->add('telephone',TelType::class,[
                 
