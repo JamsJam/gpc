@@ -37,6 +37,9 @@ class Activites
     #[ORM\Column(length: 255)]
     private ?string $image = null;
     
+    #[ORM\Column]
+    private ?bool $isPublic = false;
+    
     // #[Vich\UploadableField(mapping: 'crop_images', fileNameProperty: 'image')]
     // private ?File $imageFile = null;
 
@@ -142,6 +145,18 @@ class Activites
     public function setCrop(?Array $crop): self
     {
         $this->crop = $crop;
+
+        return $this;
+    }
+
+    public function isPublic(): ?bool
+    {
+        return $this->isPublic;
+    }
+
+    public function setIsPublic(bool $isPublic): static
+    {
+        $this->isPublic = $isPublic;
 
         return $this;
     }
