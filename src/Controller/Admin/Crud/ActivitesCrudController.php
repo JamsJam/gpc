@@ -55,7 +55,7 @@ class ActivitesCrudController extends AbstractCrudController
         ;
     }
 
-    // /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -68,7 +68,7 @@ class ActivitesCrudController extends AbstractCrudController
                 ->setSortable(true)
                 ,
             BooleanField::new('isPublic','Visible')
-                ->onlyOnIndex()
+                // ->onlyOnIndex()
             ,
             
             //!====================== on form

@@ -58,7 +58,7 @@ class ExcursionsCrudController extends AbstractCrudController
                 ->setSortable(true)
                 ,
             BooleanField::new('isPublic','Visible')
-                ->onlyOnIndex()
+                // ->onlyOnIndex()
             ,
                         //!====================== on form
             TextField::new('titre')
