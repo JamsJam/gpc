@@ -48,12 +48,23 @@
     <div class="grid__container">
 
         {% for item in collection %}
-            <twig:ProductCarte 
-                produit='{{item}}'
-                type='{{type}}'
+            {#? mode prod if visible #}
+            {% if item.isPublic %}
+                <twig:ProductCarte 
+                    produit='{{item}}'
+                    type='{{type}}'
+                />
+            {% else %}
+                {#? mode test for admin if unvisible #}
+                {% if is_granted('ADMIN')%}
+                    <twig:ProductCarte 
+                    produit='{{item}}'
+                    type='{{type}}'
+                    
+                />
+                {% endif %}
                 
-            />
-            
+            {% endif %}
         {% endfor %}
     </div>
 {% else %}
