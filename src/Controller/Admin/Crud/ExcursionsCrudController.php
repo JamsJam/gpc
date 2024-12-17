@@ -73,8 +73,8 @@ class ExcursionsCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images/excursions')
                 ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
                 ->setFormTypeOptions([
+                    'required'=> false,
                     'attr' =>[
-                        'require'=> false,
 
                         "data-action"=>"change->cropper#loadImage"
                         ]

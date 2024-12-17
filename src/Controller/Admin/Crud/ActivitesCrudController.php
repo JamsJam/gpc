@@ -85,8 +85,8 @@ class ActivitesCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images/activites')
                 ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
                 ->setFormTypeOptions([
+                    'required'=> false,
                     'attr' =>[
-                        'require'=> false,
 
                         "data-action"=>"change->cropper#loadImage"
                         ]
