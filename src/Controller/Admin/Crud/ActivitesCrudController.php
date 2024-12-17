@@ -21,6 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Option\SearchMode;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class ActivitesCrudController extends AbstractCrudController
 {
@@ -58,14 +59,20 @@ class ActivitesCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')
-                ->onlyOnindex()
+            //! ==================== not on form
+            
+            
+            DateTimeField::new('createdAt', 'Ajouté le')
+                ->setFormat('dd/MM/yyyy  HH:mm:ss')
+                ->hideOnForm()
                 ->setSortable(true)
                 ,
-            DateTimeField::new('createdAt')
-                ->onlyOnindex()
-                ->setSortable(true)
-                ,
+            BooleanField::new('isPublic','Visible')
+                ->onlyOnIndex()
+            ,
+            
+            //!====================== on form
+
             TextField::new('titre')
                 ->setSortable(true)
                 ,
@@ -92,6 +99,7 @@ class ActivitesCrudController extends AbstractCrudController
                     'block_name' => 'crop_image'
                 ])
                 ->onlyOnForms(),
+            
         ];
     }
 
