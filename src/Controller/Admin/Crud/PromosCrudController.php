@@ -97,8 +97,8 @@ class PromosCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images/promotions')
                 ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
                 ->setFormTypeOptions([
+                    'required'=> false,
                     'attr' =>[
-                        'require'=> false,
                         "data-action"=>"change->cropper#loadImage"
                         ]
                 ]),

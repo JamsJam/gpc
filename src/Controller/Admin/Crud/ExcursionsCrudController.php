@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Option\SearchMode;
@@ -46,14 +47,20 @@ class ExcursionsCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')
+                        //! ==================== not on form
+            // IdField::new('id')
+            //     ->onlyOnindex()
+            //     ->setSortable(true)
+            //     ,
+            DateTimeField::new('createdAt', 'Ajouté le')
+                ->setFormat('dd/MM/yyyy  HH:mm:ss')
                 ->onlyOnindex()
                 ->setSortable(true)
                 ,
-            DateTimeField::new('createdAt')
-                ->onlyOnindex()
-                ->setSortable(true)
-                ,
+            BooleanField::new('isPublic','Visible')
+                // ->onlyOnIndex()
+            ,
+                        //!====================== on form
             TextField::new('titre')
                 ->setSortable(true)
                 ,
@@ -66,8 +73,8 @@ class ExcursionsCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images/excursions')
                 ->setUploadedFileNamePattern('[timestamp]-[randomhash].[extension]')
                 ->setFormTypeOptions([
+                    'required'=> false,
                     'attr' =>[
-                        'require'=> false,
 
                         "data-action"=>"change->cropper#loadImage"
                         ]

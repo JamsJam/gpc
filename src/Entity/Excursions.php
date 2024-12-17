@@ -43,6 +43,7 @@ class Excursions
     #[ORM\Column(type: 'json', nullable: true)]
     private ?array $crop = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -143,4 +144,5 @@ class Excursions
 
         return $this;
     }
+
 }
