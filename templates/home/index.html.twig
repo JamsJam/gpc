@@ -12,6 +12,15 @@
 {% block body %}
 {{parent()}}
     <section class="header">
+        {% for message in app.flashes('success_form') %}
+
+            <twig:flash
+                type="success_form"
+                message="{{message}}"
+            />
+        {% endfor %}
+
+        
         <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg')}}'>
             <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
         </video>

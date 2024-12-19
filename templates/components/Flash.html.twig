@@ -1,3 +1,7 @@
-<div{{ attributes }}>
-    <!-- component html -->
+<div {{ attributes }} class="flash__container"  {{stimulus_controller("flash")}}>
+    <div class="flash__{{type}}" {{stimulus_target("flash","flash")}}>
+        <p>
+            {{ message }}
+        </p>
+    </div>
 </div>
