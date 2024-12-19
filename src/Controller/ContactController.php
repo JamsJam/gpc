@@ -28,42 +28,47 @@ class ContactController extends AbstractController
             // dd($form->getData()['email']);
 
 
-            for ($counter=0; $counter < 3; $counter++) { 
-                if($counter != 1){
-                    continue;
-                }
+            for ($counter=0; $counter < 2; $counter++) { 
+                //! ====dev test purpose
+                // if($counter != 0){
+                //         continue;
+                //     }
+                //! ------------------
                 $emailInfo =  match ($counter) {
-                    // 0 => [ //? Mail Explor
+                    // 0 => [ 
+                        ////? Mail Explor 
+                        ////todo fonctionnera par api
                     //     'to'=>'leads@explor.app',
                     //     'from'=>'contact@guadeloupepassioncaraibes.com',
                     //     'subject'=>'Nouveau contact - Formulaire de contact',
                     //     'template'=>'emails/contact/explor.html.twig',
                     // ],
-                    // 1 => [//? Mail client
-                    //     'to'=>$form->getData()['email'],
-                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
-                    //     'subject'=>'Confirmation de reception du du formulaire de contact',
-                    //     'template'=>'emails/contact/client.html.twig',
-                    // ],
-
-                    //!dev test purpose 
-                    //todo remove in prod
-                    1 => [//? Mail client
+                    0 => [//? Mail client
                         'to'=>$form->getData()['email'],
-                        'from'=>'contact@fulljamdev.fr',
                         'subject'=>'Confirmation de reception du du formulaire de contact',
                         'template'=>'emails/contact/client.html.twig',
                     ],
-                    // 2 => [//? Mail admin
-                    //     'to'=>'contact@guadeloupepassioncaraibes.com',
-                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
-                    //     'subject'=>'Nouveau formulaire de reçue - Guadeloupe Passion Caraïbes',
-                    //     'template'=>'emails/contact/gpc.html.twig',
+
+                    //! ====dev test purpose 
+                    // //todo remove in prod
+                    // 0 => [//? Mail client
+                    //     'to'=>$form->getData()['email'],
+                    
+                    //     'subject'=>'Confirmation de reception du du formulaire de contact',
+                    //     'template'=>'emails/contact/client.html.twig',
                     // ],
+                    //! ------------------
+
+                    
+                    1 => [//? Mail admin
+                        'to'=>'contact@guadeloupepassioncaraibes.com',
+                        'subject'=>'Nouveau formulaire de reçue - Guadeloupe Passion Caraïbes',
+                        'template'=>'emails/contact/gpc.html.twig',
+                    ],
                     
                 };
                 $email = (new TemplatedEmail())
-                    ->from($emailInfo['from'])
+                    ->from("contact@guadeloupepassioncaraibes.com")
                     ->to($emailInfo['to'])
                     ->subject($emailInfo['subject'])
                     ->htmlTemplate($emailInfo['template'])
@@ -73,10 +78,23 @@ class ContactController extends AbstractController
                 $mailer->send($email);
             }
 
+            //todo call explor API
+
+ 
+            // Headers:
+            // x-tenant-token:
+ 
+
             //todo creer un App.flash
             $this->addFlash(
-                'success',
-                'Votre message a bien été envoyé'
+                'success_form',
+                'Votre message à bien été envoyé'
+            );
+
+            return $this->redirectToRoute(
+                "app_home",
+                [],
+                303
             );
         }
 
