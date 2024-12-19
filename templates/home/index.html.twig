@@ -14,7 +14,7 @@
     <section class="header">
         {% for message in app.flashes('success_form') %}
 
-            <twig:flash
+            <twig:Flash
                 type="success_form"
                 message="{{message}}"
             />
