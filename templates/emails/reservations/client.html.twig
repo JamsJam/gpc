@@ -1,6 +1,6 @@
 
 
-    <p>Bonjour {{ sejourInfo.nom }},</p>
+    <p>Bonjour {{ infoSejour.nom }},</p>
 <br>
     <p>Nous avons bien reçu votre réservation chez <strong>Guadeloupe Passion Caraïbes</strong>.</p>
     <br>
@@ -10,10 +10,10 @@
 <br>
     <p> Voici un récapitulatif de votre séjour :</p>
     <ul>
-        <li><strong>Date d'arrivée :</strong> {{ sejourInfo.date_arrivee|date('d/m/Y') }}</li>
-        <li><strong>Date de départ :</strong> {{ sejourInfo.date_depart|date('d/m/Y') }}</li>
-        <li><strong>Nombre de personnes :</strong> {{ sejourInfo.nb_personnes }}</li>
-        <li><strong>Hébergement :</strong> {{ sejourInfo.hebergement }}</li>
+        <li><strong>Date d'arrivée :</strong> {{ infoSejour.date_arrivee|date('d/m/Y') }}</li>
+        <li><strong>Date de départ :</strong> {{ infoSejour.date_depart|date('d/m/Y') }}</li>
+        <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li>
+        <li><strong>Hébergement :</strong> {{ infoSejour.hebergement }}</li>
     </ul>
 <br>
     <p>

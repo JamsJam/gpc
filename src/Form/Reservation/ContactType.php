@@ -2,19 +2,29 @@
 
 namespace App\Form\Reservation;
 
+use Symfony\Component\Intl\Countries;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Event\SubmitEvent;
+use Symfony\Component\Form\CallbackTransformer;
+use Symfony\Component\Form\Event\PreSubmitEvent;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Event\PostSubmitEvent;
+use Symfony\Component\Form\Event\PreSetDataEvent;
+use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Regex;
+
 
 class ContactType extends AbstractType
 {
+
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -45,7 +55,6 @@ class ContactType extends AbstractType
                 'label' => 'Nationalité <span style="color:red;">*</span>',
                 'label_html' => true,
                 'attr'=> [],
-                'data' => 'FR',
                 'constraints'=>[
                     new NotBlank(
                         message: 'Veuillez entrer votre nationalité'
@@ -111,8 +120,28 @@ class ContactType extends AbstractType
                 ]
 
             ])
+
+            ->addEventListener(FormEvents::SUBMIT,[$this, 'getCountryFromCode'])
         ;
+
     }
+    public function getCountryFromCode(SubmitEvent $event){
+            // Récupération des données soumises (tableau)
+            $formData = $event->getData();
+            // dd($formData);
+            $countryCode = $formData['nationalite'];
+            $countries = Countries::getNames();
+            if (isset($countries[$countryCode])) {
+                $formData['nationalite']=($countries[$countryCode]); // Remplacer par le nom complet
+                }
+
+            $event->setData($formData);
+
+
+
+    }
+
+
 
     public function configureOptions(OptionsResolver $resolver): void
     {
