@@ -12,7 +12,8 @@
     <div class="carte__info">
 
         <h3>
-            Test : {{produit.titre}}
+            {% if not produit.isPublic %}Test : {% endif %} {{produit.titre}}
+            
         </h3>
 
         <button 

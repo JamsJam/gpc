@@ -96,21 +96,22 @@ class ReservationController extends AbstractController
             for ($counter=0; $counter < 3; $counter++) { 
             
                 $emailInfo =  match ($counter) {
-                    0 => [ //? Mail Explor
-                        'to'=>'leads@explor.app',
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
-                        'subject'=>'Nouvelle réservation - Informations de séjour',
-                        'template'=>'emails/reservations/explor.html.twig',
-                    ],
-                    1 => [//? Mail client
+                    // 0 => [ //? Mail Explor
+                    //todo integrer httprequest
+                    //     'to'=>'leads@explor.app',
+                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
+                    //     'subject'=>'Nouvelle réservation - Informations de séjour',
+                    //     'template'=>'emails/reservations/explor.html.twig',
+                    // ],
+                    0 => [//? Mail client
                         'to'=>strval($sejourInfo['email']),
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                        'from'=>'contact@guadeloupepassioncaraibes.com',
                         'subject'=>'Confirmation de votre réservation chez Passion Caraïbes',
                         'template'=>'emails/reservations/client.html.twig',
                     ],
-                    2 => [//? Mail admin
-                        'to'=>'contact@guadeloupepassioncaraibes.fr',
-                        'from'=>'contact@guadeloupepassioncaraibes.fr',
+                    1 => [//? Mail admin
+                        'to'=>'contact@guadeloupepassioncaraibes.com',
+                        'from'=>'contact@guadeloupepassioncaraibes.com',
                         'subject'=>'Nouvelle réservation reçue - Guadeloupe Passion Caraïbes',
                         'template'=>'emails/reservations/gpc.html.twig',
                     ],
