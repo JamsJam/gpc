@@ -56,8 +56,7 @@ class UserCreateService
             ->setPrenom($prenom)
             ->setEmail($email)
             ->setRoles(['ROLE_ADMIN'])
-
-;
+            ;
 
         $user->setPassword($this->hashPassword($user, $password));
 

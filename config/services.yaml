@@ -4,7 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    encryption_key : "%env(ENCRYPTION_KEY)" 
+    encryption_key : "%env(ENCRYPTION_KEY)%" 
+    exploreLink: "%env(EXPLORE_API_LINK)%" 
+    exploreTkn: "%env(EXPLORE_API_KEY)%" 
+    testApiLink: "%env(TEST_API_LINK)%"
     image_dir: "%kernel.project_dir%/public/uploads/images"
 
 services:
@@ -29,3 +32,11 @@ services:
     App\Service\EncryptionService:
         arguments:
             $encryption_key: "%encryption_key%"
+
+    App\Service\ExploreApiService:
+        arguments:
+            $testApiLink: "%testApiLink%"
+            $exploreLink: "%exploreLink%"
+            $exploreTkn: "%exploreTkn%"
+
+

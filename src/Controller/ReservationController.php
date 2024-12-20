@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Form\Reservation\TripType as ReservationType2;
 use App\Form\Reservation\ContactType as ReservationType1;
 use App\Form\Reservation\ConfirmationType as ReservationType3;
+use App\Service\ExploreApiService;
+use DateTimeImmutable;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -77,7 +79,7 @@ class ReservationController extends AbstractController
     }
 
     #[Route('/reservation/confirm', name: 'app_reservation_confirm')]
-    public function confirm(Request $request, MailerInterface $mailer): Response
+    public function confirm(Request $request, MailerInterface $mailer, ExploreApiService $explorApi): Response
     {
 
         $session = $request->getSession();
@@ -88,21 +90,32 @@ class ReservationController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
+            // dd($sejourInfo);
             //? envoyer mail à l'utilisateur
             //? envoyer mail à l'admin
             //? envoyer mail à l'explor
+                ;
+                // $startDate = $sejourInfo['periode']
 
-            for ($counter=0; $counter < 3; $counter++) { 
-            
+                // $startDate = date_format(new DateTimeImmutable(explode($sejourInfo['periode'], " to ")[0]), "c")
+
+                 //? ===========Leads creation
+                 $leads = [
+                    "name" => $sejourInfo['prenom'].' '.$sejourInfo['nom'],
+                    "phoneNumber" => $sejourInfo['telephone'],
+                    "email" => $sejourInfo['email'],
+                    "nationality" => $sejourInfo['nationalite'],
+                    "startDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[0]), "c"),
+                    "endDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[1]), "c"),
+                    "portArrival" => "guadeloupe",
+                    "modeOfArrival" => "avion",
+                    // "comment" => "contact form -  Message du prospect :  ".$sejourInfo['message']
+                ];
+                $explorApi->sendLeadsToExplore($leads);
+
+
+            for ($counter=0; $counter < 2; $counter++) { 
                 $emailInfo =  match ($counter) {
-                    // 0 => [ //? Mail Explor
-                    //todo integrer httprequest
-                    //     'to'=>'leads@explor.app',
-                    //     'from'=>'contact@guadeloupepassioncaraibes.com',
-                    //     'subject'=>'Nouvelle réservation - Informations de séjour',
-                    //     'template'=>'emails/reservations/explor.html.twig',
-                    // ],
                     0 => [//? Mail client
                         'to'=>strval($sejourInfo['email']),
                         'from'=>'contact@guadeloupepassioncaraibes.com',
@@ -135,14 +148,6 @@ class ReservationController extends AbstractController
             );
             //? redirect to home
             return $this->redirectToRoute('app_home');
-            
-            // $contactInfo = $form->getData();
-            // $encryptInfo = array_map([$this->cryptage, 'encrypt'],$contactInfo);
-            // $dencryptInfo = array_map([$this->cryptage, 'decrypt'],$encryptInfo);
-            // dd($contactInfo,$encryptInfo,$dencryptInfo);
-
-
-            
         }
 
 
