@@ -12,6 +12,12 @@
     font-size: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     font-weight: 600;
 
+    transition: 
+        background-color 250ms ease-in-out,
+        color 250ms ease-in-out, 
+        border 250ms ease-in-out 
+    ;
+
     @extend %flex-row-center;
     
     
@@ -43,6 +49,26 @@
             // background-color: hsl(85.45deg 89.19% 36.27%);
             color: rgb(255, 255, 255);
         }
+    }
+    &__success{
+        @extend .button;
+
+        padding: 0.6rem 2rem ;
+
+        border: solid 2px hsl(134, 61%, 35%);
+        color: hsl(134, 61%, 100%);
+
+        background-color: hsl(134, 61%, 41%);
+        backdrop-filter: blur(2px);
+
+        font-size: 1.2rem;
+
+
+        &:hover{
+            background-color: hsl(134, 61%, 31%);
+        }
+
+
     }
     &__nav{
         @extend .button__primary;
