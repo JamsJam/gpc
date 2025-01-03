@@ -92,7 +92,7 @@ class DashboardController extends AbstractDashboardController
 
             yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Activites::class);
         }
-        yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
+        yield MenuItem::linkToLogout('Déconnexion', 'fa fa-exit');
     }
 
 
