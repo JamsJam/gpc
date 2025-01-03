@@ -1,0 +1,92 @@
+@use "../shared/abstract/" as * ;
+
+.connexion{
+
+    min-height: calc(100vh - 2 * 120px);
+
+    padding-block-start: 4rem;
+
+    @extend %flex-column-start-center;
+    gap: 4rem;
+    
+
+
+    h1{
+        color: $blue-hover;
+    }
+
+    form{
+
+        width: max(70vw, 300px);
+        max-width: calc(1024px - 2 * 64px);
+
+        @extend %flex-column-center-stretch;
+        gap: 2rem;
+
+        padding-inline: 2rem;
+        padding-block: 2rem;
+        border: $blue-hover 3px solid;
+        border-radius: 10px;
+
+
+        .formRow{
+            width: 100%;
+            @extend %flex-column-start-stretch;
+            gap: 0.5rem;
+
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"]
+            {
+                width: 100%;
+                padding-block: 0.5rem ;
+                padding-inline: 1rem;
+                border-radius: 10px ;
+                border: rgb(84, 84, 84) solid 2px;
+                background-color: rgb(245, 245, 245);
+
+                font-size: 1.2rem;
+                font-family: $font-text;
+            }
+            
+            label{
+                
+                font-size: 1.2rem;
+                font-weight: 600;
+                font-family: $font-text;
+            }
+        }
+
+        .fieldpwd{
+            @extend %flex-row-stretch-center;
+            gap: 0.2rem;
+
+            .seePwd{
+                @extend %flex-row-center;
+                width: 45px;
+                height: 45px;
+                border: 2px solid rgb(181, 181, 181);
+                border-radius: 8px;
+                background-color: rgb(255, 255, 255);
+            }
+
+            .eyepass{
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+
+        .buttonContainer{
+            width: 100%;
+
+            @extend %flex-row-center;
+            gap: 1rem;
+
+        }
+        
+    }
+
+}
+

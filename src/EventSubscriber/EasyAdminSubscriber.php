@@ -20,7 +20,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
         $this->slugger = $slugger;
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents() :array
     {
         return [
             BeforeEntityPersistedEvent::class => ['setActivitesSlugAndDate'],
