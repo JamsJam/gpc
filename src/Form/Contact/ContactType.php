@@ -17,7 +17,6 @@ class ContactType extends AbstractType
         $builder
             ->add('email',TextType::class,[
                 'label'=>'Votre email :',
-                
                 'row_attr' =>[
                     'class' => 'field__container'
                 ]

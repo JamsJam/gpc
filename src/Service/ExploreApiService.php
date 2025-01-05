@@ -51,7 +51,8 @@ class ExploreApiService{
         // dd($leads);
         $response = $this->client->request(
             'POST',
-            // 'https://httpbin.org/post'
+            
+            // $this->exploreLink, //! await explor validation
             $this->testApiLink,
             [
                 'headers' =>[
