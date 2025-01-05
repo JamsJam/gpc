@@ -1,6 +1,8 @@
 @use "../shared/abstract/" as * ;
 
-.connexion{
+.connexion,
+.forgot-pass,
+.forgot-pass{
 
     min-height: calc(100vh - 2 * 120px);
 
@@ -33,6 +35,7 @@
             width: 100%;
             @extend %flex-column-start-stretch;
             gap: 0.5rem;
+
 
 
             input[type="text"],
