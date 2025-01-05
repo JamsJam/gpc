@@ -31,7 +31,8 @@ class ContactController extends AbstractController
                 "email" => $contactFormData['email'],
                 "comment" => "contact form -  Message du prospect :  ".$contactFormData['message']
             ];
-            $explorApi->sendLeadsToExplore($leads);
+            //! await Explore Validatino
+            // $explorApi->sendLeadsToExplore($leads);
             
             //? ===========Mail Admin & client
             for ($counter=0; $counter < 2; $counter++) { 
