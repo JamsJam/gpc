@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="es" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="wAHzF9U" resname="accueil.titre">
+        <source>accueil.titre</source>
+        <target>Guadeloupe passion Caraïbes</target>
+      </trans-unit>
+      <trans-unit id="8N1gfda" resname="accueil.header.titre">
+        <source>accueil.header.titre</source>
+        <target>Agence réceptive des îles de Guadeloupe</target>
+      </trans-unit>
+      <trans-unit id="vSG_wkx" resname="accueil.header.cta">
+        <source>accueil.header.cta</source>
+        <target>Réserver mon voyage</target>
+      </trans-unit>
+      <trans-unit id="jdlQd1u" resname="accueil.section.services.titre">
+        <source>accueil.section.services.titre</source>
+        <target>Vous recherchez un service touristique pour vos vacances en Guadeloupe ?</target>
+      </trans-unit>
+      <trans-unit id="h_plqdP" resname="accueil.section.services.cards.activities_title">
+        <source>accueil.section.services.cards.activities_title</source>
+        <target>Activités et excursions</target>
+      </trans-unit>
+      <trans-unit id="W3Rhe7Q" resname="accueil.section.services.cards.activities_description">
+        <source>accueil.section.services.cards.activities_description</source>
+        <target>Explorer des activités à vivre en Guadeloupe.</target>
+      </trans-unit>
+      <trans-unit id="ARvOMi2" resname="accueil.section.services.cards.activities_cta">
+        <source>accueil.section.services.cards.activities_cta</source>
+        <target>Découvrir nos activités</target>
+      </trans-unit>
+      <trans-unit id="AqrCnu." resname="accueil.section.services.cards.accommodation_title">
+        <source>accueil.section.services.cards.accommodation_title</source>
+        <target>Hébergement</target>
+      </trans-unit>
+      <trans-unit id="MNgSDBz" resname="accueil.section.services.cards.accommodation_description">
+        <source>accueil.section.services.cards.accommodation_description</source>
+        <target>Séjournez dans des hôtels et villas d’exception.</target>
+      </trans-unit>
+      <trans-unit id="oJM4fHZ" resname="accueil.section.services.cards.accommodation_cta">
+        <source>accueil.section.services.cards.accommodation_cta</source>
+        <target>Voir nos hébergements</target>
+      </trans-unit>
+      <trans-unit id="QiT1xzU" resname="accueil.section.services.cards.transport_title">
+        <source>accueil.section.services.cards.transport_title</source>
+        <target>Transport et transfert</target>
+      </trans-unit>
+      <trans-unit id="vzVff_K" resname="accueil.section.services.cards.transport_description">
+        <source>accueil.section.services.cards.transport_description</source>
+        <target>Réserver facilement votre VTC ou transfert privé.</target>
+      </trans-unit>
+      <trans-unit id="mhMbeKP" resname="accueil.section.services.cards.transport_cta">
+        <source>accueil.section.services.cards.transport_cta</source>
+        <target>Réserver votre transport</target>
+      </trans-unit>
+      <trans-unit id="1hPAxPf" resname="accueil.section.activite.title">
+        <source>accueil.section.activite.title</source>
+        <target>Que faire en Guadeloupe ?</target>
+      </trans-unit>
+      <trans-unit id="MUxcMAZ" resname="accueil.section.activite.info.titre">
+        <source>accueil.section.activite.info.titre</source>
+        <target>Nos activités de loisirs et nos excursions</target>
+      </trans-unit>
+      <trans-unit id="_GilU9c" resname="accueil.section.activite.info.para">
+        <source>accueil.section.activite.info.para</source>
+        <target><![CDATA[<strong>Guadeloupe Passion Caraïbes</strong>,concepteur de loisirs interactifs, promeut l'authenticité guadeloupéenne en proposant aux visiteurs de faire des loisirs inédits et vivre des expériences inoubliables au cours des excursions.]]></target>
+      </trans-unit>
+      <trans-unit id=".DhnVAU" resname="accueil.section.hebergement.title">
+        <source>accueil.section.hebergement.title</source>
+        <target>Vous souhaitez un hébergement ?</target>
+      </trans-unit>
+      <trans-unit id="CPWYILe" resname="accueil.section.hebergement.hotel.title">
+        <source>accueil.section.hebergement.hotel.title</source>
+        <target>Notre sélection d'hôtels dans les îles de Guadeloupe</target>
+      </trans-unit>
+      <trans-unit id="LQPnwFT" resname="accueil.section.hebergement.hotel.arg1">
+        <source>accueil.section.hebergement.hotel.arg1</source>
+        <target>Séjours tout confort dans des établissements haut de gamme.</target>
+      </trans-unit>
+      <trans-unit id="SBIEkaN" resname="accueil.section.hebergement.hotel.arg2">
+        <source>accueil.section.hebergement.hotel.arg2</source>
+        <target>Services exclusifs et panoramas à couper le souffle.</target>
+      </trans-unit>
+      <trans-unit id="eM925ZI" resname="accueil.section.hebergement.hotel.arg3">
+        <source>accueil.section.hebergement.hotel.arg3</source>
+        <target>Une expérience inoubliable au cœur de l'archipel.</target>
+      </trans-unit>
+      <trans-unit id="l5KYcID" resname="accueil.section.hebergement.hotel.cta">
+        <source>accueil.section.hebergement.hotel.cta</source>
+        <target>Télécharger notre guide</target>
+      </trans-unit>
+      <trans-unit id="A9sxKAR" resname="accueil.section.hebergement.villa.title">
+        <source>accueil.section.hebergement.villa.title</source>
+        <target>Des hébergements privés dans toutes les iles de l'archipel</target>
+      </trans-unit>
+      <trans-unit id="sHYpWhr" resname="accueil.section.hebergement.villa.arg1">
+        <source>accueil.section.hebergement.villa.arg1</source>
+        <target>Séjours tout confort dans des établissements haut de gamme.</target>
+      </trans-unit>
+      <trans-unit id="yKSipLk" resname="accueil.section.hebergement.villa.arg2">
+        <source>accueil.section.hebergement.villa.arg2</source>
+        <target>Un séjour sur mesure pour des moments de détente absolue.</target>
+      </trans-unit>
+      <trans-unit id="fQ3tDKU" resname="accueil.section.hebergement.villa.arg3">
+        <source>accueil.section.hebergement.villa.arg3</source>
+        <target>Parfait pour des vacances en famille ou entre amis.</target>
+      </trans-unit>
+      <trans-unit id="NvhRlt9" resname="accueil.section.hebergement.villa.cta">
+        <source>accueil.section.hebergement.villa.cta</source>
+        <target>Télécharger notre guide</target>
+      </trans-unit>
+      <trans-unit id="r4UWrDv" resname="accueil.section.transport.title">
+        <source>accueil.section.transport.title</source>
+        <target>Un transport ou un transfert ?</target>
+      </trans-unit>
+      <trans-unit id="X3AZc8s" resname="accueil.section.transport.para">
+        <source>accueil.section.transport.para</source>
+        <target><![CDATA[Avec notre partenaire <strong>En Woute</strong>, profitez d’un service de VTC fiable et confortable dans toute la Guadeloupe. Déplacez-vous facilement grâce à leurs chauffeurs professionnels.]]></target>
+      </trans-unit>
+      <trans-unit id="mKSOIS1" resname="accueil.section.transport.arg1">
+        <source>accueil.section.transport.arg1</source>
+        <target>Transferts aéroports rapides et sécurisés</target>
+      </trans-unit>
+      <trans-unit id="BWzACVJ" resname="accueil.section.transport.arg2">
+        <source>accueil.section.transport.arg2</source>
+        <target>Excursions privées et sur mesure</target>
+      </trans-unit>
+      <trans-unit id="AaXi0.9" resname="accueil.section.transport.arg3">
+        <source>accueil.section.transport.arg3</source>
+        <target>Trajets dans un confort absolu</target>
+      </trans-unit>
+      <trans-unit id="TdJlzlA" resname="accueil.section.transport.cta1">
+        <source>accueil.section.transport.cta1</source>
+        <target><![CDATA[Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant.]]></target>
+      </trans-unit>
+      <trans-unit id="Q1Y57CG" resname="accueil.section.transport.cta2">
+        <source>accueil.section.transport.cta2</source>
+        <target>Accéder à la Web App En Woute</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -9,14 +9,16 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\PromosRepository;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(PromosRepository $pr): Response
+    #[Route('/', name: 'app_home' )]
+    public function index(PromosRepository $pr, Request $request): Response
     {
 
 
+        $locale = $request->getLocale();
         $offerResult = $pr->findTodayOffer(new DateTime());
         
         $offer =  isset($offerResult) ? [

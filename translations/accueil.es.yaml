@@ -1,0 +1,57 @@
+accueil:
+  titre: Guadeloupe passion Caraïbes
+  
+  
+  header:
+    titre: Tu agencia de viajes para las islas de Guadalupe
+    cta: Reservar mi viaje
+  
+  
+  section:
+    
+    services:
+      titre: ¿Buscas servicios turísticos para tus vacaciones en Guadalupe?
+      cards:
+        activities_title: Actividades y excursiones
+        activities_description: Descubre experiencias únicas en Guadalupe.
+        activities_cta: Explorar nuestras actividades
+
+        accommodation_title: Alojamiento
+        accommodation_description: Hospédate en hoteles y villas excepcionales.
+        accommodation_cta: Ver nuestros alojamientos
+
+        transport_title: Transporte y traslados
+        transport_description: Reserva fácilmente tu traslado privado o VTC.
+        transport_cta: Reservar tu transporte
+    
+    activite:
+      titre: ¿Qué hacer en Guadalupe?
+      info:
+        titre: Nuestras actividades de ocio y excursiones
+        para: <strong>Guadeloupe Passion Caraïbes</strong>, creador de experiencias de ocio interactivas, promueve la autenticidad de Guadalupe ofreciendo a los visitantes actividades únicas y excursiones inolvidables.
+    
+    hebergement:
+      title: ¿Buscas alojamiento?
+      
+      hotel: 
+        title: Nuestra selección de hoteles en las islas de Guadalupe
+        arg1: Disfruta de la máxima comodidad en establecimientos de lujo.
+        arg2: Servicios exclusivos y vistas impresionantes.
+        arg3: Una estancia inolvidable en el corazón del archipiélago.
+        cta: Descargar nuestra guía
+      
+      villa: 
+        title: Alojamientos privados en todas las islas del archipiélago
+        arg1: Relájate en alojamientos de lujo y confort.
+        arg2: Una estancia personalizada para un relax total.
+        arg3: Perfecto para vacaciones en familia o con amigos.
+        cta: Descargar nuestra guía
+    
+    transport:
+      title: ¿Necesitas transporte o traslado?
+      para: Con nuestro socio <strong>En Woute</strong>, disfruta de servicios de VTC fiables y cómodos en toda Guadalupe. Desplázate fácilmente con conductores profesionales.
+      arg1: Traslados rápidos y seguros al aeropuerto
+      arg2: Excursiones privadas y personalizadas
+      arg3: Viaja con total comodidad
+      cta1: Accede a su <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App para reservar tu VTC en Guadalupe</a> ahora.
+      cta2: Accede a la Web App de En Woute
