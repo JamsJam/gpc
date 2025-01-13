@@ -1,0 +1,57 @@
+accueil:
+  titre: Guadeloupe passion Caraïbes
+  
+  
+  header:
+    titre: Agence réceptive des îles de Guadeloupe
+    cta: Réserver mon voyage
+  
+  
+  section:
+    
+    services:
+      title: Vous recherchez un service touristique pour vos vacances en Guadeloupe ?
+      cards:
+        activities_title: Activités et excursions
+        activities_description: Explorer des activités à vivre en Guadeloupe.
+        activities_cta: Découvrir nos activités
+
+        accommodation_title: Hébergement
+        accommodation_description: Séjournez dans des hôtels et villas d’exception.
+        accommodation_cta: Voir nos hébergements
+
+        transport_title: Transport et transfert
+        transport_description: Réserver facilement votre VTC ou transfert privé.
+        transport_cta: Réserver votre transport
+    
+    activite:
+      title: Que faire en Guadeloupe ?
+      info:
+        titre: Nos activités de loisirs et nos excursions
+        para: <strong>Guadeloupe Passion Caraïbes</strong>,concepteur de loisirs interactifs, promeut l'authenticité guadeloupéenne en proposant aux visiteurs de faire des loisirs inédits et vivre des expériences inoubliables au cours des excursions.
+    
+    hebergement:
+      title: Vous souhaitez un hébergement ?
+      
+      hotel: 
+        title: Notre sélection d'hôtels dans les îles de Guadeloupe
+        arg1: Séjours tout confort dans des établissements haut de gamme.
+        arg2: Services exclusifs et panoramas à couper le souffle.
+        arg3: Une expérience inoubliable au cœur de l'archipel.
+        cta: Télécharger notre guide
+      
+      villa: 
+        title: Des hébergements privés dans toutes les iles de l'archipel
+        arg1: Séjours tout confort dans des établissements haut de gamme.
+        arg2: Un séjour sur mesure pour des moments de détente absolue.
+        arg3: Parfait pour des vacances en famille ou entre amis.
+        cta: Télécharger notre guide
+    
+    transport:
+      title: Un transport ou un transfert ?
+      para: Avec notre partenaire <strong>En Woute</strong>, profitez d’un service de VTC fiable et confortable dans toute la Guadeloupe. Déplacez-vous facilement grâce à leurs chauffeurs professionnels.
+      arg1: Transferts aéroports rapides et sécurisés
+      arg2: Excursions privées et sur mesure
+      arg3: Trajets dans un confort absolu
+      cta1: Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant.
+      cta2: Accéder à la Web App En Woute

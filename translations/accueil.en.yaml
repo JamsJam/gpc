@@ -1,0 +1,57 @@
+accueil:
+  titre: Guadeloupe passion Caraïbes
+  
+  
+  header:
+    titre: Your travel agency for the Guadeloupe islands
+    cta: Book my trip
+  
+  
+  section:
+    
+    services:
+      title: Looking for tourist services for your Guadeloupe vacation?
+      cards:
+        activities_title: Activities and Excursions
+        activities_description: Discover unique experiences in Guadeloupe.
+        activities_cta: Explore our activities
+
+        accommodation_title: Accommodation
+        accommodation_description: Stay in exceptional hotels and villas.
+        accommodation_cta: View our accommodations
+
+        transport_title: Transport and Transfers
+        transport_description: Easily book your private transfer or VTC.
+        transport_cta: Book your transport
+    
+    activite:
+      titre: What to do in Guadeloupe?
+      info:
+        titre: Our leisure activities and excursions
+        para: <strong>Guadeloupe Passion Caraïbes</strong>, creator of interactive leisure experiences, showcases the authentic Guadeloupe by offering visitors unique activities and unforgettable excursions.
+    
+    hebergement:
+      title: Looking for accommodation?
+      
+      hotel: 
+        title: Our selection of hotels in the Guadeloupe islands
+        arg1: Enjoy ultimate comfort in premium establishments.
+        arg2: Exclusive services and breathtaking views.
+        arg3: An unforgettable stay in the heart of the archipelago.
+        cta: Download our guide
+      
+      villa: 
+        title: Private rentals across all islands of the archipelago
+        arg1: Relax in premium and luxurious accommodations.
+        arg2: A tailor-made stay for absolute relaxation.
+        arg3: Perfect for family or group vacations.
+        cta: Download our guide
+    
+    transport:
+      title: Need transport or a transfer?
+      para: With our partner <strong>En Woute</strong>, enjoy reliable and comfortable VTC services across Guadeloupe. Move around effortlessly with professional drivers.
+      arg1: Quick and secure airport transfers
+      arg2: Private and personalized excursions
+      arg3: Travel in absolute comfort
+      cta1: Access their <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App to book your VTC in Guadeloupe</a> now.
+      cta2: Access the En Woute Web App

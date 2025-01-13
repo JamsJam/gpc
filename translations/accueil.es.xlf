@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="es" target-language="es" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="wAHzF9U" resname="accueil.titre">
+        <source>accueil.titre</source>
+        <target>Guadeloupe passion Caraïbes</target>
+      </trans-unit>
+      <trans-unit id="8N1gfda" resname="accueil.header.titre">
+        <source>accueil.header.titre</source>
+        <target>Tu agencia de viajes para las islas de Guadalupe</target>
+      </trans-unit>
+      <trans-unit id="vSG_wkx" resname="accueil.header.cta">
+        <source>accueil.header.cta</source>
+        <target>Reservar mi viaje</target>
+      </trans-unit>
+      <trans-unit id="jdlQd1u" resname="accueil.section.services.titre">
+        <source>accueil.section.services.titre</source>
+        <target>¿Buscas servicios turísticos para tus vacaciones en Guadalupe?</target>
+      </trans-unit>
+      <trans-unit id="h_plqdP" resname="accueil.section.services.cards.activities_title">
+        <source>accueil.section.services.cards.activities_title</source>
+        <target>Actividades y excursiones</target>
+      </trans-unit>
+      <trans-unit id="W3Rhe7Q" resname="accueil.section.services.cards.activities_description">
+        <source>accueil.section.services.cards.activities_description</source>
+        <target>Descubre experiencias únicas en Guadalupe.</target>
+      </trans-unit>
+      <trans-unit id="ARvOMi2" resname="accueil.section.services.cards.activities_cta">
+        <source>accueil.section.services.cards.activities_cta</source>
+        <target>Explorar nuestras actividades</target>
+      </trans-unit>
+      <trans-unit id="AqrCnu." resname="accueil.section.services.cards.accommodation_title">
+        <source>accueil.section.services.cards.accommodation_title</source>
+        <target>Alojamiento</target>
+      </trans-unit>
+      <trans-unit id="MNgSDBz" resname="accueil.section.services.cards.accommodation_description">
+        <source>accueil.section.services.cards.accommodation_description</source>
+        <target>Hospédate en hoteles y villas excepcionales.</target>
+      </trans-unit>
+      <trans-unit id="oJM4fHZ" resname="accueil.section.services.cards.accommodation_cta">
+        <source>accueil.section.services.cards.accommodation_cta</source>
+        <target>Ver nuestros alojamientos</target>
+      </trans-unit>
+      <trans-unit id="QiT1xzU" resname="accueil.section.services.cards.transport_title">
+        <source>accueil.section.services.cards.transport_title</source>
+        <target>Transporte y traslados</target>
+      </trans-unit>
+      <trans-unit id="vzVff_K" resname="accueil.section.services.cards.transport_description">
+        <source>accueil.section.services.cards.transport_description</source>
+        <target>Reserva fácilmente tu traslado privado o VTC.</target>
+      </trans-unit>
+      <trans-unit id="mhMbeKP" resname="accueil.section.services.cards.transport_cta">
+        <source>accueil.section.services.cards.transport_cta</source>
+        <target>Reservar tu transporte</target>
+      </trans-unit>
+      <trans-unit id="AaXtfFE" resname="accueil.section.activite.titre">
+        <source>accueil.section.activite.titre</source>
+        <target>¿Qué hacer en Guadalupe?</target>
+      </trans-unit>
+      <trans-unit id="MUxcMAZ" resname="accueil.section.activite.info.titre">
+        <source>accueil.section.activite.info.titre</source>
+        <target>Nuestras actividades de ocio y excursiones</target>
+      </trans-unit>
+      <trans-unit id="_GilU9c" resname="accueil.section.activite.info.para">
+        <source>accueil.section.activite.info.para</source>
+        <target><![CDATA[<strong>Guadeloupe Passion Caraïbes</strong>, creador de experiencias de ocio interactivas, promueve la autenticidad de Guadalupe ofreciendo a los visitantes actividades únicas y excursiones inolvidables.]]></target>
+      </trans-unit>
+      <trans-unit id=".DhnVAU" resname="accueil.section.hebergement.title">
+        <source>accueil.section.hebergement.title</source>
+        <target>¿Buscas alojamiento?</target>
+      </trans-unit>
+      <trans-unit id="CPWYILe" resname="accueil.section.hebergement.hotel.title">
+        <source>accueil.section.hebergement.hotel.title</source>
+        <target>Nuestra selección de hoteles en las islas de Guadalupe</target>
+      </trans-unit>
+      <trans-unit id="LQPnwFT" resname="accueil.section.hebergement.hotel.arg1">
+        <source>accueil.section.hebergement.hotel.arg1</source>
+        <target>Disfruta de la máxima comodidad en establecimientos de lujo.</target>
+      </trans-unit>
+      <trans-unit id="SBIEkaN" resname="accueil.section.hebergement.hotel.arg2">
+        <source>accueil.section.hebergement.hotel.arg2</source>
+        <target>Servicios exclusivos y vistas impresionantes.</target>
+      </trans-unit>
+      <trans-unit id="eM925ZI" resname="accueil.section.hebergement.hotel.arg3">
+        <source>accueil.section.hebergement.hotel.arg3</source>
+        <target>Una estancia inolvidable en el corazón del archipiélago.</target>
+      </trans-unit>
+      <trans-unit id="l5KYcID" resname="accueil.section.hebergement.hotel.cta">
+        <source>accueil.section.hebergement.hotel.cta</source>
+        <target>Descargar nuestra guía</target>
+      </trans-unit>
+      <trans-unit id="A9sxKAR" resname="accueil.section.hebergement.villa.title">
+        <source>accueil.section.hebergement.villa.title</source>
+        <target>Alojamientos privados en todas las islas del archipiélago</target>
+      </trans-unit>
+      <trans-unit id="sHYpWhr" resname="accueil.section.hebergement.villa.arg1">
+        <source>accueil.section.hebergement.villa.arg1</source>
+        <target>Relájate en alojamientos de lujo y confort.</target>
+      </trans-unit>
+      <trans-unit id="yKSipLk" resname="accueil.section.hebergement.villa.arg2">
+        <source>accueil.section.hebergement.villa.arg2</source>
+        <target>Una estancia personalizada para un relax total.</target>
+      </trans-unit>
+      <trans-unit id="fQ3tDKU" resname="accueil.section.hebergement.villa.arg3">
+        <source>accueil.section.hebergement.villa.arg3</source>
+        <target>Perfecto para vacaciones en familia o con amigos.</target>
+      </trans-unit>
+      <trans-unit id="NvhRlt9" resname="accueil.section.hebergement.villa.cta">
+        <source>accueil.section.hebergement.villa.cta</source>
+        <target>Descargar nuestra guía</target>
+      </trans-unit>
+      <trans-unit id="r4UWrDv" resname="accueil.section.transport.title">
+        <source>accueil.section.transport.title</source>
+        <target>¿Necesitas transporte o traslado?</target>
+      </trans-unit>
+      <trans-unit id="X3AZc8s" resname="accueil.section.transport.para">
+        <source>accueil.section.transport.para</source>
+        <target><![CDATA[Con nuestro socio <strong>En Woute</strong>, disfruta de servicios de VTC fiables y cómodos en toda Guadalupe. Desplázate fácilmente con conductores profesionales.]]></target>
+      </trans-unit>
+      <trans-unit id="mKSOIS1" resname="accueil.section.transport.arg1">
+        <source>accueil.section.transport.arg1</source>
+        <target>Traslados rápidos y seguros al aeropuerto</target>
+      </trans-unit>
+      <trans-unit id="BWzACVJ" resname="accueil.section.transport.arg2">
+        <source>accueil.section.transport.arg2</source>
+        <target>Excursiones privadas y personalizadas</target>
+      </trans-unit>
+      <trans-unit id="AaXi0.9" resname="accueil.section.transport.arg3">
+        <source>accueil.section.transport.arg3</source>
+        <target>Viaja con total comodidad</target>
+      </trans-unit>
+      <trans-unit id="TdJlzlA" resname="accueil.section.transport.cta1">
+        <source>accueil.section.transport.cta1</source>
+        <target><![CDATA[Accede a su <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App para reservar tu VTC en Guadalupe</a> ahora.]]></target>
+      </trans-unit>
+      <trans-unit id="Q1Y57CG" resname="accueil.section.transport.cta2">
+        <source>accueil.section.transport.cta2</source>
+        <target>Accede a la Web App de En Woute</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

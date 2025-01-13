@@ -1,3 +1,4 @@
+{% trans_default_domain 'accueil' %}
 <div{{ attributes }}
     class="card__container"
 >
@@ -8,9 +9,9 @@
 
         
         {{ ux_icon(serviceIcon,{'class':'card__icon' }) }}
-        <h3>{{service}}</h3>
-        <p>{{description}}</p>
-        <a href="{{target}}" class="button__secondary">{{ctaTitle}}</a>
+        <h3>{{ service|trans }}</h3>
+        <p>{{ description|trans }}</p>
+        <a href="{{target}}" class="button__secondary">{{ ctaTitle|trans }}</a>
     </div>
 
 </div>

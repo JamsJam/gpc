@@ -9,6 +9,7 @@ parameters:
     exploreTkn: "%env(EXPLORE_API_KEY)%" 
     testApiLink: "%env(TEST_API_LINK)%"
     image_dir: "%kernel.project_dir%/public/uploads/images"
+    
 
 services:
     # default configuration for services in *this* file
@@ -38,5 +39,8 @@ services:
             $testApiLink: "%testApiLink%"
             $exploreLink: "%exploreLink%"
             $exploreTkn: "%exploreTkn%"
+    
+    App\EventSubscriber\LocaleSubscriber:
+        arguments: ['%kernel.default_locale%']
 
 

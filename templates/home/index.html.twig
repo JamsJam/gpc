@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block keyWord %}
     Guadeloupe Passion Caraïbes, caraibes, Guadeloupe, Voyage en Guadeloupe, Activités touristiques, Hébergements Guadeloupe, Excursions en Guadeloupe, Transport privé, Villas de luxe, Séjours sur mesure, Plages paradisiaques, Découverte archipel 
 {% endblock %}
@@ -10,13 +11,14 @@
 {% block title %}Accueil {{parent()}}{% endblock %}
 {% block mainClass %}home{% endblock %}
 {% block body %}
+{% trans_default_domain 'accueil' %}
 {{parent()}}
     <section class="header">
         {% for message in app.flashes('success_form') %}
 
             <twig:Flash
                 type="success_form"
-                message="{{message}}"
+                message="{{message|trans()}}"
             />
         {% endfor %}
 
@@ -25,38 +27,39 @@
             <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
         </video>
         <div class="header__info">
-            <h1>Guadeloupe passion Caraïbes</h1>
-            <p class="subtitle">Agence réceptive des îles de Guadeloupe</p class="subtitle">
+            <h1>{{ 'accueil.titre'|trans }}</h1>
+            {# <p class="subtitle">Agence réceptive des îles de Guadeloupe</p class="subtitle"> #}
+            <p class="subtitle">{{ 'accueil.header.titre'|trans }}</p class="subtitle">
             <div class="btn_container">
-                <a href="{{path('app_reservation')}}" class="button__primary" >Réserver mon voyage</a>
+                <a href="{{path('app_reservation')}}" class="button__primary" >{{ 'accueil.header.cta'|trans }}</a>
                 {# <a href="#offers" class="button__secondary" >Voir les offres</a> #}
             </div>
         </div>
     </section>
 
     <section class="service">
-        <h2>Vous recherchez un service touristique pour vos vacances en Guadeloupe ?</h2>
+        <h2>{{ 'accueil.section.services.title'|trans }}</h2>
         <div class="service__cards">
             <twig:ServiceCard 
                 serviceIcon="cbi:roomsoutdoor"
-                service='Activités et excursions'
-                description='Explorer des activités à vivre en Guadeloupe.'
+                service='accueil.section.services.cards.activities_title'
+                description='accueil.section.services.cards.activities_description'
                 target="#activite"
-                ctaTitle='Découvrir nos activités'
+                ctaTitle='accueil.section.services.cards.activities_cta'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:house-fill"
-                service='Hébergement'
-                description='Séjournez dans des hôtels et villas d’exception.'
+                service='accueil.section.services.cards.accommodation_title'
+                description='accueil.section.services.cards.accommodation_description'
                 target="#hebergement"
-                ctaTitle='Voir nos hébergements'
+                ctaTitle='accueil.section.services.cards.accommodation_cta'
             />
             <twig:ServiceCard 
                 serviceIcon="bi:car-front-fill"
-                service='Transport et transfert'
-                description='Réserver facilement votre VTC ou transfert privé.'
+                service='accueil.section.services.cards.transport_title'
+                description='accueil.section.services.cards.transport_description'
                 target="#transport"
-                ctaTitle='Réserver votre transport'
+                ctaTitle='accueil.section.services.cards.transport_cta'
             />
 
             {# <twig:ServiceCard />
@@ -75,8 +78,8 @@
 
     <section class="activite" id="activite">
 
-        <h2>Que faire en Guadeloupe ?</h2>
-        {# <p></p> #}
+        <h2>{{ "accueil.section.activite.title"|trans }}</h2>
+
         <div class="activite__container">
             <div class="activite__imgGrid">
                 <div class="activite__img" id="activite__img1"></div>
@@ -86,9 +89,9 @@
                 <div class="activite__img" id="activite__img5"></div>
             </div>
             <div class="activite__info">
-                <h3>Nos activités de loisirs et nos excursions</h3>
+                <h3>{{ "accueil.section.activite.info.titre"|trans }}</h3>
                 <p>
-                    <strong>Guadeloupe Passion Caraïbes</strong>,concepteur de loisirs interactifs, promeut l'authenticité guadeloupéenne en proposant aux visiteurs de faire des loisirs inédits et vivre des expériences inoubliables au cours des excursions.
+                    {{ "accueil.section.activite.info.para"|trans|raw }}
                 </p>
 
             </div>
@@ -108,7 +111,7 @@
 
     <section class="hebergement" id="hebergement">
 
-        <h2>Vous souhaitez un hébergement ?</h2>
+        <h2>{{ "accueil.section.hebergement.title"|trans }}</h2>
         <div class="hebergement__container" id='hotel'>
             <div class="hebergement__imgGrid">
                 <div class="hebergement__img" id="hebergement__img1"></div>
@@ -118,20 +121,18 @@
             <div class="hebergement__info" >
 
                 <div class="hebergement__infoblock">
-                    <h3>Notre sélection d'hôtels dans les îles de Guadeloupe</h3>
-                    <ul 
-                    >
-                        
-                        <li>Séjours tout confort dans des établissements haut de gamme.</li>
-                        <li>Services exclusifs et panoramas à couper le souffle.</li>
-                        <li>Une expérience inoubliable au cœur de l'archipel.</li>
+                    <h3>{{ "accueil.section.hebergement.hotel.title"|trans }}</h3>
+                    <ul>
+                        <li>{{ "accueil.section.hebergement.hotel.arg1"|trans }}</li>
+                        <li>{{ "accueil.section.hebergement.hotel.arg2"|trans }}</li>
+                        <li>{{ "accueil.section.hebergement.hotel.arg3"|trans }}</li>
                     </ul>
 
                     <a 
                         href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
                         class="cta"
                         >
-                        Télécharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                        {{ "accueil.section.hebergement.hotel.cta"|trans }} {{ ux_icon('si:arrow-right-fill') }}
                     </a>
 
                 </div>
@@ -147,18 +148,20 @@
 
 
                 <div class="hebergement__infoblock">
-                    <h3>Des hébergements privés dans toutes les iles de l'archipel</h3>
-                    <ul >
-                        <li>Des gîtes et villas de charme avec piscine et vue imprenable</li>
-                        <li>Un séjour sur mesure pour des moments de détente absolue.</li>
-                        <li>Parfait pour des vacances en famille ou entre amis.</li>
+
+         
+                    <h3>{{ "accueil.section.hebergement.villa.title"|trans }}</h3>
+                    <ul>
+                        <li>{{ "accueil.section.hebergement.villa.arg1"|trans }}</li>
+                        <li>{{ "accueil.section.hebergement.villa.arg2"|trans }}</li>
+                        <li>{{ "accueil.section.hebergement.villa.arg3"|trans }}</li>
                     </ul>
+
                     <a 
-                        
+                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
                         class="cta"
-                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
                         >
-                        Télécharger notre guide {{ ux_icon('si:arrow-right-fill') }}
+                        {{ "accueil.section.hebergement.hotel.cta"|trans }} {{ ux_icon('si:arrow-right-fill') }}
                     </a>
                 </div>
             </div>
@@ -180,33 +183,33 @@
         
         <div class="transport__infos">
             <h2>
-                Un transport ou un transfert ?
+                {{ "accueil.section.transport.title"|trans }}
             </h2>
             <p>
-                Avec notre partenaire <strong>En Woute</strong>, profitez d’un service de VTC fiable et confortable dans toute la Guadeloupe. Déplacez-vous facilement grâce à leurs chauffeurs professionnels.
+                {{ "accueil.section.transport.para"|trans|raw }}
             </p>
             <ul>
                 <li>
                     <p>
-                        Transferts aéroports rapides et sécurisés
+                        {{ "accueil.section.transport.arg1"|trans }}
                     </p>
                 </li>
                 <li>
                     <p>
-                        Excursions privées et sur mesure
+                        {{ "accueil.section.transport.arg2"|trans }}
                     </p>
                 </li>
                 <li>
                     <p>
-                        Trajets dans un confort absolu
+                        {{ "accueil.section.transport.arg3"|trans }}
                     </p>
                 </li>
             </ul>
             <p>
-                Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant.
+                {{ "accueil.section.transport.cta1"|trans|raw }}
             </p>
             <a class="button__secondary" href="https://ew21596948.web.app/?providerID=5438bb9a">
-                Accéder à la Web App En Woute
+                {{ "accueil.section.transport.cta2"|trans }}
             </a>
         </div>
 
