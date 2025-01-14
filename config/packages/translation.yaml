@@ -6,4 +6,4 @@ framework:
             loco:
                 dsn: '%env(LOCO_DSN)%'
                 domain: ['accueil']
-                locales: ['en', 'fr', 'es']
+                locales: [ 'fr','en', 'es']

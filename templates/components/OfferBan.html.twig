@@ -1,18 +1,19 @@
 <div{{ attributes }}
     class="banniereOffre"
 >
+{% trans_default_domain 'accueil' %}
     <!-- component html -->
 
     <h2>
-        {{titre}}
+        {{titre|trans}}
     </h2>
     <p>
-        {{text|raw}}
+        {{text|trans|raw}}
     </p>
     <a 
         class="button__secondary"
         href="#offer"
     >
-        {{ctaTitre}}
+        {{ctaTitre|trans}}
     </a>
 </div>

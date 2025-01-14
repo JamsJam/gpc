@@ -79,4 +79,20 @@
             // fill: aliceblue;
         }
     }
+
+
+
+    &__left{
+
+        @extend %flex-row-center;
+        gap: 2rem;
+
+        
+
+
+        
+
+    }
 }
+
+

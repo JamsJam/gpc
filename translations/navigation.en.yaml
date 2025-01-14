@@ -1,0 +1,11 @@
+nav:
+  desktop:
+    link1: Home
+    link2: Contact
+    link3: About Us
+    cta: Book My Trip
+  mobile:
+    link1: Home
+    link2: Contact
+    link3: About Us
+    cta: Book My Trip

@@ -1,7 +1,9 @@
 <div {{ attributes }} class="flash__container"  {{stimulus_controller("flash")}}>
+    {% trans_default_domain 'flash' %}
     <div class="flash__{{type}}" {{stimulus_target("flash","flash")}}>
         <p>
             {{ message }}
         </p>
     </div>
 </div>
+

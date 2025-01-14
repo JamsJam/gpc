@@ -8,6 +8,13 @@
         class='nav'
         
     >
+    {% set currentLocale = app.session.get('_locale') %}
+        {% set flags = {
+        'en': 'flag-england',
+        'fr': 'flag-france',
+        'es': 'flag-spain'
+    } %}
+    {% trans_default_domain 'navigation' %}
         {% if loading == false %}
 
 
@@ -21,20 +28,26 @@
                 {#todo flex-r-b-c p7.5   #}
                 <div class="nav__links ">
                 
-                    <a href="{{path('app_home')}}"  class="nav__link">Accueil</a>
-                    <a href="{{path('app_contact')}}"    class="nav__link">Contact</a>
-                    <a href="{{path('app_about')}}"  class="nav__link">À propos</a>
+                    <a href="{{path('app_home')}}"  class="nav__link">{{'nav.desktop.link1'|trans}}</a>
+                    <a href="{{path('app_contact')}}"    class="nav__link">{{'nav.desktop.link2'|trans}}</a>
+                    <a href="{{path('app_about')}}"  class="nav__link">{{'nav.desktop.link3'|trans}}</a>
                 </div>
 
 
 
                     {#todo btn to turbo add modal-form-etape #}
+                {# <div class="nav__left"> #}
+                    <a href="{{path('app_reservation')}}" class="nav__cta button__nav ">Réserver votre voyage</a>
 
-                <a href="{{path('app_reservation')}}" class="nav__cta button__nav ">Réserver votre voyage</a>
+
+                    {# {{ ux_icon('mingcute:menu-fill',{'class':'nav__burger'})}}  #}
+
+                {# </div> #}
             {% else %}
                 
                 <div class="nav__burger" {{stimulus_action('responsivnav','getNavModal','click')}}>
                     {{ ux_icon('mingcute:menu-fill',{'class':'nav__burger'})}} 
+
                 </div>
 
             {% endif %}

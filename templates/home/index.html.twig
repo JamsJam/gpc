@@ -22,7 +22,7 @@
             />
         {% endfor %}
 
-        
+
         <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg')}}'>
             <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
         </video>
@@ -70,9 +70,9 @@
     {% if offer is not null %}
         
         <twig:offerBan 
-            titre="Offres limitées : Séjours tout inclus en Guadeloupe !"
-            text="Hôtels d’exceptions, activités et excursions inclus. <strong>Réservez avant qu’il ne soit trop tard !</strong>"
-            ctaTitre="Voir nos packs exclusifs"
+            titre="accueil.banniereOffre.titre"
+            text="accueil.banniereOffre.text"
+            ctaTitre="accueil.banniereOffre.cta"
         />
     {% endif %}
 
@@ -103,9 +103,9 @@
     </section>
 
     <twig:CtaBan 
-        titre="Découvrez l'archipel guadeloupéen dès aujourd'hui !"
-        text="Plages paradisiaques, nature luxuriante et expériences inoubliables vous attendent. <br/><strong>Réservez votre voyage en un clic !</strong>"
-        ctaTitre="Je réserve mon voyage !"
+        titre="accueil.banniereCta1.titre"
+        text="accueil.banniereCta1.text"
+        ctaTitre="accueil.banniereCta1.cta"
     />
 
 
@@ -174,9 +174,9 @@
     </section>
 
     <twig:CtaBan 
-        titre="Envolez-vous vers la magie de la Guadeloupe !"
-        text="Entre lagons turquoise, forêts tropicales et soleil toute l’année, vivez une expérience unique dans l’archipel. <br/><strong>Réservez dès maintenant !</strong>"
-        ctaTitre="Je pars en Guadeloupe !"
+        titre="accueil.banniereCta2.titre"
+        text="accueil.banniereCta2.text"
+        ctaTitre="accueil.banniereCta2.cta"
     />
 
     <section id="transport" class="transport" >
