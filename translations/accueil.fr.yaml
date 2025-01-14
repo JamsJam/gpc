@@ -29,7 +29,7 @@ accueil:
       info:
         titre: Nos activités de loisirs et nos excursions
         para: <strong>Guadeloupe Passion Caraïbes</strong>,concepteur de loisirs interactifs, promeut l'authenticité guadeloupéenne en proposant aux visiteurs de faire des loisirs inédits et vivre des expériences inoubliables au cours des excursions.
-    
+  
     hebergement:
       title: Vous souhaitez un hébergement ?
       
@@ -55,3 +55,18 @@ accueil:
       arg3: Trajets dans un confort absolu
       cta1: Accédez à leur <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App pour réserver votre VTC en Guadeloupe </a>dès maintenant.
       cta2: Accéder à la Web App En Woute
+  
+  banniereOffre:
+    titre: "Offres limitées : Séjours tout inclus en Guadeloupe !"
+    text: Hôtels d’exceptions, activités et excursions inclus.
+    cta: Voir nos packs exclusifs
+
+  banniereCta1:
+    titre: Découvrez l'archipel guadeloupéen dès aujourd'hui !
+    text: Plages paradisiaques, nature luxuriante et expériences inoubliables vous attendent. <br/><strong>Réservez votre voyage en un clic !</strong>
+    cta: Je réserve mon voyage !
+
+  banniereCta2:
+    titre: "Envolez-vous vers la magie de la Guadeloupe !"
+    text: Hôtels d’exceptions, activités et excursions inclus.
+    cta: Je pars en Guadeloupe !

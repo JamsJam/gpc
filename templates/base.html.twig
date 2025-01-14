@@ -47,6 +47,39 @@
         data-back-to-top-class="back-to-top-container--intersecting"
         class="back-to-top-container--intersecting"
     >
+        <div class="flag__container" {{stimulus_controller('localchanger')}}>
+                        {% set flags = {
+                            'en': 'flag-england',
+                            'fr': 'flag-france',
+                            'es': 'flag-spain',
+                        } %}
+
+                        <div class="flag__actual__container" {{stimulus_action('localchanger','toggleOpen','click')}}>
+                            {{ ux_icon('twemoji:' ~ flags[app.session.get('_locale')],{'class':'flag'})}} 
+                        </div>
+                        <div class="flag__dropdown">
+
+                                {% set count = 1 %}
+                                {% for locale, flag in flags %}
+                                {% if locale != app.session.get('_locale') %}
+                                <a 
+                                    href="{{path(app.current_route,{'_locale': locale})}}"
+                                    {# data-turbo="false" #}
+                                    {# target="_top" #}
+                                    id="flag{{count}}"
+                                    class="flag__changeLang"
+                                    {{stimulus_target('localchanger','flag' ~ count )}}
+
+                                >
+
+                                    {{ ux_icon('twemoji:' ~ flag, {'class':'flag'}) }}
+                                </a>
+                                {% set count = count + 1 %}
+                                {% endif %}
+                            {% endfor %}
+
+                        </div>
+                    </div>
 
         <header >
             {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
@@ -68,9 +101,9 @@
         
             <main class="{% block mainClass %}{% endblock %}" >
                 {% if modalOnPage is defined %}
-                    <twig:ModalContainer />
-                {% endif %}
-                <twig:BackToTop />
+                        <twig:ModalContainer />
+                    {% endif %}
+                        <twig:BackToTop />
                 {% block body %}
                     <div class="modalmobile" {{stimulus_controller('modalmanager')|stimulus_target('modalmanager', 'modal')|stimulus_action('modalmanager','openModal','responsivnav:getModalEvent@window')|stimulus_action('modalmanager','showOnlyOnMobile','resize@window')}}>
                         <div class="modalmobile__container">
@@ -92,9 +125,9 @@
 
                         </div>
                     </div>
+
                 {% endblock %}
             </main>
-
         {# <footer > #}
             <twig:Footer 
                 data-turbo-permanent

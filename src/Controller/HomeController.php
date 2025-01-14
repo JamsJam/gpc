@@ -17,10 +17,17 @@ class HomeController extends AbstractController
     public function index(PromosRepository $pr, Request $request): Response
     {
 
-
         $locale = $request->getLocale();
+        if($request->query->get('_locale')){
+            $request->getSession()->set('_locale',$request->query->get('_locale'));
+            // $request->setLocale($request->getSession()->get('_locale'));
+            // $locale = $request->getLocale();
+
+            return $this->redirectToRoute('app_home');
+        }
+
         $offerResult = $pr->findTodayOffer(new DateTime());
-        
+        // $request->getSession()->set('_locale', 'en');
         $offer =  isset($offerResult) ? [
             "start" => $offerResult->getBeginAt(),
             "end"   => $offerResult->getEndAt(),
@@ -42,6 +49,7 @@ class HomeController extends AbstractController
         
         return $this->render('home/index.html.twig', [
             'offer' => $offer,
+            'locale' => $locale
         ]);
     }
 }

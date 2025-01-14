@@ -1,0 +1,11 @@
+nav:
+  desktop:
+    link1: Inicio
+    link2: Contacto
+    link3: Sobre nosotros
+    cta: Reservar mi viaje
+  mobile:
+    link1: Inicio
+    link2: Contacto
+    link3: Sobre nosotros
+    cta: Reservar mi viaje

@@ -1,0 +1,10 @@
+footer:
+  column1:
+    link1: Accueil
+    link2: Nous contacter
+    link3: A propos
+  column2:
+    link1: Politique de confidentialité
+    link2: Mentions légales
+    link3: A propos
+

@@ -4,8 +4,10 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-home:
-    path:       /{_locale}
-    controller: App\Controller\HomeController::index
-    requirements:
-        _locale: fr|en|es
+# home:
+#     path:       /{_locale}
+#     controller: App\Controller\HomeController::index
+#     requirements:
+#         _locale: fr|en|es
+
+
