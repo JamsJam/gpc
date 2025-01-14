@@ -18,6 +18,7 @@ class HomeController extends AbstractController
     {
 
         $locale = $request->getLocale();
+        $request->getSession()->set('_locale', $locale);
         if($request->query->get('_locale')){
             $request->getSession()->set('_locale',$request->query->get('_locale'));
             // $request->setLocale($request->getSession()->get('_locale'));
