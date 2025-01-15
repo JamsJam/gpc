@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
+{% trans_default_domain 'catalogue' %}
 
 
     {% block keyWord %}
         {% if type is same as 'activité'  %}
-            
-            Activités Guadeloupe, loisirs archipel, activités familiales 
+
+            {{'catalogue.activite.seo.kw'|trans}}
         {% else %}
             
-            Excursions Guadeloupe, aventures archipel, découverte nature. 
+            {{'catalogue.excursion.seo.kw'|trans}} 
         {% endif %}
     {% endblock %}
 
@@ -15,17 +16,17 @@
 
     {% block desc %}
         {% if type is same as 'activité'  %}
-            Découvrez les meilleures activités en Guadeloupe : loisirs pour tous les âges et expériences authentiques au cœur des îles
+            {{ 'catalogue.activite.seo.metadesc'|trans }}
         {% else %}
             
-            Explorez notre catalogue d’excursions en Guadeloupe : nature, aventure, culture et expériences mémorables.
+            {{ 'catalogue.excursion.seo.metadesc'|trans }}
         {% endif %}
     {% endblock %}
 {# {% endif %} #}
 
 
 
-{% block title %}{{type}}{{parent()}}{% endblock %}
+{% block title %}{{ type is same as 'activité' ? 'catalogue.activite.seo.title'|trans  :  'catalogue.excursion.seo.title'|trans }}{{parent()}}{% endblock %}
 {% block mainClass %}catalogue{% endblock %}
 
 {% block body %}
@@ -34,12 +35,12 @@
 
     <a href="{{path('app_home')}}" class="return__link cta">
         {{ ux_icon('flowbite:arrow-left-outline',{'class':'back-arrow'}) }}
-        Retour
+        {{ 'catalogue.ctaBack'|trans }}
     </a>
     
     <a href="{{path('app_catalogue',{'type': type == 'activites' ? 'excursions' :'activites' })}}" class="button__secondary">
 
-        Voir les {{ type == 'activites' ? 'excursions' :'activités' }}
+        {{ type == 'activites' ?  'catalogue.activite.seeOthers'|trans :'catalogue.excursion.seeOthers'|trans }}
     </a>
 </section>
 

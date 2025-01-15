@@ -1,0 +1,21 @@
+catalogue:
+
+  ctaBack: Volver
+
+  activite:
+    more: Ver actividades
+    nodata: No hay elementos disponibles por el momento
+    seeOthers: Ver excursiones
+    seo:
+      title: Actividades - Las mejores actividades en Guadalupe
+      kw: Actividades en Guadalupe, ocio en el archipiélago, actividades familiares
+      metadesc: "Descubre las mejores actividades en Guadalupe: ocio para todas las edades y experiencias auténticas en el corazón de las islas."
+  
+  excursion:
+    more: Ver excursiones
+    nodata: No hay elementos disponibles por el momento
+    seeOthers: Ver actividades
+    seo:
+      title: Excursiones - Vive la aventura en Guadalupe
+      kw: Excursiones en Guadalupe, aventuras en el archipiélago, descubrimiento de la naturaleza
+      metadesc: "Explora nuestro catálogo de excursiones en Guadalupe: naturaleza, aventura, cultura y experiencias memorables."

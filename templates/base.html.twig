@@ -48,38 +48,43 @@
         class="back-to-top-container--intersecting"
     >
         <div class="flag__container" {{stimulus_controller('localchanger')}}>
-                        {% set flags = {
-                            'en': 'flag-england',
-                            'fr': 'flag-france',
-                            'es': 'flag-spain',
-                        } %}
+            {% set flags = {
+                'en': 'flag-england',
+                'fr': 'flag-france',
+                'es': 'flag-spain',
+            } %}
 
-                        <div class="flag__actual__container" {{stimulus_action('localchanger','toggleOpen','click')}}>
-                            {{ ux_icon('twemoji:' ~ flags[app.session.get('_locale')],{'class':'flag'})}} 
-                        </div>
-                        <div class="flag__dropdown">
+            <div class="flag__actual__container" {{stimulus_action('localchanger','toggleOpen','click')}}>
+                {{ ux_icon('twemoji:' ~ flags[app.session.get('_locale')],{'class':'flag'})}} 
+            </div>
+            <div class="flag__dropdown">
 
-                                {% set count = 1 %}
-                                {% for locale, flag in flags %}
-                                {% if locale != app.session.get('_locale') %}
-                                <a 
-                                    href="{{path(app.current_route,{'_locale': locale})}}"
-                                    data-turbo="false"
-                                    {# target="_top" #}
-                                    id="flag{{count}}"
-                                    class="flag__changeLang"
-                                    {{stimulus_target('localchanger','flag' ~ count )}}
+                {% set count = 1 %}
+                {% for locale, flag in flags %}
+                    {% if locale != app.session.get('_locale') %}
+                        <a 
+                            {% if app.current_route is same as 'app_catalogue' %}
+                                
+                                href="{{path(app.current_route,{'type' : type,'_locale': locale})}}"
+                            {% else %}
+                                
+                                href="{{path(app.current_route,{'_locale': locale})}}"
+                            {% endif %}
+                            data-turbo="false"
+                            {# target="_top" #}
+                            id="flag{{count}}"
+                            class="flag__changeLang"
+                            {{stimulus_target('localchanger','flag' ~ count )}}
+                        >
 
-                                >
+                            {{ ux_icon('twemoji:' ~ flag, {'class':'flag'}) }}
+                        </a>
+                        {% set count = count + 1 %}
+                    {% endif %}
+                {% endfor %}
 
-                                    {{ ux_icon('twemoji:' ~ flag, {'class':'flag'}) }}
-                                </a>
-                                {% set count = count + 1 %}
-                                {% endif %}
-                            {% endfor %}
-
-                        </div>
-                    </div>
+            </div>
+        </div>
 
         <header >
             {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
