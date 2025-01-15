@@ -43,6 +43,9 @@ class Excursions
     #[ORM\Column(type: 'json', nullable: true)]
     private ?array $crop = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $buttonCode = null;
+
 
     public function getId(): ?int
     {
@@ -141,6 +144,18 @@ class Excursions
     public function setIsPublic(bool $isPublic): static
     {
         $this->isPublic = $isPublic;
+
+        return $this;
+    }
+
+    public function getButtonCode(): ?string
+    {
+        return $this->buttonCode;
+    }
+
+    public function setButtonCode(?string $buttonCode): static
+    {
+        $this->buttonCode = $buttonCode;
 
         return $this;
     }
