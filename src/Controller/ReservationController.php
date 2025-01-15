@@ -12,6 +12,7 @@ use App\Form\Reservation\TripType as ReservationType2;
 use App\Form\Reservation\ContactType as ReservationType1;
 use App\Form\Reservation\ConfirmationType as ReservationType3;
 use App\Service\ExploreApiService;
+use App\Trait\LocaleTrait;
 use DateTimeImmutable;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,6 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ReservationController extends AbstractController
 {
 
+    use LocaleTrait;
 
     public function __construct(
 
@@ -29,6 +31,12 @@ class ReservationController extends AbstractController
     #[Route('/reservation', name: 'app_reservation')]
     public function index(Request $request): Response
     {
+
+        $locale = $request->getLocale();
+        $redirect = $this->handleLocale($request);
+        if($redirect){
+            return $redirect;
+        }
 
         $session = $request->getSession();
         $form = $this->createForm(ReservationType1::class);
@@ -50,6 +58,7 @@ class ReservationController extends AbstractController
 
         return $this->render('reservation/contactForm.html.twig', [
             'form' => $form,
+            'locale' => $locale,
         ]);
     }
 

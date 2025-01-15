@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\Contact\ContactType;
 use App\Service\ExploreApiService;
+use App\Trait\LocaleTrait;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
@@ -13,10 +14,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
+    use LocaleTrait;
+
     #[Route('/contact', name: 'app_contact')]
     public function index(Request $request, MailerInterface $mailer, ExploreApiService $explorApi): Response
     {
 
+        $locale = $request->getLocale();
+        $redirect = $this->handleLocale($request);
+        if($redirect){
+            return $redirect;
+        }
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
@@ -80,6 +88,7 @@ class ContactController extends AbstractController
 
         return $this->render('contact/index.html.twig', [
             'form' => $form,
+            'locale' => $locale,
         ]);
     }
 }
