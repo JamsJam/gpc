@@ -25,7 +25,7 @@ accueil:
         transport_cta: Reservar tu transporte
     
     activite:
-      titre: ¿Qué hacer en Guadalupe?
+      title: ¿Qué hacer en Guadalupe?
       info:
         titre: Nuestras actividades de ocio y excursiones
         para: <strong>Guadeloupe Passion Caraïbes</strong>, creador de experiencias de ocio interactivas, promueve la autenticidad de Guadalupe ofreciendo a los visitantes actividades únicas y excursiones inolvidables.
@@ -55,3 +55,23 @@ accueil:
       arg3: Viaja con total comodidad
       cta1: Accede a su <a href="https://ew21596948.web.app/?providerID=5438bb9a" rel="noopener" class='cta'>Web App para reservar tu VTC en Guadalupe</a> ahora.
       cta2: Accede a la Web App de En Woute
+
+  banniereOffre:
+    titre: "¡Ofertas limitadas: Estancias todo incluido en Guadalupe!"
+    text: Hoteles excepcionales, actividades y excursiones incluidas.
+    cta: Descubre nuestros paquetes exclusivos
+
+  banniereCta1:
+    titre: ¡Descubre el archipiélago de Guadalupe hoy mismo!
+    text: Playas paradisíacas, naturaleza exuberante y experiencias inolvidables te esperan. <br/><strong>¡Reserva tu viaje con un solo clic!</strong>
+    cta: ¡Reservo mi viaje!
+
+  banniereCta2:
+    titre: "¡Vuela hacia la magia de Guadalupe!"
+    text: Hoteles excepcionales, actividades y excursiones incluidas.
+    cta: ¡Voy a Guadalupe!
+
+seo:
+    title: Inicio - Reserva tu viaje
+    kw: Actividades en Guadalupe, ocio en el archipiélago, actividades familiares
+    metadesc: Excursiones en Guadalupe, aventuras en el archipiélago, descubrimiento de la naturaleza.

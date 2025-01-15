@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
+{% trans_default_domain 'accueil' %}
 
 {% block keyWord %}
-    Guadeloupe Passion Caraïbes, caraibes, Guadeloupe, Voyage en Guadeloupe, Activités touristiques, Hébergements Guadeloupe, Excursions en Guadeloupe, Transport privé, Villas de luxe, Séjours sur mesure, Plages paradisiaques, Découverte archipel 
+    {{'accueil.seo.kw'|trans}}
 {% endblock %}
 {% block desc %}
-    Explorez la Guadeloupe avec Guadeloupe Passion Caraïbes : activités uniques, hébergements de qualité, transferts privés et excursions inoubliables. Réservez votre aventure dans l'archipel dès aujourd'hui !
+        {{'accueil.seo.metadesc'|trans}}
 {% endblock %}
 
 
-{% block title %}Accueil {{parent()}}{% endblock %}
+{% block title %} {{ 'accueil.seo.title'|trans }} {{parent()}}{% endblock %}
 {% block mainClass %}home{% endblock %}
 {% block body %}
-{% trans_default_domain 'accueil' %}
+
 {{parent()}}
     <section class="header">
         {% for message in app.flashes('success_form') %}

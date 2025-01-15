@@ -64,7 +64,7 @@
                                 {% if locale != app.session.get('_locale') %}
                                 <a 
                                     href="{{path(app.current_route,{'_locale': locale})}}"
-                                    {# data-turbo="false" #}
+                                    data-turbo="false"
                                     {# target="_top" #}
                                     id="flag{{count}}"
                                     class="flag__changeLang"
