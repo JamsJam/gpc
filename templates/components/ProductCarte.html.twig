@@ -16,11 +16,19 @@
             
         </h3>
 
-        <button 
+        {# <button 
             class="button__secondary"
             {{stimulus_action('product_detail','handleDetailRequest','click',)}}
         >
             Voir plus
-        </button>
+        </button> #}
+
+        {% if produit.buttonCode %}
+        
+            {{ produit.buttonCode }}
+        {% else %}
+            <div>Button code manquant</div>
+        {% endif %}
     </div>
+
 </div>

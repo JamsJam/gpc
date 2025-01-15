@@ -77,6 +77,9 @@ class ActivitesCrudController extends AbstractCrudController
                 ->setSortable(true)
                 ,
             TextEditorField::new('description'),
+            TextField::new('buttonCode', 'Bouton de reservation')
+                ->setRequired(false)
+            ,
             
             FormField::addPanel('Image'),
 

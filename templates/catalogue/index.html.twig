@@ -49,25 +49,35 @@
 {% if collection|length > 0 %}
     <div class="grid__container">
 
-        {% for item in collection %}
-            {#? mode prod if visible #}
-            {% if item.isPublic %}
+
+
+        {#? mode test for admin if unvisible #}
+        {% if is_granted('ROLE_ADMIN')%}
+            {% for item in collection %}
+
                 <twig:ProductCarte 
-                    produit='{{item}}'
-                    type='{{type}}'
-                />
-            {% else %}
-                {#? mode test for admin if unvisible #}
-                {% if is_granted('ADMIN')%}
-                    <twig:ProductCarte 
-                    produit='{{item}}'
-                    type='{{type}}'
-                    
-                />
-                {% endif %}
+                produit='{{item}}'
+                type='{{type}}'
                 
-            {% endif %}
-        {% endfor %}
+            />
+            {% endfor %}
+        {% else %}
+            {% for item in collection %}
+                {#? mode prod if visible #}
+                {% if item.isPublic   %}
+                    {% if item.buttonCode %}
+                    
+                        <twig:ProductCarte 
+                            produit='{{item}}'
+                            type='{{type}}'
+                        />
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+            
+
+
     </div>
 {% else %}
     <div class="grid__empty">
