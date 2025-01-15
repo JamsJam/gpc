@@ -3,29 +3,29 @@
 namespace App\Controller;
 
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use DateTime;
+use App\Trait\LocaleTrait;
 
 use App\Repository\PromosRepository;
-use DateTime;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
+    use LocaleTrait ;
+    
     #[Route('/', name: 'app_home' )]
     public function index(PromosRepository $pr, Request $request): Response
     {
 
         $locale = $request->getLocale();
-        $request->getSession()->set('_locale', $locale);
-        if($request->query->get('_locale')){
-            $request->getSession()->set('_locale',$request->query->get('_locale'));
-            // $request->setLocale($request->getSession()->get('_locale'));
-            // $locale = $request->getLocale();
-
-            return $this->redirectToRoute('app_home');
+        $redirect = $this->handleLocale($request);
+        if($redirect){
+            return $redirect;
         }
+        
 
         $offerResult = $pr->findTodayOffer(new DateTime());
         // $request->getSession()->set('_locale', 'en');

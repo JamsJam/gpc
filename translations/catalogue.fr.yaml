@@ -1,0 +1,24 @@
+catalogue:
+  
+  ctaBack: Retour
+
+
+  activite:
+    more: Voir les activites
+    nodata: Aucun élément pour l'instant
+    seeOthers: Voir les excursions
+    seo:
+      title: Activités - Les meilleures activités de Guadeloupe 
+      kw: Activités Guadeloupe, loisirs archipel, activités familiales 
+      metadesc: "Découvrez les meilleures activités en Guadeloupe : loisirs pour tous les âges et expériences authentiques au cœur des îles"
+  
+  excursion:
+    more: Voir les excurtions
+    nodata: Aucun élément pour l'instant
+    seeOthers: Voir les activites
+    seo:
+      title: Excursions - Vivez l'aventure en Guadeloupe 
+      kw: Excursions Guadeloupe, aventures archipel, découverte nature. 
+      metadesc: "Explorez notre catalogue d’excursions en Guadeloupe : nature, aventure, culture et expériences mémorables."
+      
+
