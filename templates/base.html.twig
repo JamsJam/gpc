@@ -65,7 +65,7 @@
                         <a 
                             {% if app.current_route is same as 'app_catalogue' %}
                                 
-                                href="{{path(app.current_route,{'type' : type},{'_locale': locale})}}"
+                                href="{{path(app.current_route,{'type' : type,'_locale': locale})}}"
                             {% else %}
                                 
                                 href="{{path(app.current_route,{'_locale': locale})}}"
