@@ -4,9 +4,39 @@
     
     @extend %flex-row-between-center;
 
-    height: 120px;
+    height: calc(120px + 3rem);
     padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+    padding-block-start: 3rem;
+    position: relative;
     
+
+    .bandeau-contact{
+        background-color: $blue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3rem;
+        padding-inline:  clamp(2rem, -0.2857rem + 4.7619vw, 4rem);
+
+        @extend %flex-row-between-center;
+        gap: 2rem;
+
+        p{
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: azure;
+            
+            span{
+                font-weight: 700;
+
+
+            }
+        }
+
+    }
+
+
     .logo{
         height: 100%;
 

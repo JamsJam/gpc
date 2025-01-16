@@ -1,12 +1,13 @@
 
 {#todo flex-r-b-c p7.5    #}
-    <nav 
-        {{ attributes.defaults(
-            stimulus_controller('responsivnav')
-            |stimulus_action( 'responsivnav','setMobileValue','resize@window')
-            ) }}
-        class='nav'
-        
+
+<nav 
+    {{ attributes.defaults(
+        stimulus_controller('responsivnav')
+        |stimulus_action( 'responsivnav','setMobileValue','resize@window')
+        ) }}
+    class='nav'
+    
     >
     {% set currentLocale = app.session.get('_locale') %}
         {% set flags = {
@@ -15,6 +16,11 @@
         'es': 'flag-spain'
     } %}
     {% trans_default_domain 'navigation' %}
+        <div class="bandeau-contact">
+            <p> Du lundi au samedi de 9h à 17h</p>
+
+            <div><p>contact@guadeloupepassoincaraibes.com</p> <p> 0690.00.00.00</p></div>
+        </div>
         {% if loading == false %}
 
 
@@ -52,5 +58,5 @@
 
             {% endif %}
         {% endif %}
-    </nav>
+</nav>
 
