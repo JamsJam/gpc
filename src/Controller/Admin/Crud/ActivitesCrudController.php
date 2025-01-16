@@ -16,12 +16,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Option\SearchMode;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 
 class ActivitesCrudController extends AbstractCrudController
 {
@@ -77,8 +78,10 @@ class ActivitesCrudController extends AbstractCrudController
                 ->setSortable(true)
                 ,
             TextEditorField::new('description'),
-            TextField::new('buttonCode', 'Bouton de reservation')
+            TextareaField::new('buttonCode', 'Bouton de reservation')
                 ->setRequired(false)
+                ->renderAsHtml()
+                ->onlyOnForms()
             ,
             
             FormField::addPanel('Image'),

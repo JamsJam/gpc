@@ -25,9 +25,11 @@
 
         {% if produit.buttonCode %}
         
-            {{ produit.buttonCode }}
+            {{ produit.buttonCode|raw }}
+
         {% else %}
-            <div>Button code manquant</div>
+            <a href="{{ path('admin_' ~ type ~ '_edit',{'entityId':produit.id}) }}">Ajouter le bouton</a>
+            
         {% endif %}
     </div>
 
