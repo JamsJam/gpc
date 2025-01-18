@@ -1,4 +1,4 @@
-<div{{ attributes }}>
+<div{{ attributes.defaults(  stimulus_controller('horaire')) }}>
     {% if status is same as "open" %}
         <p > <twig:ux:icon name="noto:green-circle" class='horaireIcon' /> Ouvert (ferme à {{ close_hour.hours }}h)  </p>
     {% elseif status is same as "close" %}
@@ -9,5 +9,5 @@
          <p > nopefff</p>
             
     {% endif %}
-    
+
 </div>
