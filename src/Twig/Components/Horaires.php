@@ -27,7 +27,6 @@ final class Horaires
     public array $open_days = [
         "Monday",
         "Friday",
-        "Saterday",
         "Monday", 
         "Tuesday",
         "Wednesday",
@@ -40,10 +39,13 @@ final class Horaires
     ];
     public \DateTimeImmutable $today;
 
+    
     public function mount(){
         $this->updateStatus();
         // dd('hello');
     }
+
+
 
     #[LiveAction()]
     public function updateDate(){
