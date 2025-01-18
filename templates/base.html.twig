@@ -90,8 +90,8 @@
             {# <turbo-frame id="navigation" data-turbo-action="advance"> #}
                 <twig:Navbar 
                     route="{{app.current_route}}"
-                    data-turbo-permanent
                 />
+                    {# data-turbo-permanent #}
                 {% if app.user %}
                     
                     <div class="dashboard">

@@ -1,0 +1,13 @@
+<div{{ attributes }}>
+    {% if status is same as "open" %}
+        <p > Ouvert <twig:ux:icon name="noto:green-circle" class='horaireIcon' /> (ferme a 19h)</p>
+    {% elseif status is same as "close" %}
+         <p > fermé <twig:ux:icon name="noto:red-circle"  class='horaireIcon'/> (ferme a 19h)</p>
+    {% elseif status is same as "idk" %}
+         <p > nope</p>
+    {% else %}
+         <p > nopefff</p>
+            
+    {% endif %}
+    
+</div>
