@@ -4,6 +4,7 @@ namespace App\Twig\Components;
 
 
 
+use DateTimeZone;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
@@ -16,7 +17,7 @@ final class Horaires
 
     public ?string $status = null;
     public array $open_hour = [
-        "hours"=> 0,
+        "hours"=> 9,
         "minutes"=> 0
     ];
     public array $close_hour =  [
@@ -46,7 +47,7 @@ final class Horaires
 
     #[LiveAction()]
     public function updateDate(){
-        $this->today = new \DateTimeImmutable('now'); //? add timezone -4,5 caracasse
+        $this->today = new \DateTimeImmutable('now',new DateTimeZone('America/Guadeloupe')); //? add timezone -4,5 caracasse
     }
 
     #[LiveAction()]
