@@ -9,18 +9,22 @@
     class='nav'
     
     >
+      {% trans_default_domain 'navigation' %}
+        <div class="bandeau-contact">
+            {# <p> Ouvert ° (ferme a 19h)</p> #}
+            <twig:Horaires />
+            <div>
+                <a href="tel:+590690376161"><p> <twig:ux:icon name="ic:baseline-whatsapp" class='horaireIcon'/> 0690.37.61.61</p></a> <a href="mail:contact@guadeloupepassioncaraibes.com"><p><twig:ux:icon name="material-symbols-light:mail-outline-rounded" class='horaireIcon'/> contact@guadeloupepassioncaraibes.com</p></a>
+            </div> 
+        </div>
     {% set currentLocale = app.session.get('_locale') %}
         {% set flags = {
         'en': 'flag-england',
         'fr': 'flag-france',
         'es': 'flag-spain'
     } %}
-    {% trans_default_domain 'navigation' %}
-        <div class="bandeau-contact">
-            <p> Du lundi au samedi de 9h à 17h</p>
-
-            <div><p>contact@guadeloupepassoincaraibes.com</p> <p> 0690.00.00.00</p></div>
-        </div>
+  
+       
         {% if loading == false %}
 
 
@@ -42,13 +46,9 @@
 
 
                     {#todo btn to turbo add modal-form-etape #}
-                {# <div class="nav__left"> #}
+
                     <a href="{{path('app_reservation')}}" class="nav__cta button__nav ">{{'nav.desktop.cta'|trans}}</a>
 
-
-                    {# {{ ux_icon('mingcute:menu-fill',{'class':'nav__burger'})}}  #}
-
-                {# </div> #}
             {% else %}
                 
                 <div class="nav__burger" {{stimulus_action('responsivnav','getNavModal','click')}}>

@@ -11,7 +11,7 @@
     
 
     .bandeau-contact{
-        background-color: $blue;
+        background-color: $blue-hover;
         position: absolute;
         top: 0;
         left: 0;
@@ -21,16 +21,23 @@
 
         @extend %flex-row-between-center;
         gap: 2rem;
-
+        
         p{
             font-weight: 700;
             font-size: 0.8rem;
             color: azure;
+            @extend %flex-row-center-start;
+            gap: 0.4rem;
+
             
             span{
                 font-weight: 700;
 
 
+            }
+
+            .horaireIcon{
+                height: 1rem;
             }
         }
 
