@@ -10,13 +10,25 @@
     
     >
       {% trans_default_domain 'navigation' %}
-        <div class="bandeau-contact">
+        <aside class="bandeau-contact"  aria-label="contact informations">
             {# <p> Ouvert ° (ferme a 19h)</p> #}
-            <twig:Horaires />
-            <div>
-                <a href="tel:+590690376161"><p> <twig:ux:icon name="ic:baseline-whatsapp" class='horaireIcon'/> 0690.37.61.61</p></a> <a href="mail:contact@guadeloupepassioncaraibes.com"><p><twig:ux:icon name="material-symbols-light:mail-outline-rounded" class='horaireIcon'/> contact@guadeloupepassioncaraibes.com</p></a>
+            <twig:Horaires 
+                role="group"
+                aria-label="opening hours"
+            />
+            <div role="menu" aria-label="contact data">
+                <a href="tel:+590690376161" role="menuitem" aria-label="+590690376161" title="Nous appeler">
+                    <p> 
+                        <twig:ux:icon name="ic:baseline-whatsapp" class='horaireIcon' aria-hidden="true"/> 0690.37.61.61
+                    </p>
+                </a>
+                <a href="mailto:contact@guadeloupepassioncaraibes.com" role="menuitem" aria-label=" contact@guadeloupepassioncaraibes.com" title="Nous contacter par mail">
+                    <p>
+                        <twig:ux:icon name="material-symbols-light:mail-outline-rounded" class='horaireIcon' aria-hidden="true"/> Nous écrire
+                    </p>
+                </a>
             </div> 
-        </div>
+        </aside>
     {% set currentLocale = app.session.get('_locale') %}
         {% set flags = {
         'en': 'flag-england',
@@ -28,26 +40,32 @@
         {% if loading == false %}
 
 
-            <div class="logo__container">
-                    <img src="{{asset('./images/GPC-logo.png')}}" alt="logo Guadeloupe Passion Caraïbe" class="logo"/>
-            </div>
+            <a href="{{path('app_home')}}" title="Aller sur la page d'accueil" class="logo__container" >
+                    <img  src="{{asset('./images/GPC-logo.png')}}" alt="logo Guadeloupe Passion Caraïbe" class="logo" aria-hidden="true"/>
+            </a>
             
             {% if isMobile is not same as true %}
                 
 
                 {#todo flex-r-b-c p7.5   #}
-                <div class="nav__links ">
+                <div class="nav__links " role="menu" aria-label="navigation link" >
                 
-                    <a href="{{path('app_home')}}"  class="nav__link">{{'nav.desktop.link1'|trans}}</a>
-                    <a href="{{path('app_contact')}}"    class="nav__link">{{'nav.desktop.link2'|trans}}</a>
-                    <a href="{{path('app_about')}}"  class="nav__link">{{'nav.desktop.link3'|trans}}</a>
+                    <a role="menuitem" href="{{path('app_home')}}" class="nav__link" title="Aller sur la page d'accueil">
+                        {{'nav.desktop.link1'|trans}}
+                    </a>
+                    <a role="menuitem" href="{{path('app_contact')}}"    class="nav__link" title="Aller sur la page contact">
+                        {{'nav.desktop.link2'|trans}}
+                    </a>
+                    <a role="menuitem" href="{{path('app_about')}}"  class="nav__link" title="Aller sur la page à propos">
+                        {{'nav.desktop.link3'|trans}}
+                    </a>
                 </div>
 
 
 
                     {#todo btn to turbo add modal-form-etape #}
 
-                    <a href="{{path('app_reservation')}}" class="nav__cta button__nav ">{{'nav.desktop.cta'|trans}}</a>
+                    <a href="{{path('app_reservation')}}" class="nav__cta button__nav " title="Acceder au formulaire de reservation">{{'nav.desktop.cta'|trans}}</a>
 
             {% else %}
                 

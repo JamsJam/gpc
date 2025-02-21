@@ -1,6 +1,9 @@
 {% trans_default_domain 'accueil' %}
 <div{{ attributes }}
     class="card__container"
+    role="listitem"
+    aria-labelledby="service-title-{{ service|trans|slug("-") }}"
+    aria-describedby="service-desc-{{ service|trans|slug("-") }}"
 >
     <!-- component html -->
 
@@ -9,9 +12,9 @@
 
         
         {{ ux_icon(serviceIcon,{'class':'card__icon' }) }}
-        <h3>{{ service|trans }}</h3>
-        <p>{{ description|trans }}</p>
-        <a href="{{target}}" class="button__secondary">{{ ctaTitle|trans }}</a>
+        <h3 id="service-title-{{ service|trans|slug("-") }}">{{ service|trans }}</h3>
+        <p id="service-desc-{{ description|trans|slug("-") }}">{{ description|trans }}</p>
+        <a href="{{target}}" class="button__secondary" title="Aller vers la section {{ service|trans }}">{{ ctaTitle|trans }}</a>
         
     </div>
 

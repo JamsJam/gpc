@@ -39,6 +39,8 @@ final class Horaires
     ];
     public \DateTimeImmutable $today;
 
+    public string $next_open_day;
+
     
     public function mount(){
         $this->updateStatus();
@@ -106,7 +108,9 @@ final class Horaires
             $status = "open";
         } else if(!$this->isOpenDay() || !$this->isOpenHour()){
             $status = "close";
+
         }else{
+            
             $status = "";
         }
 

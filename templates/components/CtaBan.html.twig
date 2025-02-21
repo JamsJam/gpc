@@ -1,11 +1,14 @@
-<div{{ attributes }}
-    class="bannierCta"
->
 {% trans_default_domain 'accueil' %}
+<section{{ attributes }}
+    class="bannierCta"
+    
+    aria-labelledby="title-cta-{{ titre|trans|slug('-') }}"
+>
+
     <!-- component html -->
 
-    <h2>
-        {{titre|trans}}
+    <h2 id="title-cta-{{ titre|trans|slug('-') }}">
+        {{ titre|trans }}
     </h2>
     <p>
         {{text|trans|raw}}
@@ -16,4 +19,4 @@
     >
         {{ctaTitre|trans}}
     </a>
-</div>
+</section>

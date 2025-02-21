@@ -14,7 +14,7 @@
 {% block body %}
 
 {{parent()}}
-    <section class="header">
+    <section class="header"  aria-label="Header section" aria-describedby="header-description">
         {% for message in app.flashes('success_form') %}
 
             <twig:Flash
@@ -24,13 +24,13 @@
         {% endfor %}
 
 
-        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg')}}'>
+        <video loop autoplay muted poster='{{asset('images/gpcpromo_poster.jpg') }}' aria-hidden="true">
             <source src="{{ asset('video/gpcpromo_compress_candy.mp4') }}" type="video/mp4">
         </video>
-        <div class="header__info">
-            <h1>{{ 'accueil.titre'|trans }}</h1>
+        <div class="header__info" >
+            <h1 id="app-title">{{ 'accueil.titre'|trans }}</h1>
             {# <p class="subtitle">Agence réceptive des îles de Guadeloupe</p class="subtitle"> #}
-            <p class="subtitle">{{ 'accueil.header.titre'|trans }}</p class="subtitle">
+            <p id="header-description" class="subtitle">{{ 'accueil.header.titre'|trans }}</p class="subtitle">
             <div class="btn_container">
                 <a href="{{path('app_reservation')}}" class="button__primary" >{{ 'accueil.header.cta'|trans }}</a>
                 {# <a href="#offers" class="button__secondary" >Voir les offres</a> #}
@@ -38,15 +38,17 @@
         </div>
     </section>
 
-    <section class="service">
-        <h2>{{ 'accueil.section.services.title'|trans }}</h2>
-        <div class="service__cards">
+
+    <section class="service" aria-labelledby="service-section">
+        <h2 id='service-section'>{{ 'accueil.section.services.title'|trans }}</h2>
+        <div class="service__cards" role="list" aria-label="Nos services" >
             <twig:ServiceCard 
                 serviceIcon="cbi:roomsoutdoor"
                 service='accueil.section.services.cards.activities_title'
                 description='accueil.section.services.cards.activities_description'
                 target="#activite"
                 ctaTitle='accueil.section.services.cards.activities_cta'
+                
             />
             <twig:ServiceCard 
                 serviceIcon="bi:house-fill"
@@ -77,12 +79,12 @@
         />
     {% endif %}
 
-    <section class="activite" id="activite">
+    <section class="activite" id="activite" aria-labelledby="activities-section">
 
-        <h2>{{ "accueil.section.activite.title"|trans }}</h2>
+        <h2 id='activities-section'>{{ "accueil.section.activite.title"|trans }}</h2>
 
         <div class="activite__container">
-            <div class="activite__imgGrid">
+            <div class="activite__imgGrid" aria-hidden="true">
                 <div class="activite__img" id="activite__img1"></div>
                 <div class="activite__img" id="activite__img2"></div>
                 <div class="activite__img" id="activite__img3"></div>
@@ -110,9 +112,9 @@
     />
 
 
-    <section class="hebergement" id="hebergement">
+    <section class="hebergement" id="hebergement" aria-labelledby="herbergement-section">
 
-        <h2>{{ "accueil.section.hebergement.title"|trans }}</h2>
+        <h2 id="herbergement-section">{{ "accueil.section.hebergement.title"|trans }}</h2>
         <div class="hebergement__container" id='hotel'>
             <div class="hebergement__imgGrid">
                 <div class="hebergement__img" id="hebergement__img1"></div>
@@ -142,7 +144,7 @@
         </div>
 
 
-        <div class="hebergement__container" id="villa">
+        <div class="hebergement__container" id="villa" >
 
 
             <div class="hebergement__info">
@@ -159,7 +161,7 @@
                     </ul>
 
                     <a 
-                        href='{{asset("documents/hotel-partenaire-GPC.pdf")}}'
+                        href='{{asset("documents/hebergement-prive-GPC.pdf")}}'
                         class="cta"
                         >
                         {{ "accueil.section.hebergement.hotel.cta"|trans }} {{ ux_icon('si:arrow-right-fill') }}
@@ -180,10 +182,10 @@
         ctaTitre="accueil.banniereCta2.cta"
     />
 
-    <section id="transport" class="transport" >
+    <section id="transport" class="transport" aria-labelledby="transfert-section">
         
         <div class="transport__infos">
-            <h2>
+            <h2 id="transfert-section">
                 {{ "accueil.section.transport.title"|trans }}
             </h2>
             <p>
@@ -230,9 +232,9 @@
     {% if offer is not null %}
 
 
-        <section  id="offer">
+        <section  id="offer" aria-labelledby="offer-section">
 
-            <h2>Offre exclusive :  {{offer.titre}}</h2>
+            <h2 id="offer-section">Offre exclusive :  {{offer.titre}}</h2>
 
             <p class="offer__subtext">Profitez d'une offre toute comprise, à ne pas manquer !</p>
 
