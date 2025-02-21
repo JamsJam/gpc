@@ -108,8 +108,9 @@ final class Horaires
             $status = "open";
         } else if(!$this->isOpenDay() || !$this->isOpenHour()){
             $status = "close";
-            
+
         }else{
+            
             $status = "";
         }
 

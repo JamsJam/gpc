@@ -40,16 +40,13 @@ class PromosRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
-       public function findTodayOffer($today): ?Promos
-       {
-           $qb =  $this->createQueryBuilder('p');
-           $qb ->andWhere( $qb->expr()->between(':today', 'p.beginAt', 'p.endAt'))
-               ->setParameter('today', $today)
-               
-               
+    public function findTodayOffer($today): ?Promos
+    {
+        $qb =  $this->createQueryBuilder('p');
+        $qb ->andWhere( $qb->expr()->between(':today', 'p.beginAt', 'p.endAt'))
+            ->setParameter('today', $today)
+        ;
 
-           ;
-
-           return  $qb->getQuery()->getOneOrNullResult();
-       }
+        return  $qb->getQuery()->getOneOrNullResult();
+    }
 }

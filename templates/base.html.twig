@@ -54,21 +54,21 @@
                 'es': 'flag-spain',
             } %}
 
-            <div class="flag__actual__container" {{stimulus_action('localchanger','toggleOpen','click')}}>
+            <div class="flag__actual__container" {{stimulus_action('localchanger','toggleOpen','click')}} role="button" aria-label="Langue {{app.session.get('_locale') }}">
                 {{ ux_icon('twemoji:' ~ flags[app.session.get('_locale')],{'class':'flag'})}} 
             </div>
-            <div class="flag__dropdown">
+            <div class="flag__dropdown" role="menu">
 
                 {% set count = 1 %}
                 {% for locale, flag in flags %}
                     {% if locale != app.session.get('_locale') %}
-                        <a 
+                        <a role="menuitem" aria-label="changer la langue {{ locale }}" 
                             {% if app.current_route is same as 'app_catalogue' %}
-                                
-                                href="{{path(app.current_route,{'type' : type,'_locale': locale})}}"
+                                href="{{url(app.current_route,{'type' : type,'_locale': locale})}}"
+                                aria-label="changer la langue en {{ locale }}"
                             {% else %}
-                                
-                                href="{{path(app.current_route,{'_locale': locale})}}"
+                                href="{{url(app.current_route,{'_locale': locale})}}"
+                                aria-label="changer la langue en {{ locale }}"
                             {% endif %}
                             data-turbo="false"
                             {# target="_top" #}
@@ -104,7 +104,7 @@
             {% endblock %}
         </header>
         
-            <main class="{% block mainClass %}{% endblock %}" >
+            <main class="{% block mainClass %}{% endblock %}"  aria-labelledby="app-title">
                 {% if modalOnPage is defined %}
                         <twig:ModalContainer />
                     {% endif %}
