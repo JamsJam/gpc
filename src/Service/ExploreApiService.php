@@ -52,8 +52,8 @@ class ExploreApiService{
         $response = $this->client->request(
             'POST',
             
-            // $this->exploreLink, //! await explor validation
-            $this->testApiLink,
+            $this->exploreLink, //! await explor validation
+            // $this->testApiLink,
             [
                 'headers' =>[
                     "x-tenant-token" => $this->exploreTkn,
@@ -63,6 +63,6 @@ class ExploreApiService{
                 
             ]
         );
-        dd($response->toArray());
+        // dd($response->toArray());
     }
 }

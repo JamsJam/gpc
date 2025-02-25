@@ -120,7 +120,7 @@ class ReservationController extends AbstractController
                     "modeOfArrival" => "avion",
                     // "comment" => "contact form -  Message du prospect :  ".$sejourInfo['message']
                 ];
-                $explorApi->sendLeadsToExplore($leads);
+                // $explorApi->sendLeadsToExplore($leads);
 
 
             for ($counter=0; $counter < 2; $counter++) { 
@@ -138,12 +138,17 @@ class ReservationController extends AbstractController
                         'template'=>'emails/reservations/gpc.html.twig',
                     ],
                 };
+                // dd($sejourInfo);
                 $email = (new TemplatedEmail())
                     ->from($emailInfo['from'])
                     ->from($emailInfo['to'])
                     ->subject($emailInfo['subject'])
                     ->htmlTemplate($emailInfo['template'])
-                    ->context(['infoSejour' => $sejourInfo])
+                    ->context([
+                        'infoSejour' => $sejourInfo,
+                        "startDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[0]), "c"),
+                        "endDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[1]), "c")
+                    ])
                 ;
 
                 $mailer->send($email);
@@ -152,8 +157,8 @@ class ReservationController extends AbstractController
 
             //? creer un App.flash
             $this->addFlash(
-                'success',
-                'Votre message a bien été envoyé'
+                'success_resa',
+                'Votre réservation a bien été pris en compte'
             );
             //? redirect to home
             return $this->redirectToRoute('app_home');

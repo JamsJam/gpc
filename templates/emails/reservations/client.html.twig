@@ -10,10 +10,14 @@
 <br>
     <p> Voici un récapitulatif de votre séjour :</p>
     <ul>
-        <li><strong>Date d'arrivée :</strong> {{ infoSejour.date_arrivee|date('d/m/Y') }}</li>
-        <li><strong>Date de départ :</strong> {{ infoSejour.date_depart|date('d/m/Y') }}</li>
-        <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li>
-        <li><strong>Hébergement :</strong> {{ infoSejour.hebergement }}</li>
+        <li><strong>Date d'arrivée :</strong> {{ startDate }}</li>
+        <li><strong>Date de départ :</strong> {{ endDate }}</li>
+        {# <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li> #}
+        <li><strong>lieux :</strong> {% for lieux in infoSejour.lieux %}
+            lieux,
+        {% endfor %}</li>
+        <li><strong>Votre email :</strong>{{ infoSejour.email }}</li>
+        <li><strong>Votre telephone :</strong>{{ infoSejour.telephone }}</li>
     </ul>
 <br>
     <p>
