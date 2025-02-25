@@ -4,12 +4,12 @@
     <p>Une nouvelle réservation a été effectuée. Voici les détails :</p>
     
     <ul>
-        <li><strong>Nom du client :</strong> {{ infoSejour.nom }}</li>
+        <li><strong>Nom du client :</strong>{{ infoSejour.prenom }} {{ infoSejour.nom }}</li>
         <li><strong>Email :</strong> {{ infoSejour.email }}</li>
         <li><strong>Numéro de téléphone :</strong> {{ infoSejour.telephone }}</li>
-        <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li>
-        <li><strong>Date d'arrivée :</strong> {{ infoSejour.date_arrivee|date('d/m/Y') }}</li>
-        <li><strong>Date de départ :</strong> {{ infoSejour.date_depart|date('d/m/Y') }}</li>
+        {# <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li> #}
+        <li><strong>Date d'arrivée :</strong> {{ startDate|date('d/m/Y') }}</li>
+        <li><strong>Date de départ :</strong> {{ endDate|date('d/m/Y') }}</li>
     </ul>
     
     <p>Merci de vérifier les informations et d'intégrer cette réservation dans le CRM.</p>

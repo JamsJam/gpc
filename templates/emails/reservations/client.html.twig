@@ -1,6 +1,6 @@
 
 
-    <p>Bonjour {{ infoSejour.nom }},</p>
+    <p>Bonjour {{ infoSejour.prenom }} {{ infoSejour.nom }},</p>
 <br>
     <p>Nous avons bien reçu votre réservation chez <strong>Guadeloupe Passion Caraïbes</strong>.</p>
     <br>
@@ -12,8 +12,8 @@
     <ul>
         <li><strong>Votre email :</strong>{{ infoSejour.email }}</li>
         <li><strong>Votre telephone :</strong>{{ infoSejour.telephone }}</li>
-        <li><strong>Date d'arrivée :</strong> {{ startDate }}</li>
-        <li><strong>Date de départ :</strong> {{ endDate }}</li>
+        <li><strong>Date d'arrivée :</strong> {{ startDate|date('d/m/Y') }}</li>
+        <li><strong>Date de départ :</strong> {{ endDate|date('d/m/Y') }}</li>
         {# <li><strong>Nombre de personnes :</strong> {{ infoSejour.nb_personnes }}</li> #}
         <li><strong>lieux :</strong> {% for lieu in infoSejour.lieux %}
             {{ lieu }},
