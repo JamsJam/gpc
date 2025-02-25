@@ -123,7 +123,7 @@ class ReservationController extends AbstractController
                 // $explorApi->sendLeadsToExplore($leads);
 
 
-            for ($counter=0; $counter < 2; $counter++) { 
+            for ($counter=0; $counter <= 2; $counter++) { 
                 $emailInfo =  match ($counter) {
                     0 => [//? Mail client
                         'to'=>strval($sejourInfo['email']),
@@ -137,21 +137,38 @@ class ReservationController extends AbstractController
                         'subject'=>'Nouvelle réservation reçue - Guadeloupe Passion Caraïbes',
                         'template'=>'emails/reservations/gpc.html.twig',
                     ],
+                    2 => [//? Mail explor
+                        'to'=>'hugo@explor.app',
+                        'from'=>'contact@guadeloupepassioncaraibes.com',
+                        'subject'=>'Nouvelle réservation reçue - Guadeloupe Passion Caraïbes',
+                        'template'=>'emails/reservations/explor.html.twig',
+                    ],
                 };
-                // dd($sejourInfo);
                 $email = (new TemplatedEmail())
                     ->from($emailInfo['from'])
                     ->to($emailInfo['to'])
                     ->subject($emailInfo['subject'])
                     ->htmlTemplate($emailInfo['template'])
-                    ->context([
-                        'infoSejour' => $sejourInfo,
-                        "startDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[0]), "c"),
-                        "endDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[1]), "c")
-                    ])
                 ;
-
-                $mailer->send($email);
+                if ($counter !== 2) {
+                    $email
+                        ->context([
+                            'infoSejour' => $sejourInfo,
+                            "startDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[0]), "c"),
+                            "endDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[1]), "c")
+                        ])
+                    ;
+                } else {
+                    $email 
+                        ->context([
+                            'infoSejour' => $sejourInfo,
+                            "startDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[0]), "c"),
+                            "endDate" => date_format(new DateTimeImmutable(explode(" to ",$sejourInfo['periode'])[1]), "c"),
+                            "lead" => $leads
+                        ])
+                    ;
+                }
+                    $mailer->send($email);
             }
 
 
