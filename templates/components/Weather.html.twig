@@ -1,9 +1,18 @@
 
     <section {{ attributes }} class="meteo" {{stimulus_controller('meteo')}} aria-label="météo" aria-describedby="wheater-title">
-        {# <h2 id="wheater-title">La météo sur nos iles</h2>
+        
+        <h2 id="wheater-title">La météo sur nos iles</h2>
         <div class="meteo__container" {{stimulus_target('marquee')}}>
-            <p>Guadeloupe</p>
+
+            <div class="meteo_widget">
+                <img src="" alt="">
+                <span></span>
+                <h3>Guadeloupe</h3>
+            </div>
+            
             <p>Marie-galante</p>
+            
             <p>les-Saintes</p>
-        </div> #}
+        </div> 
+       
     </section>
