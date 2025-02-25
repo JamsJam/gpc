@@ -12,6 +12,15 @@
         <li><strong>Date de départ :</strong> {{ endDate|date('d/m/Y') }}</li>
     </ul>
     
+    <ul>
+        <li>Informations :</li>
+        {% for key,item in leads %}
+            {% if item is not null %}
+                <li><strong>{{ key }} :</strong> {{ item }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
     <p>Merci de vérifier les informations et d'intégrer cette réservation dans le CRM.</p>
 
     <p>Cordialement,<br>
