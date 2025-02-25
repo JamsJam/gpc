@@ -141,7 +141,7 @@ class ReservationController extends AbstractController
                 // dd($sejourInfo);
                 $email = (new TemplatedEmail())
                     ->from($emailInfo['from'])
-                    ->from($emailInfo['to'])
+                    ->to($emailInfo['to'])
                     ->subject($emailInfo['subject'])
                     ->htmlTemplate($emailInfo['template'])
                     ->context([
